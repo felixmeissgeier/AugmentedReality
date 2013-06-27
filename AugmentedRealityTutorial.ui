@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AugmentedRealityTutorialClass</class>
+ <widget class="QMainWindow" name="AugmentedRealityTutorialClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>966</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AugmentedRealityTutorial</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>941</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>200</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="imageLabel">
+       <property name="text">
+        <string>No Camera Input</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>200</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Input Device</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QRadioButton" name="radioInputWebCam">
+            <property name="text">
+             <string>WebCam</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioInputFile">
+            <property name="text">
+             <string>File Input</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushReloadFileInput">
+            <property name="text">
+             <string>Reload File</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushPause">
+            <property name="text">
+             <string>Pause</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Basic Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QPushButton" name="pushCalibrateGuitar">
+            <property name="text">
+             <string>Calibrate Guitar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkShowCalibration">
+            <property name="text">
+             <string>Show Calibration</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>Calibration Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushFretBoardDetected">
+            <property name="text">
+             <string>FretBoard Detected</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>966</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AugmentedRealityTutorial.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>radioInputWebCam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>inputDeviceChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>938</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushReloadFileInput</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>reloadFileInputPushed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>938</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>566</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushPause</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>pauseVideo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>938</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkShowCalibration</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>showCalibrationChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>938</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushCalibrateGuitar</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>calibrateGuitar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>891</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushFretBoardDetected</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>fretBoardDetected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>867</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>713</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>thresholdTypeChanged()</slot>
+  <slot>thresholdValueChanged(int)</slot>
+  <slot>adaptiveThresholdSettingsChanged()</slot>
+  <slot>drawParameterChanged()</slot>
+  <slot>inputDeviceChanged()</slot>
+  <slot>reloadFileInputPushed()</slot>
+  <slot>pauseVideo()</slot>
+  <slot>showCalibrationChanged()</slot>
+  <slot>calibrateGuitar()</slot>
+  <slot>fretBoardDetected()</slot>
+ </slots>
+</ui>
