@@ -22,6 +22,6 @@ public:
 
 private:
   double getDistanceBetweenLines(double m1, double b1, double m2, double b2, double x1);
-  
+
 };
 

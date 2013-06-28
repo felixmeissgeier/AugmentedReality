@@ -10,6 +10,10 @@ GuitarDetector::~GuitarDetector(void)
 {
 }
 
+int compareFretLineXPosition(const void * a, const void * b){
+  return ( (*(cv::Vec4i*)b)[0] - (*(cv::Vec4i*)a)[0] );
+}
+
 cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings thresholdSettings, Marker detectedMarker, FretBoard& fretBoard){
   cv::Mat grayscaleFrame,tmpGrayFrame,contourFrame,thresholdFrame,filteredFrame,sobelFrame,outputFrame;
   std::string status = "detecting fret board...";
@@ -44,7 +48,6 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     //blur( cannyFrame, filteredFrame, cv::Size(3,3) );
     outputFrame = grayscaleFrame.clone();
 
-#define DRAWLINES 
     cv::vector<cv::Vec4i> lines;
     cv::HoughLinesP( filteredFrame, lines, 1, CV_PI/180, 10,100,20.0 );
     
@@ -53,7 +56,6 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     bool bottomLineDefined=false;
     for( size_t i = 0; i < lines.size(); i++ )
     {
-      
       cv::Vec4i l = lines[i];
       double lineM = (l[3]-l[1])/(double)(l[2]-l[0]);
       double lineN = l[1] - (lineM * l[0]);
@@ -97,9 +99,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     double bottomLineM = (bottomLine[3]-bottomLine[1])/(double)(bottomLine[2]-bottomLine[0]);
     double bottomLineN = bottomLine[1] - (bottomLineM * bottomLine[0]);
 
-    std::vector<std::vector<cv::Point2d>> intersectionPoints;
-    std::vector<cv::Point2d> zeroFret;
-    
+
     if(bottomLineDefined==true){
 
       double yTop = topLineM*filteredFrame.cols+topLineN;
@@ -127,18 +127,19 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
         //outputFrame = tmpThresholdFrame.clone();
         //yTop = 0;
         if(fretLines.size()>0){
-          int indexZeroFret = 0;
-          int xValue = 0;
+          qsort(fretLines.data(),fretLines.size(),sizeof(cv::Vec4i),compareFretLineXPosition);
+          
+          std::vector<std::vector<cv::Point2d>> intersectionPoints;
+          std::vector<cv::Point2d> fret;
+    
           for(int i = 0; i<fretLines.size(); i++){
-            if(fretLines[i][0]>xValue){
-              xValue = fretLines[i][0];
-              indexZeroFret = i;
-            }
+            fret.clear();
+            fret.push_back(cv::Point2d(fretLines[i][0]-grayscaleFrame.cols,topLineM*fretLines[i][0]+topLineN));
+            fret.push_back(cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN));
+            intersectionPoints.push_back(fret);
           }
-          zeroFret.push_back(cv::Point2d(fretLines[indexZeroFret][0]-grayscaleFrame.cols,topLineM*fretLines[indexZeroFret][0]+topLineN));
-          zeroFret.push_back(cv::Point2d(fretLines[indexZeroFret][2]-grayscaleFrame.cols,bottomLineM*fretLines[indexZeroFret][2]+bottomLineN));
-          intersectionPoints.push_back(zeroFret);
           fretBoard.setIntersectionPoints(intersectionPoints);
+
           for(int linec = 0; linec<fretLines.size(); linec++){
             //to static... just works if guitar is very horizontal
             if(abs(fretLines[linec][0]-fretLines[linec][2])<5){

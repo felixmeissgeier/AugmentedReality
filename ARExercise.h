@@ -59,6 +59,8 @@ private:
     bool _showCalibration;
     bool _calibrationModeOn;
     FretBoard _currentFretBoard;
+    FretBoard _detectedFretBoard;
+    bool _fretBoardDetected;
 
     QReadWriteLock _lock;
 };

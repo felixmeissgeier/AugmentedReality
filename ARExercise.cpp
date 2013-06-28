@@ -9,7 +9,8 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _videoPaused(false),
     _recomputeDuration(50), 
     _captureDuration(33),
-    _calibrationModeOn(false)
+    _calibrationModeOn(false),
+    _fretBoardDetected(false)
 {
   cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
   ui.setupUi(this);
@@ -27,6 +28,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   _recomputeTimer->start(_recomputeDuration);
   
   inputDeviceChanged();
+  showCalibrationChanged();
 }
 
 void ARExercise::refresh(){
@@ -41,10 +43,8 @@ void ARExercise::refresh(){
     if(drawFrame.empty()==false){
       QImage::Format imgFormat;
       imgFormat = QImage::Format::Format_RGB888;
-
-      if(_showCalibration=true){
-        drawFrame = drawCalibration(drawFrame);
-      }
+        
+      drawFrame = drawCalibration(drawFrame);
 
       QImage img(drawFrame.data,drawFrame.size[1],drawFrame.size[0],imgFormat);
       img = img.rgbSwapped();
@@ -59,13 +59,31 @@ void ARExercise::refresh(){
 
 cv::Mat ARExercise::drawCalibration(cv::Mat image){
   cv::Mat mat = image.clone();
-  std::vector<std::vector<cv::Point2d>> intersectionPoints =  _currentFretBoard.getIntersectionPoints();
-  if(intersectionPoints.size()>0){
-    //cv::Point2d origin(intersectionPoints[0][0]);
-    cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
-    for(int fret=0; fret<intersectionPoints.size(); fret++){
-      for(int string=0; string<intersectionPoints[fret].size(); string++){
-        cv::circle(mat,cv::Point2d(origin.x+intersectionPoints[fret][string].x,origin.y+intersectionPoints[fret][string].y),3,cv::Scalar(0,0,220));
+  if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){ 
+    std::vector<std::vector<cv::Point2d>> intersectionPoints;
+    cv::Scalar markColor;
+    if(_fretBoardDetected==true){
+      cv::putText(mat,"Fretboard Detected",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
+      intersectionPoints =  _detectedFretBoard.getIntersectionPoints();
+      markColor[0]=0;
+      markColor[1]=230;
+      markColor[2]=0;
+    }
+    else if(_calibrationModeOn==true){
+      cv::putText(mat,"Calibration Mode",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
+      intersectionPoints =  _currentFretBoard.getIntersectionPoints();
+      markColor[0]=0;
+      markColor[1]=0;
+      markColor[2]=230;
+    }
+
+    if(intersectionPoints.size()>0){
+      //cv::Point2d origin(intersectionPoints[0][0]);
+      cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
+      for(int fret=0; fret<intersectionPoints.size(); fret++){
+        for(int string=0; string<intersectionPoints[fret].size(); string++){
+          cv::circle(mat,cv::Point2d(origin.x+intersectionPoints[fret][string].x,origin.y+intersectionPoints[fret][string].y),3,markColor);
+        }
       }
     }
   }
@@ -84,9 +102,15 @@ void ARExercise::recomputeMarkerPosition(){
     settings.useAdaptiveThreshold = true;
 
     std::vector<Marker> detectedMarkers = _markerDetector.detectMarkers(_currentInputFrame,settings);
-
     if(!detectedMarkers.empty()){
-      qDebug()<<detectedMarkers.at(0).getMarkerID();
+      _currentMarker = detectedMarkers.at(0);
+    }
+    else{
+      return;
+    }
+
+    if(_calibrationModeOn==true){
+      //qDebug()<<detectedMarkers.at(0).getMarkerID();
       ThresholdSettings guitarDetectorSettings;
       guitarDetectorSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
       guitarDetectorSettings.useAdaptiveThreshold = true;
@@ -97,13 +121,8 @@ void ARExercise::recomputeMarkerPosition(){
       _currentThresholdFrame = _guitarDetector.detectFretBoard(_currentInputFrame,guitarDetectorSettings,detectedMarkers.at(0),_currentFretBoard);
       cv::imshow("subwindow",_currentThresholdFrame);
       _currentMarker = detectedMarkers.at(0);
-      //qDebug()<<"cols: "<<thresholdFrame.cols;
-      //_currentThresholdFrame = thresholdFrame.clone();
     }
-    else{
-      _currentThresholdFrame = cv::Mat();
-      qDebug()<<"no marker";
-    }
+
   }
 }
 
@@ -166,11 +185,14 @@ void ARExercise::showCalibrationChanged(){
 }
 
 void ARExercise::calibrateGuitar(){
-
+  _calibrationModeOn = true;
+  _fretBoardDetected = false;
 }
 
 void ARExercise::fretBoardDetected(){
-
+  _detectedFretBoard = _currentFretBoard;
+  _fretBoardDetected = true;
+  _calibrationModeOn = false;
 }
 
 ARExercise::~ARExercise()
