@@ -8,18 +8,22 @@ Marker::Marker(){
   _leftTopCornerIndex = 0;
   _rightBottomCornerIndex = 0;
   _rightBottomCornerIndex = 0;
+  _detectionRotations = 0;
+  _valid = false;
 
 }
 
-Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance){
+Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations){
   _cornerPoints = cornerPoints;
   indexMarkerCorners();
   _markerID = markerID;
   _distance = distance;
+  _detectionRotations = detectionRotations;
+  _valid = true;
   
 }
 
-Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance){
+Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance, int detectionRotations){
   _cornerPoints.clear();
   for(int i=0; i<cornerPoints.size(); i++){
     _cornerPoints.push_back(cvPointFrom32f(cornerPoints[i]));
@@ -27,12 +31,48 @@ Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double dista
   indexMarkerCorners();
   _markerID = markerID;
   _distance = distance;
-  
+  _detectionRotations = detectionRotations;
+  _valid = true;
 }
-
 
 Marker::~Marker(void)
 {
+}
+
+bool Marker::isValid(){
+  return _valid;
+}
+
+void Marker::setParameters(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations){
+  _cornerPoints = cornerPoints;
+  indexMarkerCorners();
+  _markerID = markerID;
+  _distance = distance;
+  _detectionRotations = detectionRotations;
+  _valid = true;
+}
+
+double Marker::getMarkerRotationAngle(){
+  double absOpposite = getRightBottomCorner().y-getLeftBottomCorner().y;
+  double hypotenuse = getBottomEdgeLength();
+  
+  return asin(absOpposite/hypotenuse)+(_detectionRotations*(0.5*M_PI));
+}
+
+double Marker::getLeftEdgeLength(){
+  return sqrt(pow(getLeftBottomCorner().y-getLeftTopCorner().y,2)+pow(getLeftBottomCorner().x-getLeftTopCorner().x,2));
+}
+
+double Marker::getTopEdgeLength(){
+  return sqrt(pow(getLeftTopCorner().y-getRightTopCorner().y,2)+pow(getLeftTopCorner().x-getRightTopCorner().x,2));
+}
+
+double Marker::getRightEdgeLength(){
+  return sqrt(pow(getRightBottomCorner().y-getRightTopCorner().y,2)+pow(getRightBottomCorner().x-getRightTopCorner().x,2));
+}
+
+double Marker::getBottomEdgeLength(){
+  return sqrt(pow(getLeftBottomCorner().y-getRightBottomCorner().y,2)+pow(getLeftBottomCorner().x-getRightBottomCorner().x,2));
 }
 
 

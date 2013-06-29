@@ -24,7 +24,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     cv::Point2d leftBottomCorner = detectedMarker.getLeftBottomCorner();
     cv::Point2d rightBottomCorner = detectedMarker.getRightBottomCorner();
 
-    double markerEdgeLength = sqrt(pow(leftBottomCorner.y-leftUpperCorner.y,2)+pow(leftBottomCorner.x-leftUpperCorner.x,2));
+    double markerEdgeLength = detectedMarker.getLeftEdgeLength();
     double markerEdgeRealityRatio = markerEdgeLength/0.045;
     double minFretBoardHeight = markerEdgeRealityRatio*0.04;
     double markerAngle = atan2(rightUpperCorner.y - leftUpperCorner.y, rightUpperCorner.x - leftUpperCorner.x);
@@ -138,6 +138,8 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
             fret.push_back(cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN));
             intersectionPoints.push_back(fret);
           }
+          fretBoard.setMarkerScale(detectedMarker.getBottomEdgeLength()/0.045);
+          fretBoard.setMarkerRotation(detectedMarker.getMarkerRotationAngle());
           fretBoard.setIntersectionPoints(intersectionPoints);
 
           for(int linec = 0; linec<fretLines.size(); linec++){

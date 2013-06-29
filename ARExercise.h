@@ -2,8 +2,6 @@
 #ifndef AREXERCISE_H
 #define AREXERCISE_H
 
-#include "MarkerDetector.h"
-#include "GuitarDetector.h"
 #include <QtGui/QMainWindow>
 #include "ui_AugmentedRealityTutorial.h"
 #include <opencv2\core\core.hpp>
@@ -17,9 +15,9 @@
 #include <QTime>
 #include <iostream>
 #include <QDebug>
-#include <windows.h>
 #include "ThresholdSettings.h"
 #include "FretBoard.h"
+#include "DetectionThread.h"
 
 class ARExercise : public QMainWindow
 {
@@ -32,7 +30,7 @@ public:
     
 public slots:
   void refresh();
-  void recomputeMarkerPosition();
+  //void recomputeMarkerPosition();
 
   void inputDeviceChanged();
   void showCalibrationChanged();
@@ -44,11 +42,9 @@ public slots:
 
 private:
     Ui::AugmentedRealityTutorialClass ui;
-    MarkerDetector _markerDetector;
+    DetectionThread _detectionThread;
     Marker _currentMarker;
-    GuitarDetector _guitarDetector;
     QTimer* _captureTimer;
-    QTimer* _recomputeTimer;
     QTime* _simTime;
     cv::VideoCapture* _cap;
     cv::Mat _currentInputFrame, _currentThresholdFrame;

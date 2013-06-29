@@ -25,7 +25,7 @@ private:
   void computeSamplingPoints(cv::vector<cv::Point> approximatedPolygon, cv::vector<cv::vector<cv::Point2f>>& computedSamplingPoints, cv::Mat thresholdFrame);
   int subpixSampleSafe( const cv::Mat srcImage, cv::Point2d p );
   cv::Point sobel( const cv::Mat srcImage, cv::Mat& outImage );
-  int findMarkerID(cv::Mat markerImg, std::map<int,int> markerList);
+  int findMarkerID(cv::Mat markerImg, std::map<int,int> markerList, int& detectionRotations);
   bool isMarker(cv::Mat* markerImg);
   bool getMarkerBit(int rawBit);
   void initMarkerList();

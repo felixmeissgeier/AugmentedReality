@@ -8,8 +8,12 @@ public:
   FretBoard(void);
   ~FretBoard(void);
 
-  void setIntersectionPoints(std::vector<std::vector<cv::Point2d>>);
+  void setIntersectionPoints(std::vector<std::vector<cv::Point2d>> intersectionPoints);
   std::vector<std::vector<cv::Point2d>> getIntersectionPoints();
+  void setMarkerRotation(double rotation);
+  double getMarkerRotation();
+  void setMarkerScale(double scale);
+  double getMarkerScale();
 
 private:
   /*  real intersection between string and frets; begins with zero-fret (end of fret-board)
@@ -27,5 +31,7 @@ private:
   *   upper-right corner of the marker
   */
   std::vector<std::vector<cv::Point2d>> _intersectionPoints;
+  double _markerRotationAngle;
+  double _markerScale;
 };
 

@@ -124,12 +124,14 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
         cv::Mat transformMat = cv::getPerspectiveTransform(srcPoints,dstPoints);
         cv::Mat transformedMarkerImg(6,6,CV_8UC1,cv::Scalar::all(0));
         cv::warpPerspective(thresholdFrame,transformedMarkerImg,transformMat,transformedMarkerImg.size());
-        int markerID = findMarkerID(transformedMarkerImg,_markerList);
+        int detectionRotations = 0;
+        int markerID = findMarkerID(transformedMarkerImg,_markerList,detectionRotations);
+        //qDebug()<<"found: "<<markerID;
         if(markerID!=-1){
           if(resultMatrix.cols==4 && resultMatrix.rows==4){           
             estimateSquarePose(resultMatrix.ptr<float>(),cornerPointsNew.data(),0.045);        
             double distance = sqrt(pow((double)resultMatrix.at<float>(3),2.0)+pow((double)resultMatrix.at<float>(7),2.0)+pow((double)resultMatrix.at<float>(11),2.0));
-            Marker marker(cornerPoints,markerID,distance);
+            Marker marker(cornerPoints,markerID,distance,detectionRotations);
             detectedMarkers.push_back(marker);
 
           }
@@ -310,13 +312,13 @@ bool MarkerDetector::isMarker(cv::Mat* markerImg){
   return true;
 }
 
-int MarkerDetector::findMarkerID(cv::Mat markerImg, std::map<int,int> markerList){
+int MarkerDetector::findMarkerID(cv::Mat markerImg, std::map<int,int> markerList, int& detectionRotations){
   int returnVal = -1;
 
   cv::Point2f markerImgCenter(2.5, 2.5);
   cv::Mat tmp;
   if(isMarker(&markerImg)){
-    for(int turnIt = 0; turnIt<4; turnIt++){
+    for(detectionRotations = 0; detectionRotations<4; detectionRotations++){
       //read marker ID
       int currentID = 0;    
       for(int row=1;row<markerImg.rows-1;row++){
@@ -330,7 +332,6 @@ int MarkerDetector::findMarkerID(cv::Mat markerImg, std::map<int,int> markerList
         }
         currentID+=rowValue;
       }
-
       if(markerList.find(currentID)==markerList.end()){
         //qDebug()<<"currentID: "<<currentID;
         cv::warpAffine(markerImg,tmp,cv::getRotationMatrix2D(markerImgCenter,90.0,1.0),markerImg.size());

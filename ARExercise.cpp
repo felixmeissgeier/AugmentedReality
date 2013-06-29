@@ -7,28 +7,26 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _inputFilePath("guitar_init2.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _cap(0),
     _videoPaused(false),
-    _recomputeDuration(50), 
     _captureDuration(33),
     _calibrationModeOn(false),
     _fretBoardDetected(false)
 {
-  cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
+
   ui.setupUi(this);
   this->move(300,100);
   _captureTimer = new QTimer();
-  _recomputeTimer = new QTimer();
 
   _cap = new cv::VideoCapture(_camDeviceID);
   //_cap = new cv::VideoCapture(_inputFilePath.toStdString());
 
   QObject::connect(_captureTimer,SIGNAL(timeout()),this,SLOT(refresh()));
-  QObject::connect(_recomputeTimer,SIGNAL(timeout()),this,SLOT(recomputeMarkerPosition()));
+  //QObject::connect(_recomputeTimer,SIGNAL(timeout()),this,SLOT(recomputeMarkerPosition()));
 
   _captureTimer->start(_captureDuration);
-  _recomputeTimer->start(_recomputeDuration);
   
   inputDeviceChanged();
   showCalibrationChanged();
+  _detectionThread.start();
 }
 
 void ARExercise::refresh(){
@@ -43,8 +41,13 @@ void ARExercise::refresh(){
     if(drawFrame.empty()==false){
       QImage::Format imgFormat;
       imgFormat = QImage::Format::Format_RGB888;
-        
+      
+      _detectionThread.setInputFrame(drawFrame);
+      _currentMarker = _detectionThread.getCurrentMarker();
       drawFrame = drawCalibration(drawFrame);
+      if(_currentMarker.isValid()){
+        cv::circle(drawFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
+      }
 
       QImage img(drawFrame.data,drawFrame.size[1],drawFrame.size[0],imgFormat);
       img = img.rgbSwapped();
@@ -59,7 +62,7 @@ void ARExercise::refresh(){
 
 cv::Mat ARExercise::drawCalibration(cv::Mat image){
   cv::Mat mat = image.clone();
-  if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){ 
+  if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
     std::vector<std::vector<cv::Point2d>> intersectionPoints;
     cv::Scalar markColor;
     if(_fretBoardDetected==true){
@@ -71,18 +74,32 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
     }
     else if(_calibrationModeOn==true){
       cv::putText(mat,"Calibration Mode",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
+      _currentFretBoard = _detectionThread.getCurrentFretBoard();
       intersectionPoints =  _currentFretBoard.getIntersectionPoints();
       markColor[0]=0;
       markColor[1]=0;
       markColor[2]=230;
     }
 
+    
     if(intersectionPoints.size()>0){
       //cv::Point2d origin(intersectionPoints[0][0]);
       cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
       for(int fret=0; fret<intersectionPoints.size(); fret++){
         for(int string=0; string<intersectionPoints[fret].size(); string++){
-          cv::circle(mat,cv::Point2d(origin.x+intersectionPoints[fret][string].x,origin.y+intersectionPoints[fret][string].y),3,markColor);
+          cv::Point2d fretboardPoint;
+          if(_calibrationModeOn==true){
+            fretboardPoint = cv::Point2d(intersectionPoints[fret][string].x+origin.x,intersectionPoints[fret][string].y+origin.y);
+          }
+          else{
+            double deltaMarkerRotationAngle = _currentMarker.getMarkerRotationAngle()-_detectedFretBoard.getMarkerRotation();
+            double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
+            cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);
+            //rotate point
+            cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
+            fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
+          }
+          cv::circle(mat,fretboardPoint,3,markColor);
         }
       }
     }
@@ -91,50 +108,15 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
   return mat;
 }
 
-void ARExercise::recomputeMarkerPosition(){
-  if(!_currentInputFrame.empty()){
-    ThresholdSettings settings;
-    settings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
-    settings.adaptiveThresholdBlocksize = 101;
-    settings.adaptiveThresholdConstantC = 5;
-    settings.thresholdType = cv::THRESH_BINARY;
-    settings.thresholdValue = 150;
-    settings.useAdaptiveThreshold = true;
-
-    std::vector<Marker> detectedMarkers = _markerDetector.detectMarkers(_currentInputFrame,settings);
-    if(!detectedMarkers.empty()){
-      _currentMarker = detectedMarkers.at(0);
-    }
-    else{
-      return;
-    }
-
-    if(_calibrationModeOn==true){
-      //qDebug()<<detectedMarkers.at(0).getMarkerID();
-      ThresholdSettings guitarDetectorSettings;
-      guitarDetectorSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
-      guitarDetectorSettings.useAdaptiveThreshold = true;
-      guitarDetectorSettings.adaptiveThresholdBlocksize = 11;
-      guitarDetectorSettings.adaptiveThresholdConstantC = 2.0;
-      guitarDetectorSettings.thresholdValue = 150;
-      guitarDetectorSettings.thresholdType = cv::THRESH_BINARY;
-      _currentThresholdFrame = _guitarDetector.detectFretBoard(_currentInputFrame,guitarDetectorSettings,detectedMarkers.at(0),_currentFretBoard);
-      cv::imshow("subwindow",_currentThresholdFrame);
-      _currentMarker = detectedMarkers.at(0);
-    }
-
-  }
-}
-
 void ARExercise::inputDeviceChanged(){
+  _captureTimer->stop();
   if(_cap!=0){
     _cap->release();
   }
-
-  Sleep(1000);
+  
   delete _cap;
   _cap = 0;
-
+  
   if(ui.radioInputWebCam->isChecked()){
     _cap = new cv::VideoCapture(_camDeviceID);
     ui.pushReloadFileInput->setEnabled(false);
@@ -150,7 +132,6 @@ void ARExercise::inputDeviceChanged(){
   }
 
   _captureTimer->start(_captureDuration);
-  _recomputeTimer->start(_recomputeDuration);
 }
 
 void ARExercise::pauseVideo(){
@@ -158,12 +139,10 @@ void ARExercise::pauseVideo(){
     if(_videoPaused==true){
       ui.pushPause->setText("Pause");
       _captureTimer->start(_captureDuration);
-      _recomputeTimer->start(_recomputeDuration);
       _videoPaused = false;
     }
     else{
       ui.pushPause->setText("Continue");
-      _recomputeTimer->stop();
       _captureTimer->stop();
       _videoPaused = true;
     }
@@ -187,17 +166,19 @@ void ARExercise::showCalibrationChanged(){
 void ARExercise::calibrateGuitar(){
   _calibrationModeOn = true;
   _fretBoardDetected = false;
+  _detectionThread.setCalibrationMode(_calibrationModeOn);
 }
 
 void ARExercise::fretBoardDetected(){
   _detectedFretBoard = _currentFretBoard;
   _fretBoardDetected = true;
   _calibrationModeOn = false;
+  _detectionThread.setCalibrationMode(_calibrationModeOn);
 }
 
 ARExercise::~ARExercise()
 {
+  _detectionThread.terminateThread();
   delete _captureTimer;
-  delete _recomputeTimer;
   delete _cap;
 }
