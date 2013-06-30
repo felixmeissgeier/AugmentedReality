@@ -1,38 +1,39 @@
 #include "Marker.h"
 
-Marker::Marker(){
-  _markerID = 0;
-  _distance = 0.0;
+Marker::Marker()
+  :_markerID(0),
+  _distance(0),
+  _leftBottomCornerIndex(0),
+  _leftTopCornerIndex(0),
+  _rightBottomCornerIndex(0),
+  _rightTopCornerIndex(0),
+  _detectionRotations(0),
+  _valid(false)
+{
   _cornerPoints.clear();
-  _leftBottomCornerIndex = 0;
-  _leftTopCornerIndex = 0;
-  _rightBottomCornerIndex = 0;
-  _rightBottomCornerIndex = 0;
-  _detectionRotations = 0;
-  _valid = false;
-
 }
 
-Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations){
-  _cornerPoints = cornerPoints;
-  indexMarkerCorners();
-  _markerID = markerID;
-  _distance = distance;
-  _detectionRotations = detectionRotations;
-  _valid = true;
-  
+Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations)
+  :_cornerPoints(cornerPoints),
+  _markerID(markerID),
+  _distance(distance),
+  _detectionRotations(detectionRotations),
+  _valid(true)
+{
+  indexMarkerCorners();  
 }
 
-Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance, int detectionRotations){
+Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance, int detectionRotations)
+  :_markerID(markerID),
+  _distance(distance),
+  _detectionRotations(detectionRotations),
+  _valid(true)
+{
   _cornerPoints.clear();
   for(int i=0; i<cornerPoints.size(); i++){
     _cornerPoints.push_back(cvPointFrom32f(cornerPoints[i]));
   }
   indexMarkerCorners();
-  _markerID = markerID;
-  _distance = distance;
-  _detectionRotations = detectionRotations;
-  _valid = true;
 }
 
 Marker::~Marker(void)

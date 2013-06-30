@@ -45,6 +45,8 @@ void ARExercise::refresh(){
       _detectionThread.setInputFrame(drawFrame);
       _currentMarker = _detectionThread.getCurrentMarker();
       drawFrame = drawCalibration(drawFrame);
+
+      //just mark right top corner of marker
       if(_currentMarker.isValid()){
         cv::circle(drawFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
       }
@@ -60,6 +62,9 @@ void ARExercise::refresh(){
   }
 }
 
+/*
+*   This method draws detected sampling points of current fretboard calibration
+*/
 cv::Mat ARExercise::drawCalibration(cv::Mat image){
   cv::Mat mat = image.clone();
   if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
@@ -89,9 +94,11 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
         for(int string=0; string<intersectionPoints[fret].size(); string++){
           cv::Point2d fretboardPoint;
           if(_calibrationModeOn==true){
+            //if calibration mpde, than only draw detected intersection points
             fretboardPoint = cv::Point2d(intersectionPoints[fret][string].x+origin.x,intersectionPoints[fret][string].y+origin.y);
           }
           else{
+            //if stored fretboard calibration has to be drawn, apply rotation and scaling before drawing the point circles
             double deltaMarkerRotationAngle = _currentMarker.getMarkerRotationAngle()-_detectedFretBoard.getMarkerRotation();
             double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
             cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);

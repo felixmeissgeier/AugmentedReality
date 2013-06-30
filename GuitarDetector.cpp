@@ -18,6 +18,11 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
   cv::Mat grayscaleFrame,tmpGrayFrame,contourFrame,thresholdFrame,filteredFrame,sobelFrame,outputFrame;
   std::string status = "detecting fret board...";
  
+  double realMarkerEdgeLength = 0.045;
+  double realMinFretBoardHeight = 0.04;
+  double realMaxFretBoardHeight = 0.06;
+  double realMinFretHeight = 0.03;
+
   if(!inputFrame.empty()){
     cv::Point2d leftUpperCorner = detectedMarker.getLeftTopCorner();
     cv::Point2d rightUpperCorner = detectedMarker.getRightTopCorner();
@@ -25,12 +30,14 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     cv::Point2d rightBottomCorner = detectedMarker.getRightBottomCorner();
 
     double markerEdgeLength = detectedMarker.getLeftEdgeLength();
-    double markerEdgeRealityRatio = markerEdgeLength/0.045;
-    double minFretBoardHeight = markerEdgeRealityRatio*0.04;
+    double markerEdgeRealityRatio = markerEdgeLength/realMarkerEdgeLength;
+    double minFretBoardHeight = markerEdgeRealityRatio*realMinFretBoardHeight;
     double markerAngle = atan2(rightUpperCorner.y - leftUpperCorner.y, rightUpperCorner.x - leftUpperCorner.x);
     double yDif = (leftBottomCorner.y - leftUpperCorner.y)>(rightBottomCorner.y - rightUpperCorner.y)?(leftBottomCorner.y - leftUpperCorner.y):(rightBottomCorner.y - rightUpperCorner.y);
 
+    //convert to grayscale image
     cv::cvtColor(inputFrame,tmpGrayFrame,CV_BGR2GRAY);
+    //get subimage taking marker corners into account
     cv::Rect roi(0,rightUpperCorner.y,rightUpperCorner.x,inputFrame.rows-rightUpperCorner.y);
     grayscaleFrame = cv::Mat(tmpGrayFrame,roi);
     
@@ -44,10 +51,13 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     //cv::Laplacian(grayscaleFrame,thresholdFrame,-1,7);
     //cv::Sobel(grayscaleFrame,sobelFrame,-1,0,1,3);
     //cv::threshold(sobelFrame,thresholdFrame,10,250,cv::THRESH_BINARY);
-    cv::Canny( grayscaleFrame, filteredFrame, 50, 200, 3 , false);
     //blur( cannyFrame, filteredFrame, cv::Size(3,3) );
+
+    //apply canny filter to extract edges
+    cv::Canny( grayscaleFrame, filteredFrame, 50, 200, 3 , false);
     outputFrame = grayscaleFrame.clone();
 
+    //detect lines using HoughLines
     cv::vector<cv::Vec4i> lines;
     cv::HoughLinesP( filteredFrame, lines, 1, CV_PI/180, 10,100,20.0 );
     
@@ -69,6 +79,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
         lineAngle = atan2((double)abs(l[1] - l[3]), (double)abs(l[0]-l[2]));
       }
 
+      //check if line rotation is nearly similar to marker orientation
       if(abs(lineAngle)<=abs(markerAngle)+0.1 && abs(lineAngle)>=abs(markerAngle)-0.1){
         //line( outputFrame, cv::Point(l[0],l[1]), cv::Point(l[2],l[3]), cv::Scalar(255,255,255), 1, CV_AA);
       
@@ -85,7 +96,9 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
           
           /*abs(lineM)<abs(topLineM+0.5*topLineM) && abs(lineM)>abs(topLineM-0.5*topLineM)*/
           
-          if(lineDistanceLeft<(markerEdgeRealityRatio*0.06) && lineDistanceRight<(markerEdgeRealityRatio*0.06) 
+          //check if left and right distances between detected top- and bottom line are less than max 
+          //fret board height in meteres (real values)
+          if(lineDistanceLeft<(markerEdgeRealityRatio*realMaxFretBoardHeight) && lineDistanceRight<(markerEdgeRealityRatio*realMaxFretBoardHeight) 
             && lineDistanceLeft>=minFretBoardHeight && lineDistanceRight>=minFretBoardHeight){
             bottomLine = l;
             bottomLineDefined = true;
@@ -101,7 +114,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
 
 
     if(bottomLineDefined==true){
-
+      //TODO: remove code duplication
       double yTop = topLineM*filteredFrame.cols+topLineN;
       double yBottom = bottomLineM*filteredFrame.cols+bottomLineN;
       yTop = (yTop>=grayscaleFrame.rows)?grayscaleFrame.rows-1:yTop;
@@ -113,20 +126,25 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
       line( outputFrame, cv::Point(0,bottomLineN), cv::Point(outputFrame.cols, bottomLineM*outputFrame.cols+bottomLineN), cv::Scalar(0,0,255), 3, CV_AA);
       
       if(abs(leftFretHeight-rightFretHeight)<20){
+        //detecting frets
 
+        //get subimage using detected top and bottom fret board bounds
         cv::Rect roi2(0,yTop,filteredFrame.cols,yBottom-yTop);
         cv::Mat fretFrame = cv::Mat(grayscaleFrame,roi2);
+        //edge detection using sobel
         cv::Sobel(fretFrame,sobelFrame,-1,1,0,3);
         cv::Mat tmpThresholdFrame;
+        //better extraction of edges by thresholding image
         cv::threshold(sobelFrame,tmpThresholdFrame,120,255,cv::THRESH_BINARY);
       
+        //get lines
         cv::vector<cv::Vec4i> fretLines;
-        cv::HoughLinesP( tmpThresholdFrame, fretLines, 1, CV_PI/180,10,markerEdgeRealityRatio*0.03,10.0);
-
+        cv::HoughLinesP( tmpThresholdFrame, fretLines, 1, CV_PI/180,10,markerEdgeRealityRatio*realMinFretHeight,10.0);
 
         //outputFrame = tmpThresholdFrame.clone();
         //yTop = 0;
         if(fretLines.size()>0){
+          //sort detected frets by x position
           qsort(fretLines.data(),fretLines.size(),sizeof(cv::Vec4i),compareFretLineXPosition);
           
           std::vector<std::vector<cv::Point2d>> intersectionPoints;
@@ -138,12 +156,13 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
             fret.push_back(cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN));
             intersectionPoints.push_back(fret);
           }
-          fretBoard.setMarkerScale(detectedMarker.getBottomEdgeLength()/0.045);
+          //define new fretboard
+          fretBoard.setMarkerScale(detectedMarker.getBottomEdgeLength()/realMarkerEdgeLength);
           fretBoard.setMarkerRotation(detectedMarker.getMarkerRotationAngle());
           fretBoard.setIntersectionPoints(intersectionPoints);
 
           for(int linec = 0; linec<fretLines.size(); linec++){
-            //to static... just works if guitar is very horizontal
+            //TODO:to static... just works if guitar is very horizontal
             if(abs(fretLines[linec][0]-fretLines[linec][2])<5){
               line(outputFrame,cv::Point(fretLines[linec][0],topLineM*fretLines[linec][0]+topLineN),cv::Point(fretLines[linec][2],bottomLineM*fretLines[linec][2]+bottomLineN),cv::Scalar(0,0,255),2,CV_AA);
             }
@@ -160,6 +179,10 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
 }
 
 double GuitarDetector::getDistanceBetweenLines(double m1, double b1, double m2, double b2, double x1){
+  //orthogonal sloge of m -> -(1/m)
+  //first compute orthognal line through specified point of fct1
+  //afterwards calculate intersection with second function
+  
   double distance = 0;
   if(m1==0 && m2==0){
     distance = abs(b2-b1);
