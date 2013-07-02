@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init2.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init3.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _cap(0),
     _videoPaused(false),
     _captureDuration(33),
@@ -40,7 +40,7 @@ void ARExercise::refresh(){
     
     if(drawFrame.empty()==false){
       QImage::Format imgFormat;
-		imgFormat = QImage::Format_RGB888;
+      imgFormat = QImage::Format_RGB888;
       
       _detectionThread.setInputFrame(drawFrame);
       _currentMarker = _detectionThread.getCurrentMarker();
@@ -90,18 +90,26 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
     if(intersectionPoints.size()>0){
       //cv::Point2d origin(intersectionPoints[0][0]);
       cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
+      double deltaMarkerRotationAngle = _detectedFretBoard.getMarkerRotation()-_currentMarker.getMarkerRotationAngle();
+      double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
+      cv::Point2d leftCorner = cv::Point2d(_currentMarker.getRightTopCorner().x-_currentMarker.getTopEdgeLength(),_currentMarker.getRightTopCorner().y);
+      cv::Point2d rotatedLeftCorner1 = cv::Point2d(leftCorner.x-origin.x,leftCorner.y-origin.y);
+      cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
+      cv::circle(mat,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
+      
       for(int fret=0; fret<intersectionPoints.size(); fret++){
         for(int string=0; string<intersectionPoints[fret].size(); string++){
           cv::Point2d fretboardPoint;
+     
           if(_calibrationModeOn==true){
             //if calibration mpde, than only draw detected intersection points
             fretboardPoint = cv::Point2d(intersectionPoints[fret][string].x+origin.x,intersectionPoints[fret][string].y+origin.y);
           }
           else{
             //if stored fretboard calibration has to be drawn, apply rotation and scaling before drawing the point circles
-            double deltaMarkerRotationAngle = _currentMarker.getMarkerRotationAngle()-_detectedFretBoard.getMarkerRotation();
-            double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
             cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);
+            //cv::Point2d normalizedPoint = cv::Point2d(translatePoint.x-origin.x,translatePoint.y-origin.y);
+            //cv::Point2d translatePoint = cv::Point2d(translatePoint1.x+origin.x,translatePoint1.y+origin.y);
             //rotate point
             cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
             fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
@@ -116,6 +124,7 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
 }
 
 void ARExercise::inputDeviceChanged(){
+  _currentMarker = Marker();
   _captureTimer->stop();
   if(_cap!=0){
     _cap->release();
@@ -186,6 +195,7 @@ void ARExercise::fretBoardDetected(){
 ARExercise::~ARExercise()
 {
   _detectionThread.terminateThread();
+  _detectionThread.wait();
   delete _captureTimer;
   delete _cap;
 }

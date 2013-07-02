@@ -37,16 +37,24 @@ void DetectionThread::run(){
       std::vector<Marker> detectedMarkers = _markerDetector.detectMarkers(_currentInputFrame,_markerDetectionThresholdSettings);
       
       if(!detectedMarkers.empty()){
-        _currentMarker = detectedMarkers.at(0);
-        qDebug()<<detectedMarkers.at(0).getMarkerID();
+        if(_currentMarker.isValid()){
+          if(abs(_currentMarker.getLeftBottomCorner().x-detectedMarkers.at(0).getLeftBottomCorner().x)>1
+            || abs(_currentMarker.getLeftBottomCorner().y-detectedMarkers.at(0).getLeftBottomCorner().y)>1){
+            _currentMarker = detectedMarkers.at(0);
+            qDebug()<<detectedMarkers.at(0).getMarkerID();
+          }
+        }
+        else{
+          _currentMarker = detectedMarkers.at(0);
+        }
       }
       else{
         qDebug()<<"no marker";
       }
 
-      if(_calibrationModeOn==true){
+      if(_calibrationModeOn==true && _currentMarker.isValid()==true){
         //detect fret board
-        cv::Mat fretDetectionFrame = _guitarDetector.detectFretBoard(_currentInputFrame,_guitarDetectionThresholdSettings,detectedMarkers.at(0),_currentFretBoard);
+        cv::Mat fretDetectionFrame = _guitarDetector.detectFretBoard(_currentInputFrame,_guitarDetectionThresholdSettings,_currentMarker,_currentFretBoard);
         //cv::imshow("subwindow",fretDetectionFrame);
       }
 

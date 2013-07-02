@@ -20,6 +20,10 @@ public:
   cv::Point2d getRightTopCorner();
   cv::Point2d getLeftBottomCorner();
   cv::Point2d getRightBottomCorner();
+
+  /*
+  * get Marker rotation angle anti clockwise
+  */
   double getMarkerRotationAngle();
   double getLeftEdgeLength();
   double getTopEdgeLength();

@@ -54,10 +54,15 @@ void Marker::setParameters(cv::vector<cv::Point2d> cornerPoints, int markerID, d
 }
 
 double Marker::getMarkerRotationAngle(){
-  double absOpposite = getRightBottomCorner().y-getLeftBottomCorner().y;
-  double hypotenuse = getBottomEdgeLength();
+  double absOpposite = getLeftTopCorner().y-getRightTopCorner().y;
+  double adjacent = getTopEdgeLength();
+  _detectionRotations = 0;
+  double rotationAngleTop = asin(absOpposite/adjacent)+(_detectionRotations*(0.5*M_PI));
+  absOpposite = getLeftBottomCorner().y-getRightBottomCorner().y;
+  adjacent = getBottomEdgeLength();
+  double rotationAngleBottom = asin(absOpposite/adjacent)+(_detectionRotations*(0.5*M_PI));
   
-  return asin(absOpposite/hypotenuse)+(_detectionRotations*(0.5*M_PI));
+  return (rotationAngleBottom+rotationAngleTop)/2.0;
 }
 
 double Marker::getLeftEdgeLength(){
