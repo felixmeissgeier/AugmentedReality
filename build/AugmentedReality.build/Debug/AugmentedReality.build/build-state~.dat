@@ -1,0 +1,2593 @@
+TAugmentedReality
+v7
+r0
+t394455467.113060
+cCheck dependencies
+cProcessInfoPlistFile /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/Info.plist Info.plist
+cPhaseScriptExecution "Qt Qmake" /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-D7BA7D76DAB5DD13389D6332.sh
+cPhaseScriptExecution "Qt Preprocessors" /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-A0A52A2ADF7A1E2A99738674.sh
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o /Users/andreas/workspace_cpp/AugmentedReality/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+
+N/Developer/usr/lib/clang/1.7/include/emmintrin.h
+c000000004D0875A70000000000009059
+t1292400039
+s36953
+i<xmmintrin.h>
+
+N/Developer/usr/lib/clang/1.7/include/mm_malloc.h
+c000000004D0875A7000000000000096F
+t1292400039
+s2415
+i<stdlib.h>
+i<malloc.h>
+
+N/Developer/usr/lib/clang/1.7/include/mmintrin.h
+c000000004D0875A70000000000003C76
+t1292400039
+s15478
+
+N/Developer/usr/lib/clang/1.7/include/xmmintrin.h
+c000000004D0875A70000000000005FC3
+t1292400039
+s24515
+i<mmintrin.h>
+i<mm_malloc.h>
+i<emmintrin.h>
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h
+c000000004A119834000000000000EA8F
+t1242667060
+s60047
+i<xmmintrin.h>
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h
+c000000004A119834000000000000093D
+t1242667060
+s2365
+i<stdlib.h>
+i<errno.h>
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h
+c000000004A1198340000000000009260
+t1242667060
+s37472
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h
+c000000004A119834000000000000BECA
+t1242667060
+s48842
+i<mmintrin.h>
+i<mm_malloc.h>
+i<emmintrin.h>
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/emmintrin.h
+c000000004D087E9F000000000000EAA5
+t1292402335
+s60069
+i<xmmintrin.h>
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/mm_malloc.h
+c000000004D087E9F000000000000093D
+t1292402335
+s2365
+i<stdlib.h>
+i<errno.h>
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/mmintrin.h
+c000000004D087E9F00000000000092B1
+t1292402335
+s37553
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/xmmintrin.h
+c000000004D087E9F000000000000BECA
+t1292402335
+s48842
+i<mmintrin.h>
+i<mm_malloc.h>
+i<emmintrin.h>
+
+N/Library/Frameworks/Qt3Support.framework/Headers/q3cstring.h
+c0000000051CC016E00000000000027AE
+t1372324206
+s10158
+i<QtCore/qbytearray.h>
+
+N/Library/Frameworks/Qt3Support.framework/Headers/q3valuelist.h
+c0000000051CC016E000000000000209A
+t1372324206
+s8346
+i<QtCore/qalgorithms.h>
+i<QtCore/qdatastream.h>
+i<QtCore/qlinkedlist.h>
+i<QtCore/qlist.h>
+i<iterator>
+i<list>
+
+N/Library/Frameworks/QtCore.framework/Headers/QPoint
+c0000000051CC016B0000000000000014
+t1372324203
+s20
+i"qpoint.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/QPointF
+c0000000051CC016B0000000000000014
+t1372324203
+s20
+i"qpoint.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/QVariant
+c0000000051CC016B0000000000000016
+t1372324203
+s22
+i"qvariant.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/qabstractitemmodel.h
+c0000000051CC016900000000000040E6
+t1372324201
+s16614
+i<QtCore/qvariant.h>
+i<QtCore/qobject.h>
+i<QtCore/qhash.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qalgorithms.h
+c0000000051CC0169000000000000403F
+t1372324201
+s16447
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic.h
+c0000000051CC01690000000000001ACD
+t1372324201
+s6861
+i<QtCore/qglobal.h>
+i<QtCore/qbasicatomic.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_alpha.h
+c0000000051CC016900000000000065CA
+t1372324201
+s26058
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_arch.h
+c0000000051CC01690000000000000E65
+t1372324201
+s3685
+i"QtCore/qglobal.h"
+i"QtCore/qatomic_integrity.h"
+i"QtCore/qatomic_vxworks.h"
+i"QtCore/qatomic_alpha.h"
+i"QtCore/qatomic_arm.h"
+i"QtCore/qatomic_armv6.h"
+i"QtCore/qatomic_avr32.h"
+i"QtCore/qatomic_bfin.h"
+i"QtCore/qatomic_generic.h"
+i"QtCore/qatomic_i386.h"
+i"QtCore/qatomic_ia64.h"
+i"QtCore/qatomic_macosx.h"
+i"QtCore/qatomic_mips.h"
+i"QtCore/qatomic_parisc.h"
+i"QtCore/qatomic_powerpc.h"
+i"QtCore/qatomic_s390.h"
+i"QtCore/qatomic_sparc.h"
+i"QtCore/qatomic_windows.h"
+i"QtCore/qatomic_windowsce.h"
+i"QtCore/qatomic_x86_64.h"
+i"QtCore/qatomic_symbian.h"
+i"QtCore/qatomic_sh.h"
+i"QtCore/qatomic_sh4a.h"
+i"QtCore/qatomic_generic.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_arm.h
+c0000000051CC01690000000000000B0E
+t1372324201
+s2830
+i"QtCore/qatomic_armv7.h"
+i"QtCore/qatomic_armv6.h"
+i"QtCore/qatomic_armv5.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_armv5.h
+c0000000051CC016900000000000030F1
+t1372324201
+s12529
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_armv6.h
+c0000000051CC01690000000000004100
+t1372324201
+s16640
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_armv7.h
+c0000000051CC0169000000000000099C
+t1372324201
+s2460
+i"QtCore/qatomic_armv6.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_avr32.h
+c0000000051CC01690000000000001D52
+t1372324201
+s7506
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_bfin.h
+c0000000051CC01690000000000002760
+t1372324201
+s10080
+i<asm/fixed_code.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_bootstrap.h
+c0000000051CC01690000000000000C36
+t1372324201
+s3126
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_generic.h
+c0000000051CC01690000000000002215
+t1372324201
+s8725
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_i386.h
+c0000000051CC01690000000000002AE7
+t1372324201
+s10983
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_ia64.h
+c0000000051CC0169000000000000650D
+t1372324201
+s25869
+i<ia64intrin.h>
+i<ia64/sys/inline.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_integrity.h
+c0000000051CC01690000000000002289
+t1372324201
+s8841
+i<INTEGRITY.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_macosx.h
+c0000000051CC01690000000000000901
+t1372324201
+s2305
+i<QtCore/qatomic_x86_64.h>
+i<QtCore/qatomic_i386.h>
+i<QtCore/qatomic_powerpc.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_mips.h
+c0000000051CC01690000000000006E51
+t1372324201
+s28241
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_parisc.h
+c0000000051CC016900000000000020E6
+t1372324201
+s8422
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_powerpc.h
+c0000000051CC01690000000000005996
+t1372324201
+s22934
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_s390.h
+c0000000051CC0169000000000000378B
+t1372324201
+s14219
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_sh.h
+c0000000051CC0169000000000000241F
+t1372324201
+s9247
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_sh4a.h
+c0000000051CC01690000000000004626
+t1372324201
+s17958
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_sparc.h
+c0000000051CC0169000000000000429E
+t1372324201
+s17054
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_symbian.h
+c0000000051CC01690000000000002C00
+t1372324201
+s11264
+i<QtCore/qglobal.h>
+i<e32std.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_vxworks.h
+c0000000051CC016900000000000021C3
+t1372324201
+s8643
+i<QtCore/qatomic_powerpc.h>
+i<vxWorksCommon.h>
+i<taskLib.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_windows.h
+c0000000051CC01690000000000003FC2
+t1372324201
+s16322
+i"QtCore/qatomic_i386.h"
+i"QtCore/qatomic_x86_64.h"
+i<winbase.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_windowsce.h
+c0000000051CC0169000000000000088C
+t1372324201
+s2188
+i<QtCore/qglobal.h>
+i"QtCore/qatomic_windows.h"
+
+N/Library/Frameworks/QtCore.framework/Headers/qatomic_x86_64.h
+c0000000051CC01690000000000002AFD
+t1372324201
+s11005
+
+N/Library/Frameworks/QtCore.framework/Headers/qbasicatomic.h
+c0000000051CC0169000000000000193B
+t1372324201
+s6459
+i<QtCore/qglobal.h>
+i<QtCore/qatomic_bootstrap.h>
+i<QtCore/qatomic_arch.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qbasictimer.h
+c0000000051CC016900000000000009D5
+t1372324201
+s2517
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qbuffer.h
+c0000000051CC016A0000000000000D2C
+t1372324202
+s3372
+i<QtCore/qiodevice.h>
+i<QtCore/qbytearray.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qbytearray.h
+c0000000051CC016A0000000000005ED7
+t1372324202
+s24279
+i<QtCore/qatomic.h>
+i<QtCore/qnamespace.h>
+i<string.h>
+i<stdarg.h>
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qchar.h
+c0000000051CC016A0000000000003419
+t1372324202
+s13337
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qconfig.h
+c0000000051CC016A0000000000001420
+t1372324202
+s5152
+
+N/Library/Frameworks/QtCore.framework/Headers/qcontiguouscache.h
+c0000000051CC016A00000000000036F9
+t1372324202
+s14073
+i<QtCore/qatomic.h>
+i<limits.h>
+i<new>
+
+N/Library/Frameworks/QtCore.framework/Headers/qcoreapplication.h
+c0000000051CC016A00000000000028F2
+t1372324202
+s10482
+i<QtCore/qobject.h>
+i<QtCore/qcoreevent.h>
+i<QtCore/qeventloop.h>
+i<QtCore/qstringlist.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qcoreevent.h
+c0000000051CC016A000000000000402D
+t1372324202
+s16429
+i<QtCore/qnamespace.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qobjectdefs.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qdatastream.h
+c0000000051CC016A0000000000002CF7
+t1372324202
+s11511
+i<QtCore/qscopedpointer.h>
+i<QtCore/qiodevice.h>
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qeventloop.h
+c0000000051CC016A0000000000000C86
+t1372324202
+s3206
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qfeatures.h
+c0000000051CC016B0000000000005489
+t1372324203
+s21641
+
+N/Library/Frameworks/QtCore.framework/Headers/qfile.h
+c0000000051CC016B0000000000001AB8
+t1372324203
+s6840
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<stdio.h>
+i<f32file.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qglobal.h
+c0000000051CC016B0000000000016461
+t1372324203
+s91233
+i<stddef.h>
+i<QtCore/qconfig.h>
+i<algorithm>
+i<AvailabilityMacros.h>
+i<utility>
+i<e32def.h>
+i<QtCore/qfeatures.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qhash.h
+c0000000051CC016B0000000000007902
+t1372324203
+s30978
+i<QtCore/qatomic.h>
+i<QtCore/qchar.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<QtCore/qpair.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qiodevice.h
+c0000000051CC016B00000000000020C7
+t1372324203
+s8391
+i<QtCore/qobject.h>
+i<QtCore/qobjectdefs.h>
+i<QtCore/qscopedpointer.h>
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qiterator.h
+c0000000051CC016B00000000000025F9
+t1372324203
+s9721
+i<QtCore/qglobal.h>
+i<ciso646>
+
+N/Library/Frameworks/QtCore.framework/Headers/qline.h
+c0000000051CC016B00000000000026CD
+t1372324203
+s9933
+i<QtCore/qpoint.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qlinkedlist.h
+c0000000051CC016B0000000000003D97
+t1372324203
+s15767
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<iterator>
+i<list>
+
+N/Library/Frameworks/QtCore.framework/Headers/qlist.h
+c0000000051CC016B0000000000007529
+t1372324203
+s29993
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<iterator>
+i<list>
+i<iterator>
+i<initializer_list>
+i<new>
+i<limits.h>
+i<string.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qlocale.h
+c0000000051CC016B00000000000062F4
+t1372324203
+s25332
+i<QtCore/qvariant.h>
+i<QtCore/qstring.h>
+i<QtCore/qobjectdefs.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qmap.h
+c0000000051CC016B0000000000008402
+t1372324203
+s33794
+i<QtCore/qatomic.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<map>
+i<new>
+
+N/Library/Frameworks/QtCore.framework/Headers/qmargins.h
+c0000000051CC016B00000000000010C6
+t1372324203
+s4294
+i<QtCore/qnamespace.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qmetatype.h
+c0000000051CC016B00000000000034F8
+t1372324203
+s13560
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qdatastream.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qmimedata.h
+c0000000051CC016B0000000000000CFC
+t1372324203
+s3324
+i<QtCore/qvariant.h>
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qnamespace.h
+c0000000051CC016B000000000000DAA2
+t1372324203
+s55970
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qobject.h
+c0000000051CC016B0000000000003574
+t1372324203
+s13684
+i<QtCore/qobjectdefs.h>
+i<QtCore/qstring.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qcoreevent.h>
+i<QtCore/qscopedpointer.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qobjectdefs.h
+c0000000051CC016B0000000000004694
+t1372324203
+s18068
+i<QtCore/qnamespace.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qpair.h
+c0000000051CC016B0000000000000F45
+t1372324203
+s3909
+i<QtCore/qdatastream.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qpoint.h
+c0000000051CC016B0000000000002878
+t1372324203
+s10360
+i<QtCore/qnamespace.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qpointer.h
+c0000000051CC016B000000000000148E
+t1372324203
+s5262
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qrect.h
+c0000000051CC016B00000000000056EB
+t1372324203
+s22251
+i<QtCore/qsize.h>
+i<QtCore/qpoint.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qregexp.h
+c0000000051CC016B0000000000001666
+t1372324203
+s5734
+i<QtCore/qstring.h>
+i<new>
+
+N/Library/Frameworks/QtCore.framework/Headers/qscopedpointer.h
+c0000000051CC016B00000000000019EF
+t1372324203
+s6639
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qset.h
+c0000000051CC016B00000000000036A7
+t1372324203
+s13991
+i<QtCore/qhash.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qshareddata.h
+c0000000051CC016B00000000000021E2
+t1372324203
+s8674
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qsharedpointer.h
+c0000000051CC016B00000000000016C7
+t1372324203
+s5831
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qshareddata.h>
+i<QtCore/qsharedpointer_impl.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qsharedpointer_impl.h
+c0000000051CC016B0000000000006EA3
+t1372324203
+s28323
+i<new>
+i<QtCore/qatomic.h>
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qsize.h
+c0000000051CC016B0000000000002888
+t1372324203
+s10376
+i<QtCore/qnamespace.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qstring.h
+c0000000051CC016B000000000000F5A5
+t1372324203
+s62885
+i<QtCore/qchar.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qatomic.h>
+i<QtCore/qnamespace.h>
+i<Qt3Support/q3cstring.h>
+i<string>
+i<stdarg.h>
+i<QtCore/qstringbuilder.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qstringbuilder.h
+c0000000051CC016B00000000000038FE
+t1372324203
+s14590
+i<QtCore/qstring.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qmap.h>
+i<string.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qstringlist.h
+c0000000051CC016B00000000000026D6
+t1372324203
+s9942
+i<QtCore/qalgorithms.h>
+i<QtCore/qdatastream.h>
+i<QtCore/qlist.h>
+i<QtCore/qregexp.h>
+i<QtCore/qstring.h>
+i<QtCore/qstringmatcher.h>
+i<Qt3Support/q3valuelist.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qstringmatcher.h
+c0000000051CC016B0000000000000D29
+t1372324203
+s3369
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qtextcodec.h
+c0000000051CC016B0000000000001C3A
+t1372324203
+s7226
+i<QtCore/qstring.h>
+i<QtCore/qlist.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qtextstream.h
+c0000000051CC016B00000000000033E7
+t1372324203
+s13287
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<QtCore/qchar.h>
+i<QtCore/qlocale.h>
+i<QtCore/qscopedpointer.h>
+i<QtCore/qtextcodec.h>
+i<stdio.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qvariant.h
+c0000000051CC016B0000000000004866
+t1372324203
+s18534
+i<QtCore/qatomic.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qmetatype.h>
+i<QtCore/qmap.h>
+i<QtCore/qhash.h>
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtCore.framework/Headers/qvector.h
+c0000000051CC016B0000000000006924
+t1372324203
+s26916
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<QtCore/qlist.h>
+i<iterator>
+i<vector>
+i<stdlib.h>
+i<string.h>
+i<initializer_list>
+i<QtCore/QPointF>
+i<QtCore/QPoint>
+
+N/Library/Frameworks/QtCore.framework/QtCore
+c0000000051CC02A10000000000378E40
+t1372324513
+s3640896
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QDebug
+c0000000051CC016A0000000000000014
+t1372324202
+s20
+i"qdebug.h"
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QReadLocker
+c0000000051CC016B000000000000001C
+t1372324203
+s28
+i"qreadwritelock.h"
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QTime
+c0000000051CC016B0000000000000017
+t1372324203
+s23
+i"qdatetime.h"
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QTimer
+c0000000051CC016B0000000000000014
+t1372324203
+s20
+i"qtimer.h"
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QWriteLocker
+c0000000051CC016B000000000000001C
+t1372324203
+s28
+i"qreadwritelock.h"
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qdatetime.h
+c0000000051CC016A0000000000002D88
+t1372324202
+s11656
+i<QtCore/qstring.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qsharedpointer.h>
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qdebug.h
+c0000000051CC016A000000000000294B
+t1372324202
+s10571
+i<QtCore/qalgorithms.h>
+i<QtCore/qhash.h>
+i<QtCore/qlist.h>
+i<QtCore/qmap.h>
+i<QtCore/qpair.h>
+i<QtCore/qtextstream.h>
+i<QtCore/qstring.h>
+i<QtCore/qvector.h>
+i<QtCore/qset.h>
+i<QtCore/qcontiguouscache.h>
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qreadwritelock.h
+c0000000051CC016B00000000000018FD
+t1372324203
+s6397
+i<QtCore/qglobal.h>
+i<limits.h>
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qthread.h
+c0000000051CC016B000000000000112C
+t1372324203
+s4396
+i<QtCore/qobject.h>
+i<limits.h>
+
+N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qtimer.h
+c0000000051CC016B0000000000000DF0
+t1372324203
+s3568
+i<QtCore/qbasictimer.h>
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/QAction
+c0000000051CC016C0000000000000015
+t1372324204
+s21
+i"qaction.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QApplication
+c0000000051CC016C000000000000001A
+t1372324204
+s26
+i"qapplication.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QButtonGroup
+c0000000051CC016C000000000000001A
+t1372324204
+s26
+i"qbuttongroup.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QCheckBox
+c0000000051CC016C0000000000000017
+t1372324204
+s23
+i"qcheckbox.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QGroupBox
+c0000000051CC016C0000000000000017
+t1372324204
+s23
+i"qgroupbox.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QHBoxLayout
+c0000000051CC016C0000000000000018
+t1372324204
+s24
+i"qboxlayout.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QHeaderView
+c0000000051CC016C0000000000000019
+t1372324204
+s25
+i"qheaderview.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QLabel
+c0000000051CC016C0000000000000014
+t1372324204
+s20
+i"qlabel.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QMainWindow
+c0000000051CC016C0000000000000019
+t1372324204
+s25
+i"qmainwindow.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QMenuBar
+c0000000051CC016C0000000000000016
+t1372324204
+s22
+i"qmenubar.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QPlatformWindow
+c0000000051CC016D0000000000000021
+t1372324205
+s33
+i"qplatformwindow_qpa.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QPushButton
+c0000000051CC016D0000000000000019
+t1372324205
+s25
+i"qpushbutton.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QRadioButton
+c0000000051CC016D000000000000001A
+t1372324205
+s26
+i"qradiobutton.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QSpacerItem
+c0000000051CC016D0000000000000019
+t1372324205
+s25
+i"qlayoutitem.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QStatusBar
+c0000000051CC016D0000000000000018
+t1372324205
+s24
+i"qstatusbar.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QToolBar
+c0000000051CC016D0000000000000016
+t1372324205
+s22
+i"qtoolbar.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QVBoxLayout
+c0000000051CC016D0000000000000018
+t1372324205
+s24
+i"qboxlayout.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/QWidget
+c0000000051CC016D0000000000000015
+t1372324205
+s21
+i"qwidget.h"
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractbutton.h
+c0000000051CC016C000000000000174F
+t1372324204
+s5967
+i<QtGui/qicon.h>
+i<QtGui/qkeysequence.h>
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractitemdelegate.h
+c0000000051CC016C00000000000011E2
+t1372324204
+s4578
+i<QtCore/qobject.h>
+i<QtGui/qstyleoption.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractitemview.h
+c0000000051CC016C0000000000003559
+t1372324204
+s13657
+i<QtGui/qabstractscrollarea.h>
+i<QtCore/qabstractitemmodel.h>
+i<QtGui/qitemselectionmodel.h>
+i<QtGui/qabstractitemdelegate.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractscrollarea.h
+c0000000051CC016C0000000000001312
+t1372324204
+s4882
+i<QtGui/qframe.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractslider.h
+c0000000051CC016C0000000000001771
+t1372324204
+s6001
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qabstractspinbox.h
+c0000000051CC016C00000000000017E9
+t1372324204
+s6121
+i<QtGui/qwidget.h>
+i<QtGui/qvalidator.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qaction.h
+c0000000051CC016C0000000000002376
+t1372324204
+s9078
+i<QtGui/qkeysequence.h>
+i<QtCore/qstring.h>
+i<QtGui/qwidget.h>
+i<QtCore/qvariant.h>
+i<QtGui/qicon.h>
+i<QtGui/qactiongroup.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qactiongroup.h
+c0000000051CC016C0000000000000E88
+t1372324204
+s3720
+i<QtGui/qaction.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qapplication.h
+c0000000051CC016C0000000000003B28
+t1372324204
+s15144
+i<QtCore/qcoreapplication.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qpoint.h>
+i<QtCore/qsize.h>
+i<QtGui/qcursor.h>
+i<QtGui/qdesktopwidget.h>
+i<QtGui/qwidget.h>
+i<QtGui/qpalette.h>
+i<QtGui/qrgb.h>
+i<QtGui/qtransportauth_qws.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qboxlayout.h
+c0000000051CC016C0000000000001606
+t1372324204
+s5638
+i<QtGui/qlayout.h>
+i<QtGui/qwidget.h>
+i<limits.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qbrush.h
+c0000000051CC016C0000000000002760
+t1372324204
+s10080
+i<QtCore/qpair.h>
+i<QtCore/qpoint.h>
+i<QtCore/qvector.h>
+i<QtCore/qscopedpointer.h>
+i<QtGui/qcolor.h>
+i<QtGui/qmatrix.h>
+i<QtGui/qtransform.h>
+i<QtGui/qimage.h>
+i<QtGui/qpixmap.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qbuttongroup.h
+c0000000051CC016C0000000000000DD6
+t1372324204
+s3542
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qcheckbox.h
+c0000000051CC016C0000000000000EB7
+t1372324204
+s3767
+i<QtGui/qabstractbutton.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qcolor.h
+c0000000051CC016C00000000000022CB
+t1372324204
+s8907
+i<QtGui/qrgb.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstringlist.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qcursor.h
+c0000000051CC016C0000000000001507
+t1372324204
+s5383
+i<QtCore/qpoint.h>
+i<QtGui/qwindowdefs.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qdesktopwidget.h
+c0000000051CC016C0000000000000E2A
+t1372324204
+s3626
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qdialog.h
+c0000000051CC016C0000000000000FFC
+t1372324204
+s4092
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qdrag.h
+c0000000051CC016C0000000000000CB7
+t1372324204
+s3255
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qevent.h
+c0000000051CC016C0000000000006D4A
+t1372324204
+s27978
+i<QtGui/qwindowdefs.h>
+i<QtCore/qobject.h>
+i<QtGui/qregion.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+i<QtGui/qkeysequence.h>
+i<QtCore/qcoreevent.h>
+i<QtGui/qmime.h>
+i<QtGui/qdrag.h>
+i<QtCore/qvariant.h>
+i<QtCore/qmap.h>
+i<QtCore/qset.h>
+i<QtCore/qfile.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qfont.h
+c0000000051CC016C0000000000002A8E
+t1372324204
+s10894
+i<QtGui/qwindowdefs.h>
+i<QtCore/qstring.h>
+i<QtCore/qsharedpointer.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qfontinfo.h
+c0000000051CC016C0000000000000B5C
+t1372324204
+s2908
+i<QtGui/qfont.h>
+i<QtCore/qsharedpointer.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qfontmetrics.h
+c0000000051CC016C0000000000001BF8
+t1372324204
+s7160
+i<QtGui/qfont.h>
+i<QtCore/qsharedpointer.h>
+i<QtCore/qrect.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qframe.h
+c0000000051CC016C000000000000123A
+t1372324204
+s4666
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qgridlayout.h
+c0000000051CC016C0000000000001CA4
+t1372324204
+s7332
+i<QtGui/qlayout.h>
+i<QtGui/qwidget.h>
+i<limits.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qgroupbox.h
+c0000000051CC016C0000000000000FDB
+t1372324204
+s4059
+i<QtGui/qframe.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qheaderview.h
+c0000000051CC016C0000000000002360
+t1372324204
+s9056
+i<QtGui/qabstractitemview.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qicon.h
+c0000000051CC016C0000000000001738
+t1372324204
+s5944
+i<QtCore/qglobal.h>
+i<QtCore/qsize.h>
+i<QtCore/qlist.h>
+i<QtGui/qpixmap.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qimage.h
+c0000000051CC016C00000000000038AC
+t1372324204
+s14508
+i<QtGui/qtransform.h>
+i<QtGui/qpaintdevice.h>
+i<QtGui/qrgb.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qrect.h>
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qitemselectionmodel.h
+c0000000051CC016C000000000000276C
+t1372324204
+s10092
+i<QtCore/qset.h>
+i<QtCore/qvector.h>
+i<QtCore/qlist.h>
+i<QtCore/qabstractitemmodel.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qkeysequence.h
+c0000000051CC016C0000000000001B63
+t1372324204
+s7011
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qlabel.h
+c0000000051CC016C00000000000017E9
+t1372324204
+s6121
+i<QtGui/qframe.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qlayout.h
+c0000000051CC016C0000000000001E9B
+t1372324204
+s7835
+i<QtCore/qobject.h>
+i<QtGui/qlayoutitem.h>
+i<QtGui/qsizepolicy.h>
+i<QtCore/qrect.h>
+i<QtCore/qmargins.h>
+i<limits.h>
+i<QtGui/qboxlayout.h>
+i<QtGui/qgridlayout.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qlayoutitem.h
+c0000000051CC016C0000000000001569
+t1372324204
+s5481
+i<QtGui/qsizepolicy.h>
+i<QtCore/qrect.h>
+i<limits.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmacdefines_mac.h
+c0000000051CC016C0000000000001932
+t1372324204
+s6450
+i<QtCore/qglobal.h>
+i<Cocoa/Cocoa.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmainwindow.h
+c0000000051CC016C0000000000001C73
+t1372324204
+s7283
+i<QtGui/qwidget.h>
+i<QtGui/qtabwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmatrix.h
+c0000000051CC016C0000000000001B09
+t1372324204
+s6921
+i<QtGui/qpolygon.h>
+i<QtGui/qregion.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qline.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+i<QtGui/qwmatrix.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmenu.h
+c0000000051CC016C0000000000003CBE
+t1372324204
+s15550
+i<QtGui/qwidget.h>
+i<QtCore/qstring.h>
+i<QtGui/qicon.h>
+i<QtGui/qaction.h>
+i<QtGui/qpixmap.h>
+i<windef.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmenubar.h
+c0000000051CC016C00000000000036E4
+t1372324204
+s14052
+i<QtGui/qmenu.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qmime.h
+c0000000051CC016D00000000000018F2
+t1372324205
+s6386
+i<QtCore/qmimedata.h>
+i<QtCore/qvariant.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpaintdevice.h
+c0000000051CC016D00000000000017A3
+t1372324205
+s6051
+i<QtGui/qwindowdefs.h>
+i<QtCore/qrect.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpainterpath.h
+c0000000051CC016D000000000000382D
+t1372324205
+s14381
+i<QtGui/qmatrix.h>
+i<QtCore/qglobal.h>
+i<QtCore/qrect.h>
+i<QtCore/qline.h>
+i<QtCore/qvector.h>
+i<QtCore/qscopedpointer.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpalette.h
+c0000000051CC016D000000000000338B
+t1372324205
+s13195
+i<QtGui/qwindowdefs.h>
+i<QtGui/qcolor.h>
+i<QtGui/qbrush.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpixmap.h
+c0000000051CC016D00000000000030D7
+t1372324205
+s12503
+i<QtGui/qpaintdevice.h>
+i<QtGui/qcolor.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+i<QtCore/qsharedpointer.h>
+i<QtGui/qimage.h>
+i<QtGui/qtransform.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qplatformwindow_qpa.h
+c0000000051CC016D0000000000000C7E
+t1372324205
+s3198
+i<QtCore/qscopedpointer.h>
+i<QtCore/qrect.h>
+i<QtCore/qstring.h>
+i<QtGui/qwindowdefs.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qplatformwindowformat_qpa.h
+c0000000051CC016D0000000000001D79
+t1372324205
+s7545
+i<QtGui/QPlatformWindow>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpolygon.h
+c0000000051CC016D0000000000001A36
+t1372324205
+s6710
+i<QtCore/qvector.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qpushbutton.h
+c0000000051CC016D000000000000107E
+t1372324205
+s4222
+i<QtGui/qabstractbutton.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qradiobutton.h
+c0000000051CC016D0000000000000BA8
+t1372324205
+s2984
+i<QtGui/qabstractbutton.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qregion.h
+c0000000051CC016D000000000000218F
+t1372324205
+s8591
+i<QtCore/qatomic.h>
+i<QtCore/qrect.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qdatastream.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qrgb.h
+c0000000051CC016D0000000000000D32
+t1372324205
+s3378
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qrubberband.h
+c0000000051CC016D0000000000000D22
+t1372324205
+s3362
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qsizepolicy.h
+c0000000051CC016D000000000000231E
+t1372324205
+s8990
+i<QtCore/qobject.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qslider.h
+c0000000051CC016D000000000000117F
+t1372324205
+s4479
+i<QtGui/qabstractslider.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qstatusbar.h
+c0000000051CC016D0000000000000EE5
+t1372324205
+s3813
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qstyle.h
+c0000000051CC016D0000000000006D0B
+t1372324205
+s27915
+i<QtCore/qobject.h>
+i<QtCore/qrect.h>
+i<QtCore/qsize.h>
+i<QtGui/qicon.h>
+i<QtGui/qpixmap.h>
+i<QtGui/qpalette.h>
+i<QtGui/qsizepolicy.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qstyleoption.h
+c0000000051CC016D0000000000007054
+t1372324205
+s28756
+i<QtCore/qvariant.h>
+i<QtGui/qabstractspinbox.h>
+i<QtGui/qicon.h>
+i<QtGui/qmatrix.h>
+i<QtGui/qslider.h>
+i<QtGui/qstyle.h>
+i<QtGui/qtabbar.h>
+i<QtGui/qtabwidget.h>
+i<QtGui/qrubberband.h>
+i<QtGui/qframe.h>
+i<QtCore/qabstractitemmodel.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qtabbar.h
+c0000000051CC016D0000000000001BFA
+t1372324205
+s7162
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qtabwidget.h
+c0000000051CC016D0000000000002296
+t1372324205
+s8854
+i<QtGui/qwidget.h>
+i<QtGui/qicon.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qtoolbar.h
+c0000000051CC016D000000000000196D
+t1372324205
+s6509
+i<QtGui/qwidget.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qtransform.h
+c0000000051CC016D0000000000002CA2
+t1372324205
+s11426
+i<QtGui/qmatrix.h>
+i<QtGui/qpainterpath.h>
+i<QtGui/qpolygon.h>
+i<QtGui/qregion.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qline.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qtransportauth_qws.h
+c0000000051CC016D0000000000001E11
+t1372324205
+s7697
+i<QtCore/qglobal.h>
+i<QtCore/qobject.h>
+i<QtCore/qhash.h>
+i<QtCore/qstring.h>
+i<QtCore/qbuffer.h>
+i<QtCore/qpointer.h>
+i<sys/types.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qvalidator.h
+c0000000051CC016D0000000000001818
+t1372324205
+s6168
+i<QtCore/qobject.h>
+i<QtCore/qstring.h>
+i<QtCore/qregexp.h>
+i<QtCore/qlocale.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qwidget.h
+c0000000051CC016D00000000000097A5
+t1372324205
+s38821
+i<QtCore/qconfig.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qobject.h>
+i<QtCore/qmargins.h>
+i<QtGui/qpaintdevice.h>
+i<QtGui/qpalette.h>
+i<QtGui/qfont.h>
+i<QtGui/qfontmetrics.h>
+i<QtGui/qfontinfo.h>
+i<QtGui/qsizepolicy.h>
+i<QtGui/qregion.h>
+i<QtGui/qbrush.h>
+i<QtGui/qcursor.h>
+i<QtGui/qkeysequence.h>
+i<QtGui/qplatformwindowformat_qpa.h>
+i<QtGui/qevent.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qwindowdefs.h
+c0000000051CC016E0000000000000F56
+t1372324206
+s3926
+i<QtCore/qobjectdefs.h>
+i<QtCore/qnamespace.h>
+i<QtGui/qmacdefines_mac.h>
+i<QtGui/qwindowdefs_win.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qwindowdefs_win.h
+c0000000051CC016E0000000000000D3C
+t1372324206
+s3388
+i<QtCore/qglobal.h>
+
+N/Library/Frameworks/QtGui.framework/Headers/qwmatrix.h
+c0000000051CC016E0000000000000899
+t1372324206
+s2201
+i<QtGui/qmatrix.h>
+
+N/Library/Frameworks/QtGui.framework/QtGui
+c0000000051CC02A30000000000CE0BF0
+t1372324515
+s13503472
+
+N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmessagebox.h
+c0000000051CC016D00000000000039DD
+t1372324205
+s14813
+i<QtGui/qdialog.h>
+
+N/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp
+c0000000051D2B11700000000000017E8
+t1372762391
+s6120
+i"ARExercise.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h
+c0000000051D2A0710000000000000618
+t1372758129
+s1560
+i<QtGui/QMainWindow>
+i"ui_AugmentedRealityTutorial.h"
+i<opencv2/core/core.hpp>
+i<opencv2/highgui/highgui.hpp>
+i<opencv2/imgproc/imgproc.hpp>
+i<opencv2/video/video.hpp>
+i<QTimer>
+i<qmessagebox.h>
+i<QWriteLocker>
+i<QReadLocker>
+i<QTime>
+i<iostream>
+i<QDebug>
+i"ThresholdSettings.h"
+i"FretBoard.h"
+i"DetectionThread.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp
+c0000000051D11FB000000000000009C2
+t1372659632
+s2498
+i"DetectionThread.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h
+c0000000051D2A7DB00000000000003CB
+t1372760027
+s971
+i<qthread.h>
+i<QWriteLocker>
+i<QReadLocker>
+i<opencv2/core/core.hpp>
+i<opencv2/imgproc/imgproc.hpp>
+i"ThresholdSettings.h"
+i"Marker.h"
+i"MarkerDetector.h"
+i"GuitarDetector.h"
+i"FretBoard.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp
+c0000000051D2B1170000000000000281
+t1372762391
+s641
+i"FretBoard.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.h
+c0000000051D2B07200000000000004C3
+t1372762226
+s1219
+i<vector>
+i<opencv2/core/core.hpp>
+
+N/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp
+c0000000051D2B11700000000000024AC
+t1372762391
+s9388
+i"GuitarDetector.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.h
+c0000000051D2A7F5000000000000025D
+t1372760053
+s605
+i"MarkerDetector.h"
+i"Marker.h"
+i<iostream>
+i<vector>
+i<qdebug.h>
+i<opencv2/core/core.hpp>
+i<opencv2/highgui/highgui.hpp>
+i<opencv2/imgproc/imgproc.hpp>
+i<opencv2/video/video.hpp>
+i"FretBoard.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp
+c0000000051D11FB00000000000000F66
+t1372659632
+s3942
+i"Marker.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/Marker.h
+c0000000051D2A7FE0000000000000473
+t1372760062
+s1139
+i<opencv2/core/core.hpp>
+
+N/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp
+c0000000051D2B117000000000000333D
+t1372762391
+s13117
+i"MarkerDetector.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.h
+c0000000051D2B0B50000000000000490
+t1372762293
+s1168
+i<iostream>
+i<vector>
+i<qdebug.h>
+i<opencv2/core/core.hpp>
+i<opencv2/highgui/highgui.hpp>
+i<opencv2/imgproc/imgproc.hpp>
+i<opencv2/video/video.hpp>
+i"PoseEstimation.h"
+i<opencv2/core/types_c.h>
+i"Marker.h"
+i"ThresholdSettings.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp
+c0000000051D11FB000000000000050E3
+t1372659632
+s20707
+i"PoseEstimation.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.h
+c0000000051D2A82F0000000000000315
+t1372760111
+s789
+i<math.h>
+i<vector>
+i<algorithm>
+i<iostream>
+i<opencv2/core/types_c.h>
+i<opencv2/core/core_c.h>
+
+N/Users/andreas/workspace_cpp/AugmentedReality/ThresholdSettings.h
+c0000000051D11FB00000000000000100
+t1372659632
+s256
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o
+t2
+s0
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/AugmentedReality.LinkFileList
+c0000000051D2B22300000000000004ED
+t1372762659
+s1261
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o
+t1372762661
+s439776
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o
+t1372762662
+s191532
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o
+t1372762663
+s447704
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o
+t1372762664
+s147912
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o
+t2
+s0
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o
+t1372762665
+s123128
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o
+t1372762664
+s601308
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o
+t1372762667
+s615664
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-A0A52A2ADF7A1E2A99738674.sh
+c0000000051D2B2230000000000000072
+t1372762659
+s114
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-D7BA7D76DAB5DD13389D6332.sh
+c0000000051D2B2230000000000000071
+t1372762659
+s113
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app
+t2
+s0
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/Info.plist
+t1372762659
+s1036
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/MacOS/AugmentedReality
+t2
+s0
+
+N/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/PkgInfo
+t1372762659
+s8
+
+N/Users/andreas/workspace_cpp/AugmentedReality/main.cpp
+c0000000051D11FB100000000000000BF
+t1372659633
+s191
+i"ARExercise.h"
+i<QtGui/QApplication>
+
+N/Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp
+c0000000051D2B0B50000000000000E2F
+t1372762293
+s3631
+i"ARExercise.h"
+
+N/Users/andreas/workspace_cpp/AugmentedReality/ui_AugmentedRealityTutorial.h
+c0000000051D2A7C2000000000000272B
+t1372760002
+s10027
+i<QtCore/QVariant>
+i<QtGui/QAction>
+i<QtGui/QApplication>
+i<QtGui/QButtonGroup>
+i<QtGui/QCheckBox>
+i<QtGui/QGroupBox>
+i<QtGui/QHBoxLayout>
+i<QtGui/QHeaderView>
+i<QtGui/QLabel>
+i<QtGui/QMainWindow>
+i<QtGui/QMenuBar>
+i<QtGui/QPushButton>
+i<QtGui/QRadioButton>
+i<QtGui/QSpacerItem>
+i<QtGui/QStatusBar>
+i<QtGui/QToolBar>
+i<QtGui/QVBoxLayout>
+i<QtGui/QWidget>
+
+N/opt/local/include/opencv2/core/core.hpp
+c00000000515E92A4000000000002D379
+t1365152420
+s185209
+i"opencv2/core/types_c.h"
+i"opencv2/core/version.hpp"
+i<limits.h>
+i<algorithm>
+i<cmath>
+i<cstddef>
+i<complex>
+i<map>
+i<new>
+i<string>
+i<vector>
+i<sstream>
+i"opencv2/core/operations.hpp"
+i"opencv2/core/mat.hpp"
+
+N/opt/local/include/opencv2/core/core_c.h
+c00000000515E92A40000000000013298
+t1365152420
+s78488
+i"opencv2/core/types_c.h"
+
+N/opt/local/include/opencv2/core/mat.hpp
+c00000000515E92A40000000000013A5A
+t1365152420
+s80474
+i<limits.h>
+i<string.h>
+
+N/opt/local/include/opencv2/core/operations.hpp
+c00000000515E92A4000000000001F85F
+t1365152420
+s129119
+i<string.h>
+i<limits.h>
+i<ext/atomicity.h>
+i<bits/atomicity.h>
+i<limits>
+
+N/opt/local/include/opencv2/core/types_c.h
+c00000000515E92A4000000000000E041
+t1365152420
+s57409
+i<assert.h>
+i<stdlib.h>
+i<string.h>
+i<float.h>
+i<stdint.h>
+i<intrin.h>
+i<emmintrin.h>
+i<fastmath.h>
+i<math.h>
+i<ipl.h>
+i<ipl/ipl.h>
+i"tegra_round.hpp"
+i"emmintrin.h"
+
+N/opt/local/include/opencv2/core/version.hpp
+c00000000515E92A40000000000000B70
+t1365152420
+s2928
+
+N/opt/local/include/opencv2/highgui/highgui.hpp
+c00000000515E92A400000000000023CA
+t1365152420
+s9162
+i"opencv2/core/core.hpp"
+i"opencv2/highgui/highgui_c.h"
+
+N/opt/local/include/opencv2/highgui/highgui_c.h
+c00000000515E92A400000000000065EE
+t1365152420
+s26094
+i"opencv2/core/core_c.h"
+
+N/opt/local/include/opencv2/imgproc/imgproc.hpp
+c00000000515E92A4000000000000DA60
+t1365152420
+s55904
+i"opencv2/core/core.hpp"
+i"opencv2/imgproc/types_c.h"
+
+N/opt/local/include/opencv2/imgproc/types_c.h
+c00000000515E92A40000000000004038
+t1365152420
+s16440
+i"opencv2/core/core_c.h"
+
+N/opt/local/include/opencv2/video/background_segm.hpp
+c00000000515E92A40000000000002A72
+t1365152420
+s10866
+i"opencv2/core/core.hpp"
+i<list>
+
+N/opt/local/include/opencv2/video/tracking.hpp
+c00000000515E92A400000000000047FF
+t1365152420
+s18431
+i"opencv2/core/core.hpp"
+i"opencv2/imgproc/imgproc.hpp"
+
+N/opt/local/include/opencv2/video/video.hpp
+c00000000515E92A40000000000000970
+t1365152420
+s2416
+i"opencv2/video/tracking.hpp"
+i"opencv2/video/background_segm.hpp"
+
+N/opt/local/lib/libopencv_calib3d.2.4.5.dylib
+c000000005167B7CA00000000000BD090
+t1365751754
+s774288
+
+N/opt/local/lib/libopencv_calib3d.2.4.dylib
+c000000005167B7CA00000000000BD090
+t1365751754
+s774288
+
+N/opt/local/lib/libopencv_calib3d.dylib
+c000000005167B7CA00000000000BD090
+t1365751754
+s774288
+
+N/opt/local/lib/libopencv_contrib.2.4.5.dylib
+c000000005167B7E700000000000FF240
+t1365751783
+s1045056
+
+N/opt/local/lib/libopencv_contrib.2.4.dylib
+c000000005167B7E700000000000FF240
+t1365751783
+s1045056
+
+N/opt/local/lib/libopencv_contrib.dylib
+c000000005167B7E700000000000FF240
+t1365751783
+s1045056
+
+N/opt/local/lib/libopencv_core.2.4.5.dylib
+c000000005167B7660000000000289D10
+t1365751654
+s2661648
+
+N/opt/local/lib/libopencv_core.2.4.dylib
+c000000005167B7660000000000289D10
+t1365751654
+s2661648
+
+N/opt/local/lib/libopencv_core.dylib
+c000000005167B7660000000000289D10
+t1365751654
+s2661648
+
+N/opt/local/lib/libopencv_features2d.2.4.5.dylib
+c000000005167B7B500000000000CACF0
+t1365751733
+s830704
+
+N/opt/local/lib/libopencv_features2d.2.4.dylib
+c000000005167B7B500000000000CACF0
+t1365751733
+s830704
+
+N/opt/local/lib/libopencv_features2d.dylib
+c000000005167B7B500000000000CACF0
+t1365751733
+s830704
+
+N/opt/local/lib/libopencv_flann.2.4.5.dylib
+c000000005167B7760000000000097D28
+t1365751670
+s621864
+
+N/opt/local/lib/libopencv_flann.2.4.dylib
+c000000005167B7760000000000097D28
+t1365751670
+s621864
+
+N/opt/local/lib/libopencv_flann.dylib
+c000000005167B7760000000000097D28
+t1365751670
+s621864
+
+N/opt/local/lib/libopencv_gpu.2.4.5.dylib
+c000000005167B80A00000000000305D8
+t1365751818
+s198104
+
+N/opt/local/lib/libopencv_gpu.2.4.dylib
+c000000005167B80A00000000000305D8
+t1365751818
+s198104
+
+N/opt/local/lib/libopencv_gpu.dylib
+c000000005167B80A00000000000305D8
+t1365751818
+s198104
+
+N/opt/local/lib/libopencv_highgui.2.4.5.dylib
+c000000005167B79F0000000000062D10
+t1365751711
+s404752
+
+N/opt/local/lib/libopencv_highgui.2.4.dylib
+c000000005167B79F0000000000062D10
+t1365751711
+s404752
+
+N/opt/local/lib/libopencv_highgui.dylib
+c000000005167B79F0000000000062D10
+t1365751711
+s404752
+
+N/opt/local/lib/libopencv_imgproc.2.4.5.dylib
+c000000005167B78F000000000025ECB8
+t1365751695
+s2485432
+
+N/opt/local/lib/libopencv_imgproc.2.4.dylib
+c000000005167B78F000000000025ECB8
+t1365751695
+s2485432
+
+N/opt/local/lib/libopencv_imgproc.dylib
+c000000005167B78F000000000025ECB8
+t1365751695
+s2485432
+
+N/opt/local/lib/libopencv_legacy.2.4.5.dylib
+c000000005167B7F60000000000136798
+t1365751798
+s1271704
+
+N/opt/local/lib/libopencv_legacy.2.4.dylib
+c000000005167B7F60000000000136798
+t1365751798
+s1271704
+
+N/opt/local/lib/libopencv_legacy.dylib
+c000000005167B7F60000000000136798
+t1365751798
+s1271704
+
+N/opt/local/lib/libopencv_ml.2.4.5.dylib
+c000000005167B7780000000000084DB0
+t1365751672
+s544176
+
+N/opt/local/lib/libopencv_ml.2.4.dylib
+c000000005167B7780000000000084DB0
+t1365751672
+s544176
+
+N/opt/local/lib/libopencv_ml.dylib
+c000000005167B7780000000000084DB0
+t1365751672
+s544176
+
+N/opt/local/lib/libopencv_nonfree.2.4.5.dylib
+c000000005167B8110000000000023F08
+t1365751825
+s147208
+
+N/opt/local/lib/libopencv_nonfree.2.4.dylib
+c000000005167B8110000000000023F08
+t1365751825
+s147208
+
+N/opt/local/lib/libopencv_nonfree.dylib
+c000000005167B8110000000000023F08
+t1365751825
+s147208
+
+N/opt/local/lib/libopencv_objdetect.2.4.5.dylib
+c000000005167B7AF00000000000948B8
+t1365751727
+s608440
+
+N/opt/local/lib/libopencv_objdetect.2.4.dylib
+c000000005167B7AF00000000000948B8
+t1365751727
+s608440
+
+N/opt/local/lib/libopencv_objdetect.dylib
+c000000005167B7AF00000000000948B8
+t1365751727
+s608440
+
+N/opt/local/lib/libopencv_photo.2.4.5.dylib
+c000000005167B7930000000000021E58
+t1365751699
+s138840
+
+N/opt/local/lib/libopencv_photo.2.4.dylib
+c000000005167B7930000000000021E58
+t1365751699
+s138840
+
+N/opt/local/lib/libopencv_photo.dylib
+c000000005167B7930000000000021E58
+t1365751699
+s138840
+
+N/opt/local/lib/libopencv_stitching.2.4.5.dylib
+c000000005167B81D00000000000A0558
+t1365751837
+s656728
+
+N/opt/local/lib/libopencv_stitching.2.4.dylib
+c000000005167B81D00000000000A0558
+t1365751837
+s656728
+
+N/opt/local/lib/libopencv_stitching.dylib
+c000000005167B81D00000000000A0558
+t1365751837
+s656728
+
+N/opt/local/lib/libopencv_superres.2.4.5.dylib
+c000000005167B8120000000000031028
+t1365751826
+s200744
+
+N/opt/local/lib/libopencv_superres.2.4.dylib
+c000000005167B8120000000000031028
+t1365751826
+s200744
+
+N/opt/local/lib/libopencv_superres.dylib
+c000000005167B8120000000000031028
+t1365751826
+s200744
+
+N/opt/local/lib/libopencv_ts.2.4.5.dylib
+c000000005167B7C700000000000CD7D0
+t1365751751
+s841680
+
+N/opt/local/lib/libopencv_ts.2.4.dylib
+c000000005167B7C700000000000CD7D0
+t1365751751
+s841680
+
+N/opt/local/lib/libopencv_ts.dylib
+c000000005167B7C700000000000CD7D0
+t1365751751
+s841680
+
+N/opt/local/lib/libopencv_video.2.4.5.dylib
+c000000005167B79D000000000005D338
+t1365751709
+s381752
+
+N/opt/local/lib/libopencv_video.2.4.dylib
+c000000005167B79D000000000005D338
+t1365751709
+s381752
+
+N/opt/local/lib/libopencv_video.dylib
+c000000005167B79D000000000005D338
+t1365751709
+s381752
+
+N/opt/local/lib/libopencv_videostab.2.4.5.dylib
+c000000005167B8140000000000045870
+t1365751828
+s284784
+
+N/opt/local/lib/libopencv_videostab.2.4.dylib
+c000000005167B8140000000000045870
+t1365751828
+s284784
+
+N/opt/local/lib/libopencv_videostab.dylib
+c000000005167B8140000000000045870
+t1365751828
+s284784
+
+N/usr/include/AvailabilityMacros.h
+c000000004A11A9B30000000000006724
+t1242671539
+s26404
+
+N/usr/include/assert.h
+c000000004A5C14A60000000000000DCB
+t1247548582
+s3531
+
+N/usr/include/errno.h
+c000000004A5C14A600000000000003EB
+t1247548582
+s1003
+
+N/usr/include/float.h
+c000000004A5C14A60000000000001F2C
+t1247548582
+s7980
+
+N/usr/include/limits.h
+c000000004A5C14A6000000000000145A
+t1247548582
+s5210
+
+N/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/usr/include/stdarg.h
+c000000004A5C14A600000000000000EA
+t1247548582
+s234
+
+N/usr/include/stddef.h
+c000000004A5C14A60000000000001404
+t1247548582
+s5124
+
+N/usr/include/stdint.h
+c000000004A11A512000000000000190C
+t1242670354
+s6412
+
+N/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/usr/include/sys/types.h
+c000000004A73D6550000000000002905
+t1249105493
+s10501
+
+NInfo.plist
+c0000000051D2A77800000000000002A3
+t1372759928
+s675
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies394455459#394455459#0(0"0(0#1#0"8610729920#0"0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455459.671565
+e394455461.809997
+r0
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o
+x/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h: In constructor 'ARExercise::ARExercise(QWidget*, Qt::WFlags)':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:55: warning: 'ARExercise::_showCalibration' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:51: warning:   'int ARExercise::_camDeviceID'
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:52: warning: 'ARExercise::_inputFilePath' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:49: warning:   'cv::VideoCapture* ARExercise::_cap'
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'void ARExercise::refresh()':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:43: error: 'class QImage::Format' is not a class or namespace
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'cv::Mat ARExercise::drawCalibration(cv::Mat)':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:93: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:94: warning: comparison between signed and unsigned integer expressions
+lSLF07#2@68"Compile /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455459#394455461#0(1418"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h: In constructor 'ARExercise::ARExercise(QWidget*, Qt::WFlags)':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:55: warning: 'ARExercise::_showCalibration' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:51: warning:   'int ARExercise::_camDeviceID'/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:52: warning: 'ARExercise::_inputFilePath' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:49: warning:   'cv::VideoCapture* ARExercise::_cap'/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'void ARExercise::refresh()':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:43: error: 'class QImage::Format' is not a class or namespace/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'cv::Mat ARExercise::drawCalibration(cv::Mat)':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:93: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:94: warning: comparison between signed and unsigned integer expressions9(22@56"'ARExercise::_showCalibration' will be initialized after394455461#123#129#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#55#0#55#0#0"0(22@30"'int ARExercise::_camDeviceID'394455461#252#105#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#51#0#51#0#0"0(22@21"When initialized here394455461#357#97#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#3#0#3#0#0"0(22@54"'ARExercise::_inputFilePath' will be initialized after394455461#454#127#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#52#0#52#0#0"0(22@36"'cv::VideoCapture* ARExercise::_cap'394455461#581#111#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#49#0#49#0#0"0(22@21"When initialized here394455461#692#97#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#3#0#3#0#0"0(4@50"'class QImage::Format' is not a class or namespace394455461#900#123#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#43#0#43#0#0"0(22@58"Comparison between signed and unsigned integer expressions394455461#1152#133#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#93#0#93#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455461#1285#133#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#94#0#94#0#58"comparison between signed and unsigned integer expressions0(0#0#60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp8610233152#1419"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o1#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455315.307575
+e394455317.107426
+r0
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o
+x/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h: In constructor 'ARExercise::ARExercise(QWidget*, Qt::WFlags)':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:55: warning: 'ARExercise::_showCalibration' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:51: warning:   'int ARExercise::_camDeviceID'
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:52: warning: 'ARExercise::_inputFilePath' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:49: warning:   'cv::VideoCapture* ARExercise::_cap'
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'void ARExercise::refresh()':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:43: error: 'class QImage::Format' is not a class or namespace
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'cv::Mat ARExercise::drawCalibration(cv::Mat)':
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:93: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:94: warning: comparison between signed and unsigned integer expressions
+lSLF07#2@68"Compile /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455315#394455317#0(1418"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h: In constructor 'ARExercise::ARExercise(QWidget*, Qt::WFlags)':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:55: warning: 'ARExercise::_showCalibration' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:51: warning:   'int ARExercise::_camDeviceID'/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:52: warning: 'ARExercise::_inputFilePath' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h:49: warning:   'cv::VideoCapture* ARExercise::_cap'/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'void ARExercise::refresh()':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:43: error: 'class QImage::Format' is not a class or namespace/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp: In member function 'cv::Mat ARExercise::drawCalibration(cv::Mat)':/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:93: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp:94: warning: comparison between signed and unsigned integer expressions9(22@56"'ARExercise::_showCalibration' will be initialized after394455316#123#129#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#55#0#55#0#0"0(22@30"'int ARExercise::_camDeviceID'394455316#252#105#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#51#0#51#0#0"0(22@21"When initialized here394455316#357#97#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#3#0#3#0#0"0(22@54"'ARExercise::_inputFilePath' will be initialized after394455316#454#127#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#52#0#52#0#0"0(22@36"'cv::VideoCapture* ARExercise::_cap'394455316#581#111#0(6@58"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.h394450929#49#0#49#0#0"0(22@21"When initialized here394455316#692#97#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#3#0#3#0#0"0(4@50"'class QImage::Format' is not a class or namespace394455316#900#123#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#43#0#43#0#0"0(22@58"Comparison between signed and unsigned integer expressions394455316#1152#133#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#93#0#93#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455316#1285#133#0(6@60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp394455191#94#0#94#0#58"comparison between signed and unsigned integer expressions0(0#0#60"/Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp8617631904#1424"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/ARExercise.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/ARExercise.o1#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455459.673058
+e394455461.409777
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o
+x/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h: In constructor 'DetectionThread::DetectionThread()':
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:30: warning: 'DetectionThread::_terminateThread' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:29: warning:   'int DetectionThread::_refreshInterval'
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp:4: warning:   when initialized here
+lSLF07#2@73"Compile /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp394455459#394455461#0(478"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h: In constructor 'DetectionThread::DetectionThread()':/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:30: warning: 'DetectionThread::_terminateThread' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:29: warning:   'int DetectionThread::_refreshInterval'/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp:4: warning:   when initialized here3(22@61"'DetectionThread::_terminateThread' will be initialized after394455461#118#139#0(6@63"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h394452827#30#0#30#0#0"0(22@39"'int DetectionThread::_refreshInterval'394455461#257#119#0(6@63"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h394452827#29#0#29#0#0"0(22@21"When initialized here394455461#376#102#0(6@65"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp394352432#4#0#4#0#0"0(0#0#65"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp8614970816#1429"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455291.097205
+e394455292.815024
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o
+x/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h: In constructor 'DetectionThread::DetectionThread()':
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:30: warning: 'DetectionThread::_terminateThread' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:29: warning:   'int DetectionThread::_refreshInterval'
+o/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp:4: warning:   when initialized here
+lSLF07#2@73"Compile /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp394455291#394455292#0(478"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h: In constructor 'DetectionThread::DetectionThread()':/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:30: warning: 'DetectionThread::_terminateThread' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h:29: warning:   'int DetectionThread::_refreshInterval'/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp:4: warning:   when initialized here3(22@61"'DetectionThread::_terminateThread' will be initialized after394455292#118#139#0(6@63"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h394452827#30#0#30#0#0"0(22@39"'int DetectionThread::_refreshInterval'394455292#257#119#0(6@63"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.h394452827#29#0#29#0#0"0(22@21"When initialized here394455292#376#102#0(6@65"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp394352432#4#0#4#0#0"0(0#0#65"/Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp8617602048#1434"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/DetectionThread.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/DetectionThread.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455461.409904
+e394455462.334983
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o
+x/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp394455461#394455462#0(0"0(0#0#59"/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp8606330560#1417"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455292.815203
+e394455293.661760
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o
+x/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@67"Compile /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp394455292#394455293#0(0"0(0#0#59"/Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp8613934976#1422"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/FretBoard.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/FretBoard.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455461.810081
+e394455463.749353
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o
+x/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: In member function 'cv::Mat GuitarDetector::detectFretBoard(cv::Mat, ThresholdSettings, Marker, FretBoard&)':
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:71: warning: unused variable 'lineN'
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:153: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:164: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:36: warning: unused variable 'yDif'
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: At global scope:
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:17: warning: unused parameter 'thresholdSettings'
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455461#394455463#0(853"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: In member function 'cv::Mat GuitarDetector::detectFretBoard(cv::Mat, ThresholdSettings, Marker, FretBoard&)':/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:71: warning: unused variable 'lineN'/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:153: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:164: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:36: warning: unused variable 'yDif'/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: At global scope:/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:17: warning: unused parameter 'thresholdSettings'6(22@23"Unused variable 'lineN'394455462#176#102#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#71#0#71#0#19"unused variable '*'0(22@58"Comparison between signed and unsigned integer expressions394455462#278#138#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#153#0#153#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455462#416#138#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#164#0#164#0#58"comparison between signed and unsigned integer expressions0(22@22"Unused variable 'yDif'394455462#554#101#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#36#0#36#0#19"unused variable '*'0(23@16"At global scope:394455462#655#83#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#0#0#0#0#0"0(22@36"Unused parameter 'thresholdSettings'394455462#738#115#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#17#0#17#0#20"unused parameter '*'0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp8613810144#1427"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455293.030257
+e394455294.526454
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o
+x/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: In member function 'cv::Mat GuitarDetector::detectFretBoard(cv::Mat, ThresholdSettings, Marker, FretBoard&)':
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:71: warning: unused variable 'lineN'
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:153: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:164: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:36: warning: unused variable 'yDif'
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: At global scope:
+o/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:17: warning: unused parameter 'thresholdSettings'
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455293#394455294#0(853"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: In member function 'cv::Mat GuitarDetector::detectFretBoard(cv::Mat, ThresholdSettings, Marker, FretBoard&)':/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:71: warning: unused variable 'lineN'/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:153: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:164: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:36: warning: unused variable 'yDif'/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp: At global scope:/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp:17: warning: unused parameter 'thresholdSettings'6(22@23"Unused variable 'lineN'394455294#176#102#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#71#0#71#0#19"unused variable '*'0(22@58"Comparison between signed and unsigned integer expressions394455294#278#138#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#153#0#153#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455294#416#138#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#164#0#164#0#58"comparison between signed and unsigned integer expressions0(22@22"Unused variable 'yDif'394455294#554#101#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#36#0#36#0#19"unused variable '*'0(23@16"At global scope:394455294#655#83#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#0#0#0#0#0"0(22@36"Unused parameter 'thresholdSettings'394455294#738#115#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp394455191#17#0#17#0#20"unused parameter '*'0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp8618236896#1432"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/GuitarDetector.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/GuitarDetector.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455463.749787
+e394455464.669674
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o
+x/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h: In constructor 'Marker::Marker()':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:38: warning: 'Marker::_leftBottomCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:36: warning:   'int Marker::_leftTopCornerIndex'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:39: warning: 'Marker::_rightBottomCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning:   'int Marker::_rightTopCornerIndex'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning: 'Marker::_rightTopCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:35: warning:   'int Marker::_detectionRotations'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In constructor 'Marker::Marker(std::vector<CvPoint2D32f, std::allocator<CvPoint2D32f> >, int, double, int)':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:33: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In member function 'void Marker::indexMarkerCorners()':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:98: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:103: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:116: warning: comparison between signed and unsigned integer expressions
+lSLF07#2@64"Compile /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394455463#394455464#0(1862"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h: In constructor 'Marker::Marker()':/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:38: warning: 'Marker::_leftBottomCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:36: warning:   'int Marker::_leftTopCornerIndex'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:39: warning: 'Marker::_rightBottomCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning:   'int Marker::_rightTopCornerIndex'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning: 'Marker::_rightTopCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:35: warning:   'int Marker::_detectionRotations'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In constructor 'Marker::Marker(std::vector<CvPoint2D32f, std::allocator<CvPoint2D32f> >, int, double, int)':/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:33: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In member function 'void Marker::indexMarkerCorners()':/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:98: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:103: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:116: warning: comparison between signed and unsigned integer expressions13(22@58"'Marker::_leftBottomCornerIndex' will be initialized after394455464#91#127#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#38#0#38#0#0"0(22@33"'int Marker::_leftTopCornerIndex'394455464#218#104#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#36#0#36#0#0"0(22@21"When initialized here394455464#322#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@59"'Marker::_rightBottomCornerIndex' will be initialized after394455464#415#128#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#39#0#39#0#0"0(22@34"'int Marker::_rightTopCornerIndex'394455464#543#105#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#37#0#37#0#0"0(22@21"When initialized here394455464#648#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@56"'Marker::_rightTopCornerIndex' will be initialized after394455464#741#125#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#37#0#37#0#0"0(22@33"'int Marker::_detectionRotations'394455464#866#104#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#35#0#35#0#0"0(22@21"When initialized here394455464#970#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@58"Comparison between signed and unsigned integer expressions394455464#1230#129#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#33#0#33#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455464#1473#129#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#98#0#98#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455464#1602#130#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#103#0#103#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455464#1732#130#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#116#0#116#0#58"comparison between signed and unsigned integer expressions0(0#0#56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp8613043648#1411"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455294.526644
+e394455295.353298
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o
+x/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h: In constructor 'Marker::Marker()':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:38: warning: 'Marker::_leftBottomCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:36: warning:   'int Marker::_leftTopCornerIndex'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:39: warning: 'Marker::_rightBottomCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning:   'int Marker::_rightTopCornerIndex'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning: 'Marker::_rightTopCornerIndex' will be initialized after
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:35: warning:   'int Marker::_detectionRotations'
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In constructor 'Marker::Marker(std::vector<CvPoint2D32f, std::allocator<CvPoint2D32f> >, int, double, int)':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:33: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In member function 'void Marker::indexMarkerCorners()':
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:98: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:103: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:116: warning: comparison between signed and unsigned integer expressions
+lSLF07#2@64"Compile /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394455294#394455295#0(1862"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h: In constructor 'Marker::Marker()':/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:38: warning: 'Marker::_leftBottomCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:36: warning:   'int Marker::_leftTopCornerIndex'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:39: warning: 'Marker::_rightBottomCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning:   'int Marker::_rightTopCornerIndex'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:37: warning: 'Marker::_rightTopCornerIndex' will be initialized after/Users/andreas/workspace_cpp/AugmentedReality/Marker.h:35: warning:   'int Marker::_detectionRotations'/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:3: warning:   when initialized here/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In constructor 'Marker::Marker(std::vector<CvPoint2D32f, std::allocator<CvPoint2D32f> >, int, double, int)':/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:33: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp: In member function 'void Marker::indexMarkerCorners()':/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:98: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:103: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp:116: warning: comparison between signed and unsigned integer expressions13(22@58"'Marker::_leftBottomCornerIndex' will be initialized after394455295#91#127#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#38#0#38#0#0"0(22@33"'int Marker::_leftTopCornerIndex'394455295#218#104#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#36#0#36#0#0"0(22@21"When initialized here394455295#322#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@59"'Marker::_rightBottomCornerIndex' will be initialized after394455295#415#128#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#39#0#39#0#0"0(22@34"'int Marker::_rightTopCornerIndex'394455295#543#105#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#37#0#37#0#0"0(22@21"When initialized here394455295#648#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@56"'Marker::_rightTopCornerIndex' will be initialized after394455295#741#125#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#37#0#37#0#0"0(22@33"'int Marker::_detectionRotations'394455295#866#104#0(6@54"/Users/andreas/workspace_cpp/AugmentedReality/Marker.h394452862#35#0#35#0#0"0(22@21"When initialized here394455295#970#93#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#3#0#3#0#0"0(22@58"Comparison between signed and unsigned integer expressions394455295#1230#129#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#33#0#33#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455295#1473#129#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#98#0#98#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455295#1602#130#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#103#0#103#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455295#1732#130#0(6@56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp394352432#116#0#116#0#58"comparison between signed and unsigned integer expressions0(0#0#56"/Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp8613940640#1416"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/Marker.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/Marker.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455464.462800
+e394455465.899422
+r0
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o
+x/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'std::vector<Marker, std::allocator<Marker> > MarkerDetector::detectMarkers(cv::Mat, ThresholdSettings)':
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:60: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:66: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:94: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:104: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:105: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:106: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:107: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:111: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:112: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:113: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:114: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'int MarkerDetector::findMarkerID(cv::Mat, std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >, int&)':
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:326: warning: unused variable 'colValue'
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455464#394455465#0(5245"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'std::vector<Marker, std::allocator<Marker> > MarkerDetector::detectMarkers(cv::Mat, ThresholdSettings)':/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:60: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:66: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:94: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:104: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:105: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:106: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:107: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:111: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:112: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:113: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:114: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'int MarkerDetector::findMarkerID(cv::Mat, std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >, int&)':/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:326: warning: unused variable 'colValue'36(22@58"Comparison between signed and unsigned integer expressions394455465#191#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#60#0#60#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455465#328#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#66#0#66#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455465#465#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#94#0#94#0#58"comparison between signed and unsigned integer expressions0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455465#602#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#104#0#104#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455465#738#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455465#870#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455465#997#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455465#1132#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#105#0#105#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455465#1268#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455465#1400#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455465#1527#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455465#1662#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#106#0#106#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455465#1798#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455465#1930#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455465#2057#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455465#2192#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#107#0#107#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455465#2328#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455465#2460#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455465#2587#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455465#2722#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#111#0#111#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455465#2854#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455465#2994#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455465#3129#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455465#3272#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#112#0#112#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455465#3404#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455465#3544#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455465#3679#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455465#3822#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#113#0#113#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455465#3954#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455465#4094#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455465#4229#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455465#4372#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#114#0#114#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455465#4504#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455465#4644#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455465#4779#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(22@26"Unused variable 'colValue'394455465#5139#106#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#326#0#326#0#19"unused variable '*'0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp8610680384#1427"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o1#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455315.308992
+e394455316.726107
+r0
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o
+x/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'std::vector<Marker, std::allocator<Marker> > MarkerDetector::detectMarkers(cv::Mat, ThresholdSettings)':
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:60: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:66: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:94: warning: comparison between signed and unsigned integer expressions
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:104: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:105: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:106: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:107: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous
+o/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]
+o/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:111: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:112: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:113: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:114: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous
+o/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]
+o/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'int MarkerDetector::findMarkerID(cv::Mat, std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >, int&)':
+o/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:326: warning: unused variable 'colValue'
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455315#394455316#0(5245"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'std::vector<Marker, std::allocator<Marker> > MarkerDetector::detectMarkers(cv::Mat, ThresholdSettings)':/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:60: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:66: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:94: warning: comparison between signed and unsigned integer expressions/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:104: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:105: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:106: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:107: error: call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous/opt/local/include/opencv2/core/core.hpp:738: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:737: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]/opt/local/include/opencv2/core/core.hpp:736: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:111: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:112: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:113: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:114: error: call of overloaded 'Point_(cv::Point2f&)' is ambiguous/opt/local/include/opencv2/core/operations.hpp:1622: note: candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1621: note:                 cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]/opt/local/include/opencv2/core/operations.hpp:1620: note:                 cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp: In member function 'int MarkerDetector::findMarkerID(cv::Mat, std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >, int&)':/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp:326: warning: unused variable 'colValue'36(22@58"Comparison between signed and unsigned integer expressions394455316#191#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#60#0#60#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455316#328#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#66#0#66#0#58"comparison between signed and unsigned integer expressions0(22@58"Comparison between signed and unsigned integer expressions394455316#465#137#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#94#0#94#0#58"comparison between signed and unsigned integer expressions0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455316#602#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#104#0#104#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455316#738#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455316#870#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455316#997#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455316#1132#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#105#0#105#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455316#1268#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455316#1400#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455316#1527#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455316#1662#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#106#0#106#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455316#1798#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455316#1930#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455316#2057#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@58"Call of overloaded 'Point_(cv::Point_<int>&)' is ambiguous394455316#2192#136#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#107#0#107#0#0"0(13@79"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = float]394455316#2328#132#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#738#0#738#0#0"0(13@58"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = float]394455316#2460#127#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#737#0#737#0#0"0(13@66"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = float]394455316#2587#135#0(6@40"/opt/local/include/opencv2/core/core.hpp386845220#736#0#736#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455316#2722#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#111#0#111#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455316#2854#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455316#2994#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455316#3129#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455316#3272#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#112#0#112#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455316#3404#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455316#3544#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455316#3679#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455316#3822#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#113#0#113#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455316#3954#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455316#4094#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455316#4229#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(4@54"Call of overloaded 'Point_(cv::Point2f&)' is ambiguous394455316#4372#132#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#114#0#114#0#0"0(13@80"Candidates are: cv::Point_<_Tp>::Point_(const CvPoint2D32f&) [with _Tp = double]394455316#4504#140#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1622#0#1622#0#0"0(13@59"Cv::Point_<_Tp>::Point_(const CvPoint&) [with _Tp = double]394455316#4644#135#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1621#0#1621#0#0"0(13@67"Cv::Point_<_Tp>::Point_(const cv::Point_<_Tp>&) [with _Tp = double]394455316#4779#143#0(6@46"/opt/local/include/opencv2/core/operations.hpp386845220#1620#0#1620#0#0"0(22@26"Unused variable 'colValue'394455316#5139#106#0(6@64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp394455191#326#0#326#0#19"unused variable '*'0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp8615983296#1432"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/MarkerDetector.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/MarkerDetector.o1#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455464.669769
+e394455465.275382
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o
+x/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp394455464#394455465#0(0"0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp8612613824#1427"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455295.824879
+e394455296.354186
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o
+x/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp394455295#394455296#0(0"0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp8613766816#1432"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/PoseEstimation.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/PoseEstimation.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o /Users/andreas/workspace_cpp/AugmentedReality/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455462.335079
+e394455464.462710
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o
+x/Users/andreas/workspace_cpp/AugmentedReality/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/andreas/workspace_cpp/AugmentedReality/main.cpp394455462#394455464#0(0"0(0#0#54"/Users/andreas/workspace_cpp/AugmentedReality/main.cpp8603158208#1407"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/main.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o /Users/andreas/workspace_cpp/AugmentedReality/main.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455293.661851
+e394455295.824784
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o
+x/Users/andreas/workspace_cpp/AugmentedReality/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@62"Compile /Users/andreas/workspace_cpp/AugmentedReality/main.cpp394455293#394455295#0(0"0(0#0#54"/Users/andreas/workspace_cpp/AugmentedReality/main.cpp8614173728#1412"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/main.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s394455465.275576
+e394455467.112949
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o
+x/Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp394455465#394455467#0(0"0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp8614461280#1427"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o0#
+
+CCompileC build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s394455296.354369
+e394455298.314618
+r1
+xCompileC
+xbuild/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o
+x/Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@72"Compile /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp394455296#394455298#0(0"0(0#0#64"/Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp8612833696#1432"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -gdwarf-2 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality.hmap -F/Users/andreas/workspace_cpp/AugmentedReality/build/Debug -F/Library/Frameworks -F/Library/Frameworks -I/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include -I/opt/local/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/usr/include -I. -I. -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.8/mkspecs/macx-xcode -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources/x86_64 -I/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/andreas/workspace_cpp/AugmentedReality/moc_ARExercise.cpp -o /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/moc_ARExercise.o0#
+
+CLd /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/MacOS/AugmentedReality normal x86_64
+r0
+
+CPhaseScriptExecution "Qt Preprocessors" /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-A0A52A2ADF7A1E2A99738674.sh
+s394455459.654979
+e394455459.671487
+r1
+xPhaseScriptExecution
+xQt Preprocessors
+x/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-A0A52A2ADF7A1E2A99738674.sh
+omake: Nothing to be done for `preprocess'.
+lSLF07#2@42"Run custom shell script 'Qt Preprocessors'394455459#394455459#0(43"make: Nothing to be done for `preprocess'.1(13@43"make: Nothing to be done for `preprocess'.394455459#0#43#0(1@0"0(0#0#0"8608234592#17422"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER andreas    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build    setenv BUILD_ROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv CACHE_ROOT /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug    setenv CONTENTS_FOLDER_PATH AugmentedReality.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH AugmentedReality.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/AugmentedReality.dst    setenv DWARF_DSYM_FILE_NAME AugmentedReality.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH AugmentedReality.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH AugmentedReality.app/Contents/MacOS    setenv EXECUTABLE_NAME AugmentedReality    setenv EXECUTABLE_PATH AugmentedReality.app/Contents/MacOS/AugmentedReality    setenv FILE_LIST /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH AugmentedReality.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" /Library/Frameworks /Library/Frameworks"    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME AugmentedReality.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include\" /opt/local/include /Library/Frameworks/QtCore.framework/Versions/4/Headers /usr/include/QtCore /Library/Frameworks/QtGui.framework/Versions/4/Headers /usr/include/QtGui /usr/include . . . /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /usr/local/Qt4.8/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH AugmentedReality.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH AugmentedReality.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/AugmentedReality.dst/Users/andreas/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER andreas    setenv INSTALL_PATH /Users/andreas/Applications    setenv INSTALL_ROOT /tmp/AugmentedReality.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH AugmentedReality.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" /opt/local/lib /Library/Frameworks /opt/local/lib"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/AugmentedReality.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH AugmentedReality.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 10K549    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal    setenv OBJROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/Library/Frameworks -F/Library/Frameworks"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH AugmentedReality.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/PkgInfo    setenv PKGINFO_PATH AugmentedReality.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2518    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH AugmentedReality.app/Contents/PlugIns    setenv PREBINDING YES    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH AugmentedReality.app/Contents/PrivateHeaders    setenv PRODUCT_NAME AugmentedReality    setenv PRODUCT_SETTINGS_PATH /Users/andreas/workspace_cpp/AugmentedReality/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT AugmentedReality    setenv PROJECT_DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/DerivedSources    setenv PROJECT_DIR /Users/andreas/workspace_cpp/AugmentedReality    setenv PROJECT_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/AugmentedReality.xcodeproj    setenv PROJECT_NAME AugmentedReality    setenv PROJECT_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build    setenv PUBLIC_HEADERS_FOLDER_PATH AugmentedReality.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH AugmentedReality.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SDK_PRODUCT_BUILD_VERSION 10K549    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH AugmentedReality.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH AugmentedReality.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/andreas/workspace_cpp/AugmentedReality    setenv SRCROOT /Users/andreas/workspace_cpp/AugmentedReality    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/SymbolRepositories    setenv SYMROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME AugmentedReality    setenv TARGET_BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv TARGET_NAME AugmentedReality    setenv TARGET_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_ROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH AugmentedReality.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER andreas    setenv USER_APPS_DIR /Users/andreas/Applications    setenv USER_LIBRARY_DIR /Users/andreas/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH AugmentedReality.app/Contents/version.plist    setenv VERSION_INFO_BUILDER andreas    setenv VERSION_INFO_FILE AugmentedReality_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:AugmentedReality  PROJECT:AugmentedReality-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME AugmentedReality.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2518    setenv XCODE_VERSION_ACTUAL 0400    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0400    setenv YACC /Developer/usr/bin/yacc    /bin/sh -c /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-A0A52A2ADF7A1E2A99738674.sh0#
+
+CPhaseScriptExecution "Qt Qmake" /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-D7BA7D76DAB5DD13389D6332.sh
+s394455459.621099
+e394455459.654897
+r1
+xPhaseScriptExecution
+xQt Qmake
+x/Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-D7BA7D76DAB5DD13389D6332.sh
+omake: `AugmentedReality.xcodeproj/project.pbxproj' is up to date.
+lSLF07#2@34"Run custom shell script 'Qt Qmake'394455459#394455459#0(66"make: `AugmentedReality.xcodeproj/project.pbxproj' is up to date.1(13@66"make: `AugmentedReality.xcodeproj/project.pbxproj' is up to date.394455459#0#66#0(1@0"0(0#0#0"8610123200#17422"    cd /Users/andreas/workspace_cpp/AugmentedReality    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER andreas    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build    setenv BUILD_ROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv CACHE_ROOT /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug    setenv CONTENTS_FOLDER_PATH AugmentedReality.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH AugmentedReality.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/AugmentedReality.dst    setenv DWARF_DSYM_FILE_NAME AugmentedReality.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn .git CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn .git *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH AugmentedReality.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH AugmentedReality.app/Contents/MacOS    setenv EXECUTABLE_NAME AugmentedReality    setenv EXECUTABLE_PATH AugmentedReality.app/Contents/MacOS/AugmentedReality    setenv FILE_LIST /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH AugmentedReality.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" /Library/Frameworks /Library/Frameworks"    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME AugmentedReality.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/include\" /opt/local/include /Library/Frameworks/QtCore.framework/Versions/4/Headers /usr/include/QtCore /Library/Frameworks/QtGui.framework/Versions/4/Headers /usr/include/QtGui /usr/include . . . /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /usr/local/Qt4.8/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH AugmentedReality.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH AugmentedReality.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/AugmentedReality.dst/Users/andreas/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER andreas    setenv INSTALL_PATH /Users/andreas/Applications    setenv INSTALL_ROOT /tmp/AugmentedReality.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH AugmentedReality.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/AugmentedReality-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" /opt/local/lib /Library/Frameworks /opt/local/lib"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal/x86_64/AugmentedReality.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH AugmentedReality.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 10K549    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Objects-normal    setenv OBJROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/Library/Frameworks -F/Library/Frameworks"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH AugmentedReality.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/PkgInfo    setenv PKGINFO_PATH AugmentedReality.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLATFORM_PRODUCT_BUILD_VERSION 10M2518    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH AugmentedReality.app/Contents/PlugIns    setenv PREBINDING YES    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH AugmentedReality.app/Contents/PrivateHeaders    setenv PRODUCT_NAME AugmentedReality    setenv PRODUCT_SETTINGS_PATH /Users/andreas/workspace_cpp/AugmentedReality/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT AugmentedReality    setenv PROJECT_DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/DerivedSources    setenv PROJECT_DIR /Users/andreas/workspace_cpp/AugmentedReality    setenv PROJECT_FILE_PATH /Users/andreas/workspace_cpp/AugmentedReality/AugmentedReality.xcodeproj    setenv PROJECT_NAME AugmentedReality    setenv PROJECT_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build    setenv PUBLIC_HEADERS_FOLDER_PATH AugmentedReality.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/andreas/workspace_cpp/AugmentedReality/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH AugmentedReality.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SDK_PRODUCT_BUILD_VERSION 10K549    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH AugmentedReality.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/Vp/Vp3MxnAsHZu76KpZ51DN+E+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH AugmentedReality.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/andreas/workspace_cpp/AugmentedReality    setenv SRCROOT /Users/andreas/workspace_cpp/AugmentedReality    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/SymbolRepositories    setenv SYMROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME AugmentedReality    setenv TARGET_BUILD_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/Debug    setenv TARGET_NAME AugmentedReality    setenv TARGET_TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_FILES_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_FILE_DIR /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build    setenv TEMP_ROOT /Users/andreas/workspace_cpp/AugmentedReality/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH AugmentedReality.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER andreas    setenv USER_APPS_DIR /Users/andreas/Applications    setenv USER_LIBRARY_DIR /Users/andreas/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH AugmentedReality.app/Contents/version.plist    setenv VERSION_INFO_BUILDER andreas    setenv VERSION_INFO_FILE AugmentedReality_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:AugmentedReality  PROJECT:AugmentedReality-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME AugmentedReality.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 10M2518    setenv XCODE_VERSION_ACTUAL 0400    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0400    setenv YACC /Developer/usr/bin/yacc    /bin/sh -c /Users/andreas/workspace_cpp/AugmentedReality/build/AugmentedReality.build/Debug/AugmentedReality.build/Script-D7BA7D76DAB5DD13389D6332.sh0#
+
+CProcessInfoPlistFile /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/Info.plist Info.plist
+s394455459.616935
+e394455459.621003
+r1
+xProcessInfoPlistFile
+x/Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist394455459#394455459#0(0"0(0#0#56"/Users/andreas/workspace_cpp/AugmentedReality/Info.plist8613678880#341"    cd /Users/andreas/workspace_cpp/AugmentedReality    builtin-infoPlistUtility Info.plist -genpkginfo /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app/Contents/Info.plist0#
+
+CTouch /Users/andreas/workspace_cpp/AugmentedReality/build/Debug/AugmentedReality.app
+r0
+

@@ -34,14 +34,14 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
     cv::vector<cv::Point> approx;
   
     //direction of subpixel height
-    cv::vector<cv::vector<cv::Point2d>> stripeYDirections;
+    cv::vector<cv::vector<cv::Point2d> > stripeYDirections;
     //direction of subpixel width
-    cv::vector<cv::vector<cv::Point2d>> stripeXDirections;
+    cv::vector<cv::vector<cv::Point2d> > stripeXDirections;
 
-    cv::vector<cv::vector<cv::Point>> computedPolygons;
-    cv::vector<cv::vector<cv::Point>> preciseCorners;
+    cv::vector<cv::vector<cv::Point> > computedPolygons;
+    cv::vector<cv::vector<cv::Point2f> > preciseCorners;
     //edge->samplingpoints
-    cv::vector<cv::vector<cv::Point2f>> computedSamplingPoints;
+    cv::vector<cv::vector<cv::Point2f> > computedSamplingPoints;
     
     // test each contour
     for( size_t i = 0; i < contours.size(); i++ )
@@ -64,7 +64,7 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
         edgeLines.push_back(line);
       }    
       for(int polygonCount=0; polygonCount<computedPolygons.size();polygonCount++){
-        cv::vector<cv::Point> polygonCorners;
+        cv::vector<cv::Point2f> polygonCorners;
         //per corner
         for(int i=polygonCount*4;i<(polygonCount*4)+4;i++){
           cv::Vec4f line1 = edgeLines[i];
@@ -91,7 +91,7 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
         preciseCorners.push_back(polygonCorners);
       }
 
-      for(int polygonCount=0; polygonCount<computedPolygons.size();polygonCount++){
+      for(uint polygonCount=0; polygonCount<computedPolygons.size();polygonCount++){
 
         //perspective transform marker
         cv::Point2f dstPoints[4];
@@ -101,6 +101,7 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
         dstPoints[2] = cv::Point2f(5.5,-0.5);
 
         cv::Point2f srcPoints[4];
+		  
         srcPoints[0] = cv::Point2f(preciseCorners[polygonCount][0]);
         srcPoints[1] = cv::Point2f(preciseCorners[polygonCount][1]);
         srcPoints[2] = cv::Point2f(preciseCorners[polygonCount][2]);
@@ -108,10 +109,10 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
          
         cv::Mat resultMatrix(4, 4, cv::DataType<float>::type);
         cv::vector<CvPoint2D32f> cornerPoints;
-        cornerPoints.push_back(cvPointTo32f(cv::Point2d(srcPoints[0])));
-        cornerPoints.push_back(cvPointTo32f(cv::Point2d(srcPoints[1])));
-        cornerPoints.push_back(cvPointTo32f(cv::Point2d(srcPoints[2])));
-        cornerPoints.push_back(cvPointTo32f(cv::Point2d(srcPoints[3])));
+        cornerPoints.push_back(cvPointTo32f(cv::Point2f(srcPoints[0])));
+        cornerPoints.push_back(cvPointTo32f(cv::Point2f(srcPoints[1])));
+        cornerPoints.push_back(cvPointTo32f(cv::Point2f(srcPoints[2])));
+        cornerPoints.push_back(cvPointTo32f(cv::Point2f(srcPoints[3])));
 
         cv::vector<CvPoint2D32f> cornerPointsNew = cornerPoints;
         // transfer camera coords to screen coords
@@ -153,7 +154,7 @@ void MarkerDetector::printResultMatrix(float* resultmatrix){
 
 }
 
-void MarkerDetector::computeSamplingPoints(cv::vector<cv::Point> approximatedPolygon, cv::vector<cv::vector<cv::Point2f>>& computedSamplingPoints, cv::Mat thresholdFrame){
+void MarkerDetector::computeSamplingPoints(cv::vector<cv::Point> approximatedPolygon, cv::vector<cv::vector<cv::Point2f> > &computedSamplingPoints, cv::Mat thresholdFrame){
   cv::vector<cv::Point2f> samplingPoints;
   cv::vector<cv::Point2d> YDirections;
   cv::vector<cv::Point2d> XDirections;

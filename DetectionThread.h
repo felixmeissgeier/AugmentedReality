@@ -2,8 +2,8 @@
 #include <qthread.h>
 #include <QWriteLocker>
 #include <QReadLocker>
-#include <opencv2\core\core.hpp>
-#include <opencv2\imgproc\imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include "ThresholdSettings.h"
 #include "Marker.h"
 #include "MarkerDetector.h"

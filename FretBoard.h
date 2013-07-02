@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <opencv2\core\core.hpp>
+#include <opencv2/core/core.hpp>
 
 class FretBoard
 {
@@ -8,8 +8,8 @@ public:
   FretBoard(void);
   ~FretBoard(void);
 
-  void setIntersectionPoints(std::vector<std::vector<cv::Point2d>> intersectionPoints);
-  std::vector<std::vector<cv::Point2d>> getIntersectionPoints();
+  void setIntersectionPoints(std::vector<std::vector<cv::Point2d> > intersectionPoints);
+  std::vector<std::vector<cv::Point2d> > getIntersectionPoints();
   void setMarkerRotation(double rotation);
   double getMarkerRotation();
   void setMarkerScale(double scale);
@@ -30,7 +30,7 @@ private:
   *   All coordinates obtain the relative position to the 
   *   upper-right corner of the marker
   */
-  std::vector<std::vector<cv::Point2d>> _intersectionPoints;
+  std::vector<std::vector<cv::Point2d> > _intersectionPoints;
   double _markerRotationAngle;
   double _markerScale;
 };

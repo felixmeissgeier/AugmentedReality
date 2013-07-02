@@ -40,7 +40,7 @@ void ARExercise::refresh(){
     
     if(drawFrame.empty()==false){
       QImage::Format imgFormat;
-      imgFormat = QImage::Format::Format_RGB888;
+		imgFormat = QImage::Format_RGB888;
       
       _detectionThread.setInputFrame(drawFrame);
       _currentMarker = _detectionThread.getCurrentMarker();
@@ -68,7 +68,7 @@ void ARExercise::refresh(){
 cv::Mat ARExercise::drawCalibration(cv::Mat image){
   cv::Mat mat = image.clone();
   if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
-    std::vector<std::vector<cv::Point2d>> intersectionPoints;
+    std::vector<std::vector<cv::Point2d> > intersectionPoints;
     cv::Scalar markColor;
     if(_fretBoardDetected==true){
       cv::putText(mat,"Fretboard Detected",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));

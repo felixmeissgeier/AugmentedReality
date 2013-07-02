@@ -18,11 +18,11 @@ double FretBoard::getMarkerRotation(){
   return _markerRotationAngle;
 }
 
-void FretBoard::setIntersectionPoints(std::vector<std::vector<cv::Point2d>> intersectionPoints){
+void FretBoard::setIntersectionPoints(std::vector<std::vector<cv::Point2d> > intersectionPoints){
   _intersectionPoints = intersectionPoints;
 }
 
-std::vector<std::vector<cv::Point2d>> FretBoard::getIntersectionPoints(){
+std::vector<std::vector<cv::Point2d> > FretBoard::getIntersectionPoints(){
   return _intersectionPoints;
 }
 

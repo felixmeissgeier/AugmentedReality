@@ -147,7 +147,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
           //sort detected frets by x position
           qsort(fretLines.data(),fretLines.size(),sizeof(cv::Vec4i),compareFretLineXPosition);
           
-          std::vector<std::vector<cv::Point2d>> intersectionPoints;
+          std::vector<std::vector<cv::Point2d> > intersectionPoints;
           std::vector<cv::Point2d> fret;
     
           for(int i = 0; i<fretLines.size(); i++){
