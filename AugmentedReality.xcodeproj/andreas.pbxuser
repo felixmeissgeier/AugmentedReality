@@ -205,8 +205,8 @@
 					PBXSymbolsDataSource_ReferenceNameID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 394561795;
-			PBXWorkspaceStateSaveDate = 394561795;
+			PBXPerProjectTemplateStateSaveDate = 394562839;
+			PBXWorkspaceStateSaveDate = 394562839;
 		};
 		perUserProjectItems = {
 			E14384BE1782E13A0034FA54 /* PBXTextBookmark */ = E14384BE1782E13A0034FA54 /* PBXTextBookmark */;
@@ -216,7 +216,6 @@
 			E14384D01782E13A0034FA54 /* PBXTextBookmark */ = E14384D01782E13A0034FA54 /* PBXTextBookmark */;
 			E14389A01782ECC30034FA54 /* PBXTextBookmark */ = E14389A01782ECC30034FA54 /* PBXTextBookmark */;
 			E14389A21782ECC30034FA54 /* PBXTextBookmark */ = E14389A21782ECC30034FA54 /* PBXTextBookmark */;
-			E182D55717845F1500C1C2EB /* PBXTextBookmark */ = E182D55717845F1500C1C2EB /* PBXTextBookmark */;
 			E182D55C17845F1500C1C2EB /* PBXTextBookmark */ = E182D55C17845F1500C1C2EB /* PBXTextBookmark */;
 			E182D56D178460D300C1C2EB /* PBXTextBookmark */ = E182D56D178460D300C1C2EB /* PBXTextBookmark */;
 			E182D56E178460D300C1C2EB /* PBXTextBookmark */ = E182D56E178460D300C1C2EB /* PBXTextBookmark */;
@@ -232,8 +231,8 @@
 			E182D678178479FA00C1C2EB /* PBXTextBookmark */ = E182D678178479FA00C1C2EB /* PBXTextBookmark */;
 			E182D68C17847CA800C1C2EB /* PBXTextBookmark */ = E182D68C17847CA800C1C2EB /* PBXTextBookmark */;
 			E182D68D17847CA800C1C2EB /* PBXTextBookmark */ = E182D68D17847CA800C1C2EB /* PBXTextBookmark */;
-			E1AA9C1317848946001C5F8F /* PBXBookmark */ = E1AA9C1317848946001C5F8F /* PBXBookmark */;
-			E1AA9C1417848946001C5F8F /* PBXTextBookmark */ = E1AA9C1417848946001C5F8F /* PBXTextBookmark */;
+			E1AA9C6317848D65001C5F8F /* PBXBookmark */ = E1AA9C6317848D65001C5F8F /* PBXBookmark */;
+			E1AA9C7217848D79001C5F8F /* PBXTextBookmark */ = E1AA9C7217848D79001C5F8F /* PBXTextBookmark */;
 		};
 		sourceControlManager = E14384B31782DF500034FA54 /* Source Control */;
 		userBuildSettings = {
@@ -391,29 +390,18 @@
 		path = /Library/Frameworks/QtGui.framework/Headers/QAbstractButton;
 		sourceTree = "<absolute>";
 	};
-	E182D506178429FE00C1C2EB /* ImprovedMarkerDetector.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 663}}";
-			sepNavSelRange = "{785, 0}";
-			sepNavVisRange = "{122, 1209}";
-		};
-	};
 	E182D507178429FE00C1C2EB /* ImprovedMarkerDetector.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ImprovedMarkerDetector.cpp;
+		path = /ImprovedMarkerDetector.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 4849}}";
 			sepNavSelRange = "{2170, 0}";
 			sepNavVisRange = "{1614, 972}";
 		};
-	};
-	E182D55717845F1500C1C2EB /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 0ECD2859D7175E68E096DDE8 /* ARExercise.h */;
-		name = "ARExercise.h: 7";
-		rLen = 0;
-		rLoc = 145;
-		rType = 0;
-		vrLen = 1072;
-		vrLoc = 0;
 	};
 	E182D55917845F1500C1C2EB /* main.cpp */ = {
 		isa = PBXFileReference;
@@ -626,23 +614,23 @@
 		vrLen = 1460;
 		vrLoc = 6441;
 	};
-	E1AA9C1217848944001C5F8F /* ImprovedMarkerDetector.h */ = {
+	E1AA9C5F17848D4D001C5F8F /* ImprovedMarkerDetector.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 663}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 637}}";
+			sepNavSelRange = "{399, 0}";
 			sepNavVisRange = "{0, 1272}";
 		};
 	};
-	E1AA9C1317848946001C5F8F /* PBXBookmark */ = {
+	E1AA9C6317848D65001C5F8F /* PBXBookmark */ = {
 		isa = PBXBookmark;
-		fRef = E1AA9C1217848944001C5F8F /* ImprovedMarkerDetector.h */;
+		fRef = E1AA9C5F17848D4D001C5F8F /* ImprovedMarkerDetector.h */;
 	};
-	E1AA9C1417848946001C5F8F /* PBXTextBookmark */ = {
+	E1AA9C7217848D79001C5F8F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E1AA9C1217848944001C5F8F /* ImprovedMarkerDetector.h */;
-		name = "ImprovedMarkerDetector.h: 1";
+		fRef = E1AA9C5F17848D4D001C5F8F /* ImprovedMarkerDetector.h */;
+		name = "ImprovedMarkerDetector.h: 16";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 399;
 		rType = 0;
 		vrLen = 1272;
 		vrLoc = 0;
