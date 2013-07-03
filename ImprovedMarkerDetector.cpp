@@ -142,7 +142,21 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat inputFrame, Th
 					for(int i = 0; i < 4; i++)	corrected_corners[(i + angle)%4] = newCorners[i];
 					for(int i = 0; i < 4; i++)	newCorners[i] = corrected_corners[i];
 				}
-				Marker marker(newCorners,code,(double)transMatrix.at<float>(11),angle);
+				//Pose estimation
+				//Array of CVPoint2D32f
+				CvPoint2D32f pointArrayforPoseEstimation[4];
+				//Convert vector of new corners to array of CvPoint2D32f
+				for(size_t i = 0; i < newCorners.size(); i++){
+					cv::Point2f p1 = newCorners[i];
+					CvPoint2D32f p2;
+					p2.x = p1.x;
+					p2.y = p1.y;
+					pointArrayforPoseEstimation[i] = p2;
+				}
+				//Do pose estimation, marker is 4.5cm wide
+				float result[16];
+				estimateSquarePose(result, pointArrayforPoseEstimation, 0.045);
+				Marker marker(newCorners,code,(double)result[11],angle);
 				detectedMarkers.push_back(marker);
 			}
 		}
