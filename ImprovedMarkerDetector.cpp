@@ -265,10 +265,11 @@ std::vector<cv::Vec4f> ImprovedMarkerDetector::computeExactBorderLines(cv::Mat i
 			
 			double pos = (y2 - y0) / (4*y1 - 2*y0 - 2*y2 );
 
-#if defined(__GCC__)
+
+#if defined(_MSC_VER)
+      if(_isnan(pos)!=0 || _finite(pos)==0){
+#else
       if(std::isnan(pos) || std::isinf(pos)){
-#elif defined(_MSC_VER)
-      if(_isnan(pos) || !_finite(pos)){
 #endif
 				continue;
 			}
