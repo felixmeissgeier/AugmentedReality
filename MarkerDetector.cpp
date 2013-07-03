@@ -57,13 +57,13 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
     //compute precise corners 
     if(computedPolygons.size()>0){
       cv::vector<cv::Vec4f> edgeLines;
-      for(int i = 0; i < computedSamplingPoints.size(); i++){
+      for(uint i = 0; i < computedSamplingPoints.size(); i++){
         cv::Mat edgePoints(computedSamplingPoints[i]);
         cv::Vec4f line;
         cv::fitLine(edgePoints,line,CV_DIST_L2,0,0.01,0.01);
         edgeLines.push_back(line);
       }    
-      for(int polygonCount=0; polygonCount<computedPolygons.size();polygonCount++){
+      for(uint polygonCount=0; polygonCount<computedPolygons.size();polygonCount++){
         cv::vector<cv::Point2f> polygonCorners;
         //per corner
         for(int i=polygonCount*4;i<(polygonCount*4)+4;i++){

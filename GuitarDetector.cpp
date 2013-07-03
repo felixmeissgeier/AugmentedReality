@@ -150,7 +150,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
           std::vector<std::vector<cv::Point2d> > intersectionPoints;
           std::vector<cv::Point2d> fret;
     
-          for(int i = 0; i<fretLines.size(); i++){
+          for(uint i = 0; i<fretLines.size(); i++){
             fret.clear();
             fret.push_back(cv::Point2d(fretLines[i][0]-grayscaleFrame.cols,topLineM*fretLines[i][0]+topLineN));
             fret.push_back(cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN));
@@ -161,7 +161,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
           fretBoard.setMarkerRotation(detectedMarker.getMarkerRotationAngle());
           fretBoard.setIntersectionPoints(intersectionPoints);
 
-          for(int linec = 0; linec<fretLines.size(); linec++){
+          for(uint linec = 0; linec<fretLines.size(); linec++){
             //TODO:to static... just works if guitar is very horizontal
             if(abs(fretLines[linec][0]-fretLines[linec][2])<5){
               line(outputFrame,cv::Point(fretLines[linec][0],topLineM*fretLines[linec][0]+topLineN),cv::Point(fretLines[linec][2],bottomLineM*fretLines[linec][2]+bottomLineN),cv::Scalar(0,0,255),2,CV_AA);

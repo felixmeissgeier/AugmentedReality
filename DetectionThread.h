@@ -6,6 +6,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include "ThresholdSettings.h"
 #include "Marker.h"
+#include "ImprovedMarkerDetector.h"
 #include "MarkerDetector.h"
 #include "GuitarDetector.h"
 #include "FretBoard.h"
@@ -31,7 +32,7 @@ private:
   bool _calibrationModeOn;
   cv::Mat _currentInputFrame;
   Marker _currentMarker;
-  MarkerDetector _markerDetector;
+  ImprovedMarkerDetector _markerDetector;
   GuitarDetector _guitarDetector;
   FretBoard _currentFretBoard;
   ThresholdSettings _markerDetectionThresholdSettings;

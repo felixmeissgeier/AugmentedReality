@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init3.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _cap(0),
     _videoPaused(false),
     _captureDuration(33),
@@ -97,8 +97,8 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
       cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
       cv::circle(mat,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
       
-      for(int fret=0; fret<intersectionPoints.size(); fret++){
-        for(int string=0; string<intersectionPoints[fret].size(); string++){
+      for(uint fret=0; fret<intersectionPoints.size(); fret++){
+        for(uint string=0; string<intersectionPoints[fret].size(); string++){
           cv::Point2d fretboardPoint;
      
           if(_calibrationModeOn==true){
