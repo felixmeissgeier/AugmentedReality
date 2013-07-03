@@ -35,6 +35,7 @@
 		E14385FA1782E66D0034FA54 /* libopencv_video.2.4.5.dylib in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = E14385E81782E66D0034FA54 /* libopencv_video.2.4.5.dylib */; };
 		E14385FB1782E66D0034FA54 /* libopencv_videostab.2.4.5.dylib in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = E14385E91782E66D0034FA54 /* libopencv_videostab.2.4.5.dylib */; };
 		E182D508178429FE00C1C2EB /* ImprovedMarkerDetector.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = E182D507178429FE00C1C2EB /* ImprovedMarkerDetector.cpp */; };
+		E1AA9C1117848935001C5F8F /* ImprovedMarkerDetector.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = E1AA9C1017848935001C5F8F /* ImprovedMarkerDetector.cpp */; };
 		E6ED692E2DC644C1E479E7FB /* Marker.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 0D0DBCA25B57135A967CCD77 /* Marker.cpp */; settings = {ATTRIBUTES = (); }; };
 		E8211DD5679BA21EE6577E50 /* moc_ARExercise.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 6C86A0E50183ACAB4619FF02 /* moc_ARExercise.cpp */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
@@ -83,6 +84,8 @@
 		E14385E91782E66D0034FA54 /* libopencv_videostab.2.4.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.5.dylib; path = /opt/local/lib/libopencv_videostab.2.4.5.dylib; sourceTree = "<absolute>"; };
 		E182D506178429FE00C1C2EB /* ImprovedMarkerDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImprovedMarkerDetector.h; path = /ImprovedMarkerDetector.h; sourceTree = "<absolute>"; };
 		E182D507178429FE00C1C2EB /* ImprovedMarkerDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImprovedMarkerDetector.cpp; path = /ImprovedMarkerDetector.cpp; sourceTree = "<absolute>"; };
+		E1AA9C1017848935001C5F8F /* ImprovedMarkerDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImprovedMarkerDetector.cpp; path = /ImprovedMarkerDetector.cpp; sourceTree = "<absolute>"; };
+		E1AA9C1217848944001C5F8F /* ImprovedMarkerDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImprovedMarkerDetector.h; path = /ImprovedMarkerDetector.h; sourceTree = "<absolute>"; };
 		F0C65655888AAB22E212D7BB /* GuitarDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuitarDetector.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -153,6 +156,7 @@
 		883D7615C4D2DE3FA1218F12 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E1AA9C1217848944001C5F8F /* ImprovedMarkerDetector.h */,
 				E182D506178429FE00C1C2EB /* ImprovedMarkerDetector.h */,
 				0ECD2859D7175E68E096DDE8 /* ARExercise.h */,
 				7A930C09AADFAB31030EF237 /* DetectionThread.h */,
@@ -220,6 +224,7 @@
 		FB61758D0F0FDA4BA867C3D5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E1AA9C1017848935001C5F8F /* ImprovedMarkerDetector.cpp */,
 				1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */,
 				12771B7DCC98FE0E0007F6AD /* DetectionThread.cpp */,
 				CF2CF8206F54CFAB65297CD4 /* FretBoard.cpp */,
@@ -329,6 +334,7 @@
 				C01FAB79C75B036C6E1D2DC7 /* PoseEstimation.cpp in Build Sources */,
 				E8211DD5679BA21EE6577E50 /* moc_ARExercise.cpp in Build Sources */,
 				E182D508178429FE00C1C2EB /* ImprovedMarkerDetector.cpp in Build Sources */,
+				E1AA9C1117848935001C5F8F /* ImprovedMarkerDetector.cpp in Build Sources */,
 			);
 			name = "Build Sources";
 			runOnlyForDeploymentPostprocessing = 0;
