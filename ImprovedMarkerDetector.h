@@ -19,7 +19,7 @@
 #include <opencv2/core/types_c.h>
 #include "Marker.h"
 #include "ThresholdSettings.h"
-
+#include <cmath>
 
 class ImprovedMarkerDetector
 {

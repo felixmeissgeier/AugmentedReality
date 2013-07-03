@@ -18,6 +18,8 @@
 #include "ThresholdSettings.h"
 #include "FretBoard.h"
 #include "DetectionThread.h"
+#include "Tabulature.h"
+#include "GP4Decoder.h"
 
 class ARExercise : public QMainWindow
 {
@@ -50,6 +52,8 @@ private:
     cv::Mat _currentInputFrame, _currentThresholdFrame;
     int _camDeviceID;
     QString _inputFilePath;
+    QString _tabFilePath;
+    Tabulature _tabulature;
     bool _videoPaused;
     int _captureDuration, _recomputeDuration;
     bool _showCalibration;

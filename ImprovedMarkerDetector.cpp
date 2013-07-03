@@ -8,6 +8,7 @@
  */
 
 #include "ImprovedMarkerDetector.h"
+#include <math.h>
 
 
 ImprovedMarkerDetector::ImprovedMarkerDetector(void)
@@ -277,8 +278,13 @@ std::vector<cv::Vec4f> ImprovedMarkerDetector::computeExactBorderLines(cv::Mat i
 			y2 = (maxIndex >= stripeSize.height-3) ? 0 : result[maxIndex+1];
 			
 			double pos = (y2 - y0) / (4*y1 - 2*y0 - 2*y2 );
-			
-			if(std::isnan(pos) || std::isinf(pos)){
+
+
+#if defined(_MSC_VER)
+      if(_isnan(pos)!=0 || _finite(pos)==0){
+#else
+      if(std::isnan(pos) || std::isinf(pos)){
+#endif
 				continue;
 			}
 			

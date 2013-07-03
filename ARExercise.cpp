@@ -5,6 +5,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _showCalibration(false),
     _camDeviceID(0),
     _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _tabFilePath("taylor_ver2.gp4"),
     _cap(0),
     _videoPaused(false),
     _captureDuration(33),
@@ -27,6 +28,8 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   inputDeviceChanged();
   showCalibrationChanged();
   _detectionThread.start();
+
+  _tabulature = GP4Decoder::decodeFile(_tabFilePath);
 }
 
 void ARExercise::refresh(){
