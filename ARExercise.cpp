@@ -6,12 +6,31 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _camDeviceID(0),
     _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath("taylor_ver2.gp4"),
+    _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
     _videoPaused(false),
     _captureDuration(33),
     _calibrationModeOn(false),
-    _fretBoardDetected(false)
+    _fretBoardDetected(false),
+    _showSavedLabelCounter(-1)
 {
+  QFile fretboardFile(_fretboardFilePath);
+  if (fretboardFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+    FretBoard readFretboard;
+    QTextStream in(&fretboardFile);
+    QString fileInput="";
+    int lineCount = 0;
+    while (!in.atEnd()) {
+      lineCount++;
+      fileInput.append(in.readLine()+"\n");
+    }
+    if(lineCount>2){
+      //QWriteLocker locker(&_lock);
+      _detectedFretBoard = FretBoardSerializer::deserialize(fileInput);
+      _fretBoardDetected = true;
+    }
+  }
+  fretboardFile.close();
 
   ui.setupUi(this);
   this->move(300,100);
@@ -27,9 +46,9 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   
   inputDeviceChanged();
   showCalibrationChanged();
-  _detectionThread.start();
-
+  
   _tabulature = GP4Decoder::decodeFile(_tabFilePath);
+  _detectionThread.start();
 }
 
 void ARExercise::refresh(){
@@ -69,55 +88,64 @@ void ARExercise::refresh(){
 *   This method draws detected sampling points of current fretboard calibration
 */
 cv::Mat ARExercise::drawCalibration(cv::Mat image){
+  QString succesfulSaved = "";
+  if(_showSavedLabelCounter>=0 && _showSavedLabelCounter<100){
+    _showSavedLabelCounter++;
+    succesfulSaved = "    Calibration saved to '"+_fretboardFilePath+"'";
+  }
+  else if(_showSavedLabelCounter>=0 && _showSavedLabelCounter>100){
+    _showSavedLabelCounter = -1;
+  }
   cv::Mat mat = image.clone();
-  if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
-    std::vector<std::vector<cv::Point2d> > intersectionPoints;
-    cv::Scalar markColor;
-    if(_fretBoardDetected==true){
-      cv::putText(mat,"Fretboard Detected",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
-      intersectionPoints =  _detectedFretBoard.getIntersectionPoints();
-      markColor[0]=0;
-      markColor[1]=230;
-      markColor[2]=0;
-    }
-    else if(_calibrationModeOn==true){
-      cv::putText(mat,"Calibration Mode",cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
-      _currentFretBoard = _detectionThread.getCurrentFretBoard();
-      intersectionPoints =  _currentFretBoard.getIntersectionPoints();
-      markColor[0]=0;
-      markColor[1]=0;
-      markColor[2]=230;
-    }
-
+  if(_currentMarker.isValid()){
+    if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
+      std::vector<std::vector<cv::Point2d> > intersectionPoints;
+      cv::Scalar markColor;
+      if(_fretBoardDetected==true){
+        cv::putText(mat,"Fretboard Detected"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
+        intersectionPoints =  _detectedFretBoard.getIntersectionPoints();
+        markColor[0]=0;
+        markColor[1]=230;
+        markColor[2]=0;
+      }
+      else if(_calibrationModeOn==true){
+        cv::putText(mat,"Calibration Mode"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
+        _currentFretBoard = _detectionThread.getCurrentFretBoard();
+        intersectionPoints =  _currentFretBoard.getIntersectionPoints();
+        markColor[0]=0;
+        markColor[1]=0;
+        markColor[2]=230;
+      }
     
-    if(intersectionPoints.size()>0){
-      //cv::Point2d origin(intersectionPoints[0][0]);
-      cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
-      double deltaMarkerRotationAngle = _detectedFretBoard.getMarkerRotation()-_currentMarker.getMarkerRotationAngle();
-      double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
-      cv::Point2d leftCorner = cv::Point2d(_currentMarker.getRightTopCorner().x-_currentMarker.getTopEdgeLength(),_currentMarker.getRightTopCorner().y);
-      cv::Point2d rotatedLeftCorner1 = cv::Point2d(leftCorner.x-origin.x,leftCorner.y-origin.y);
-      cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
-      cv::circle(mat,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
+      if(intersectionPoints.size()>0){
+        //cv::Point2d origin(intersectionPoints[0][0]);
+        cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
+        double deltaMarkerRotationAngle = _detectedFretBoard.getMarkerRotation()-_currentMarker.getMarkerRotationAngle();
+        double deltaMarkerScale = (_currentMarker.getBottomEdgeLength()/0.045)/_detectedFretBoard.getMarkerScale();
+        cv::Point2d leftCorner = cv::Point2d(_currentMarker.getRightTopCorner().x-_currentMarker.getTopEdgeLength(),_currentMarker.getRightTopCorner().y);
+        cv::Point2d rotatedLeftCorner1 = cv::Point2d(leftCorner.x-origin.x,leftCorner.y-origin.y);
+        cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
+        cv::circle(mat,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
       
-      for(uint fret=0; fret<intersectionPoints.size(); fret++){
-        for(uint string=0; string<intersectionPoints[fret].size(); string++){
-          cv::Point2d fretboardPoint;
+        for(uint fret=0; fret<intersectionPoints.size(); fret++){
+          for(uint string=0; string<intersectionPoints[fret].size(); string++){
+            cv::Point2d fretboardPoint;
      
-          if(_calibrationModeOn==true){
-            //if calibration mpde, than only draw detected intersection points
-            fretboardPoint = cv::Point2d(intersectionPoints[fret][string].x+origin.x,intersectionPoints[fret][string].y+origin.y);
+            if(_calibrationModeOn==true){
+              //if calibration mpde, than only draw detected intersection points
+              fretboardPoint = cv::Point2d(intersectionPoints[fret][string].x+origin.x,intersectionPoints[fret][string].y+origin.y);
+            }
+            else{
+              //if stored fretboard calibration has to be drawn, apply rotation and scaling before drawing the point circles
+              cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);
+              //cv::Point2d normalizedPoint = cv::Point2d(translatePoint.x-origin.x,translatePoint.y-origin.y);
+              //cv::Point2d translatePoint = cv::Point2d(translatePoint1.x+origin.x,translatePoint1.y+origin.y);
+              //rotate point
+              cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
+              fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
+            }
+            cv::circle(mat,fretboardPoint,3,markColor);
           }
-          else{
-            //if stored fretboard calibration has to be drawn, apply rotation and scaling before drawing the point circles
-            cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);
-            //cv::Point2d normalizedPoint = cv::Point2d(translatePoint.x-origin.x,translatePoint.y-origin.y);
-            //cv::Point2d translatePoint = cv::Point2d(translatePoint1.x+origin.x,translatePoint1.y+origin.y);
-            //rotate point
-            cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
-            fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
-          }
-          cv::circle(mat,fretboardPoint,3,markColor);
         }
       }
     }
@@ -193,6 +221,20 @@ void ARExercise::fretBoardDetected(){
   _fretBoardDetected = true;
   _calibrationModeOn = false;
   _detectionThread.setCalibrationMode(_calibrationModeOn);
+  ui.pushSaveFretboard2File->setEnabled(true);
+}
+
+void ARExercise::saveFretboardToFile(){
+  if(_fretBoardDetected==true){
+    QFile fretboardFile(_fretboardFilePath);
+    fretboardFile.remove();
+    if (!fretboardFile.open(QIODevice::WriteOnly | QIODevice::Text))
+         return;
+    QTextStream out(&fretboardFile);
+    out << FretBoardSerializer::serialize(_detectedFretBoard);
+    fretboardFile.close();
+    _showSavedLabelCounter = 0;
+  }
 }
 
 ARExercise::~ARExercise()

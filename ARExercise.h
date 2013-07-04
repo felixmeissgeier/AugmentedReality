@@ -15,11 +15,13 @@
 #include <QTime>
 #include <iostream>
 #include <QDebug>
+#include <qfile.h>
 #include "ThresholdSettings.h"
 #include "FretBoard.h"
 #include "DetectionThread.h"
 #include "Tabulature.h"
 #include "GP4Decoder.h"
+#include "FretBoardSerializer.h"
 
 class ARExercise : public QMainWindow
 {
@@ -29,7 +31,7 @@ public:
     ARExercise(QWidget *parent = 0, Qt::WFlags flags = 0);
     ~ARExercise();
     Ui::AugmentedRealityTutorialClass getUI(){return ui;}
-    
+
 public slots:
   void refresh();
   //void recomputeMarkerPosition();
@@ -40,6 +42,7 @@ public slots:
   void pauseVideo();
   void fretBoardDetected();
   void calibrateGuitar();
+  void saveFretboardToFile();
   cv::Mat drawCalibration(cv::Mat image);
 
 private:
@@ -47,12 +50,13 @@ private:
     DetectionThread _detectionThread;
     Marker _currentMarker;
     QTimer* _captureTimer;
-    QTime* _simTime;
+    int _showSavedLabelCounter;
     cv::VideoCapture* _cap;
     cv::Mat _currentInputFrame, _currentThresholdFrame;
     int _camDeviceID;
     QString _inputFilePath;
     QString _tabFilePath;
+    QString _fretboardFilePath;
     Tabulature _tabulature;
     bool _videoPaused;
     int _captureDuration, _recomputeDuration;
@@ -61,6 +65,7 @@ private:
     FretBoard _currentFretBoard;
     FretBoard _detectedFretBoard;
     bool _fretBoardDetected;
+
 
     QReadWriteLock _lock;
 };

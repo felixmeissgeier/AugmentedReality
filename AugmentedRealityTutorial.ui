@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>AugmentedRealityTutorialClass</class>
  <widget class="QMainWindow" name="AugmentedRealityTutorialClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -140,7 +143,20 @@
           <item>
            <widget class="QPushButton" name="pushFretBoardDetected">
             <property name="text">
-             <string>FretBoard Detected</string>
+             <string>Fretboard Detected</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushSaveFretboard2File">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Save Fretboard To File</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -286,6 +302,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushSaveFretboard2File</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>saveFretboardToFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>833</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>376</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>thresholdTypeChanged()</slot>
@@ -298,5 +330,6 @@
   <slot>showCalibrationChanged()</slot>
   <slot>calibrateGuitar()</slot>
   <slot>fretBoardDetected()</slot>
+  <slot>saveFretboardToFile()</slot>
  </slots>
 </ui>
