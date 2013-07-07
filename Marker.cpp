@@ -31,7 +31,7 @@ _valid(true)
 {
   _cornerPoints.clear();
   for(size_t i=0; i<cornerPoints.size(); i++){
-    _cornerPoints.push_back(cv::Point2d(cornerPoints[i]));
+    _cornerPoints.push_back(cornerPoints[i]);
   }
   indexMarkerCorners();
 }

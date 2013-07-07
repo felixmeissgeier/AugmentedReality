@@ -22,6 +22,7 @@
 #include "Tabulature.h"
 #include "GP4Decoder.h"
 #include "FretBoardSerializer.h"
+#include "TabProvider.h"
 
 class ARExercise : public QMainWindow
 {
@@ -48,6 +49,7 @@ public slots:
 private:
     Ui::AugmentedRealityTutorialClass ui;
     DetectionThread _detectionThread;
+		TabProvider _tabProvider;
     Marker _currentMarker;
     QTimer* _captureTimer;
     int _showSavedLabelCounter;

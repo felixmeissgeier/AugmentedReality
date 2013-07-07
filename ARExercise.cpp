@@ -49,6 +49,9 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   
   _tabulature = GP4Decoder::decodeFile(_tabFilePath);
   _detectionThread.start();
+
+	_tabProvider.setTabulature(_tabulature);
+	_tabProvider.run();
 }
 
 void ARExercise::refresh(){
