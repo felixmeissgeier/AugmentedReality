@@ -6,7 +6,7 @@ DetectionThread::DetectionThread(void)
   _refreshInterval(33),
   _calibrationModeOn(false)
 {
-  cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
+  //cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
 
   _markerDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
   _markerDetectionThresholdSettings.adaptiveThresholdBlocksize = 101;
@@ -41,7 +41,7 @@ void DetectionThread::run(){
           if(abs(_currentMarker.getLeftBottomCorner().x-detectedMarkers.at(0).getLeftBottomCorner().x)>1
             || abs(_currentMarker.getLeftBottomCorner().y-detectedMarkers.at(0).getLeftBottomCorner().y)>1){
             _currentMarker = detectedMarkers.at(0);
-            qDebug()<<detectedMarkers.at(0).getMarkerID();
+            //qDebug()<<detectedMarkers.at(0).getMarkerID();
           }
         }
         else{
@@ -49,7 +49,7 @@ void DetectionThread::run(){
         }
       }
       else{
-        qDebug()<<"no marker";
+        //qDebug()<<"no marker";
       }
 
       if(_calibrationModeOn==true && _currentMarker.isValid()==true){

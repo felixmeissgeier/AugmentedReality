@@ -9,46 +9,34 @@
 
 #include "TabProvider.h"
 
-TabProvider::TabProvider(){
-
+TabProvider::TabProvider(QObject* consumer, Tabulature tab)
+  :_consumer(consumer),
+   _tabulature(tab),
+   _tabCounter(0),
+   _tabulatureSize(tab.size())
+{
+  QObject::connect(this,SIGNAL(tabulatureDataSetIndexChanged(int)),consumer,SLOT(updateTabulatureDataSetIndex(int)));
+  QObject::connect(&_tabDataSetUpdateTimer,SIGNAL(timeout()),this,SLOT(provideNextTabulatureDataSet()));
 }
 
 TabProvider::~TabProvider(void){
  
 }
 
-void TabProvider::run(){
-	//is this dirty? i don't know...
-	QTimer::singleShot(_tabDuration,this,SLOT(setCurrentTabulatureDataSet()));
+void TabProvider::start(){
+  _tabDataSetUpdateTimer.start(0);
 }
 
-void TabProvider::setCurrentTabulatureDataSet(){
-	_tabCounter++;
-	if(_tabCounter <= _tabulatureSize){
-		_tabDSLock.lockForWrite();
-		_currentTabDS = _tabulature.at(_tabCounter);
-		_tabDuration = _currentTabDS.getDurationMs();
-		QTimer::singleShot(_tabDuration,this,SLOT(setCurrentTabulatureDataSet()));
-		_tabDSLock.unlock();
-		std::cout<<"TabulatureDataSet updated\n";
-	}
-}
+void TabProvider::provideNextTabulatureDataSet(){
+	if(_tabCounter <= _tabulatureSize){  
+    TabulatureDataSet currentTabDS = _tabulature.at(_tabCounter);
+		int tabDuration = currentTabDS.getDurationMs();
+    _tabDataSetUpdateTimer.setInterval(tabDuration);
+    //restarttimer
+    _tabDataSetUpdateTimer.start();
 
-void TabProvider::setTabulature(Tabulature tab){
-	_tabulature = tab;
-	_tabCounter = 0;
-	_tabulatureSize = tab.size();
-	_currentTabDS = tab.at(0);
-	_tabDuration = _currentTabDS.getDurationMs();
-}
+    emit tabulatureDataSetIndexChanged(_tabCounter);
+    _tabCounter++;
+  }
 
-TabulatureDataSet TabProvider::getCurrentTabulatureDataSet(){
-	_tabDSLock.lockForRead();
-	TabulatureDataSet result = _currentTabDS;
-	_tabDSLock.unlock();
-	return result;
-}
-
-void TabProvider::interrupt(){
-	_isInterrupted = true;
 }

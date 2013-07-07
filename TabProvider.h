@@ -14,8 +14,9 @@
 #include "Tabulature.h"
 #include "TabulatureDataSet.h"
 #include <qtimer.h>
-#include <iostream.h>
 #include <qobject.h>
+#include <qstring.h>
+#include <qdebug.h>
 
 class TabProvider:public QObject
 {
@@ -23,24 +24,23 @@ class TabProvider:public QObject
 	Q_OBJECT
 	
 public:
-  TabProvider();
+  TabProvider(QObject* consumer, Tabulature tab);
 	~TabProvider();
-	void run();
-	void setTabulature(Tabulature tab);
-	TabulatureDataSet getCurrentTabulatureDataSet();
+	void start();
+
 	
 private:
+  QObject* _consumer;
 	QReadWriteLock			_tabDSLock;
-	bool								_isInterrupted;
-	TabulatureDataSet		_currentTabDS;
+  QTimer _tabDataSetUpdateTimer;
 	Tabulature					_tabulature;
 	size_t							_tabulatureSize;
 	size_t							_tabCounter;
-	int									_tabDuration;
-	
-	void interrupt();
 	
 private slots:
-	void setCurrentTabulatureDataSet();
+	void provideNextTabulatureDataSet();
+
+signals:
+  void tabulatureDataSetIndexChanged(int index);
 };
 

@@ -4,15 +4,17 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
-    _tabFilePath("taylor_ver2.gp4"),
+    _inputFilePath("guitar_init.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _tabFilePath("sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
     _videoPaused(false),
     _captureDuration(33),
     _calibrationModeOn(false),
     _fretBoardDetected(false),
-    _showSavedLabelCounter(-1)
+    _showSavedLabelCounter(-1),
+    _tabVisualizer(0),
+    _tabProvider(0)
 {
   QFile fretboardFile(_fretboardFilePath);
   if (fretboardFile.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -48,10 +50,14 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   showCalibrationChanged();
   
   _tabulature = GP4Decoder::decodeFile(_tabFilePath);
+  if(_tabulature.size()>0){
+    _tabVisualizer = new TabVisualizer(_tabulature);
+    _tabProvider = new TabProvider(this,_tabulature);
+    if(_tabProvider!=0 && _tabVisualizer!=0){
+      _tabProvider->start();
+    }
+  }
   _detectionThread.start();
-
-	_tabProvider.setTabulature(_tabulature);
-	_tabProvider.run();
 }
 
 void ARExercise::refresh(){
@@ -76,6 +82,8 @@ void ARExercise::refresh(){
         cv::circle(drawFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
       }
 
+      _tabVisualizer->drawTabulature(drawFrame);
+
       QImage img(drawFrame.data,drawFrame.size[1],drawFrame.size[0],imgFormat);
       img = img.rgbSwapped();
    
@@ -84,6 +92,12 @@ void ARExercise::refresh(){
   }
   else{
     ui.imageLabel->setText("No Camera Input - VideoCapture Object isn't opened !!!");
+  }
+}
+
+void ARExercise::updateTabulatureDataSetIndex(int index){
+  if(_tabVisualizer!=0){
+    _tabVisualizer->setTabulatureDataSetIndex(index);
   }
 }
 

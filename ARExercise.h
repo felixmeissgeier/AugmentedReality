@@ -23,6 +23,7 @@
 #include "GP4Decoder.h"
 #include "FretBoardSerializer.h"
 #include "TabProvider.h"
+#include "TabVisualizer.h"
 
 class ARExercise : public QMainWindow
 {
@@ -45,11 +46,13 @@ public slots:
   void calibrateGuitar();
   void saveFretboardToFile();
   cv::Mat drawCalibration(cv::Mat image);
+  void updateTabulatureDataSetIndex(int);
 
 private:
     Ui::AugmentedRealityTutorialClass ui;
     DetectionThread _detectionThread;
-		TabProvider _tabProvider;
+		TabProvider* _tabProvider;
+    TabVisualizer* _tabVisualizer;
     Marker _currentMarker;
     QTimer* _captureTimer;
     int _showSavedLabelCounter;
