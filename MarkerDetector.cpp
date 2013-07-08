@@ -132,7 +132,12 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat* inputFrame, Threshold
           if(resultMatrix.cols==4 && resultMatrix.rows==4){           
             estimateSquarePose(resultMatrix.ptr<float>(),cornerPointsNew.data(),0.045);        
             double distance = sqrt(pow((double)resultMatrix.at<float>(3),2.0)+pow((double)resultMatrix.at<float>(7),2.0)+pow((double)resultMatrix.at<float>(11),2.0));
-            Marker marker(cornerPoints,markerID,distance,detectionRotations);
+
+            std::vector<cv::Point2d> cornerPoints2d;
+            for(size_t i=0; i<cornerPoints.size(); i++){
+              cornerPoints2d.push_back(cvPointFrom32f(cornerPoints[i]));
+            }
+            Marker marker(cornerPoints2d,markerID,distance,detectionRotations);
             detectedMarkers.push_back(marker);
 
           }

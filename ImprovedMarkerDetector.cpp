@@ -23,8 +23,8 @@ ImprovedMarkerDetector::~ImprovedMarkerDetector(void)
 {
 }
 
-std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings){
-  std::vector<Marker> detectedMarkers;
+cv::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings){
+  cv::vector<Marker> detectedMarkers;
   if(inputFrame!=0){
 		cv::Mat greyClone, greyFrame;
 		//greyFrame = inputFrame.clone();
@@ -50,13 +50,13 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 		}
 		
 		//Preparations for contour finding
-		std::vector<std::vector<cv::Point> > contours;
-		std::vector<cv::Vec4i> hierarchies;
+    cv::vector<cv::vector<cv::Point> > contours;
+		cv::vector<cv::Vec4i> hierarchies;
 		cv::findContours(greyFrame, contours, hierarchies, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
 		
 		//Data for approximation
-		std::vector<cv::Point> approx;
-		std::vector<cv::Rect> rectangles (contours.size());
+		cv::vector<cv::Point> approx;
+		cv::vector<cv::Rect> rectangles (contours.size());
 		
 		//Check all contours
 		for(size_t i = 0; i < contours.size(); i++){
@@ -69,14 +69,14 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, CV_AA, 0);
 				
 				//Computed border lines which will be intersected later to get exact corners
-				std::vector<cv::Vec4f> borderLines = computeExactBorderLines(*inputFrame, approx);
+				cv::vector<cv::Vec4f> borderLines = computeExactBorderLines(*inputFrame, approx);
 
 				
 				
 				if(borderLines.size() == 0){
 					continue;
 				}
-				std::vector<cv::Point2f> newCorners;
+				cv::vector<cv::Point2f> newCorners;
 				//Calculate new corners
 				for(int i= 0; i < 4; i++){
 					cv::Vec4f line1 = borderLines[i];
@@ -90,7 +90,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				cv::Size markerSize(6,6);
 				cv::Mat markerImage(markerSize,CV_8UC1);
 				//given Transformation points
-				std::vector<cv::Point2f> givenPoints;
+				cv::vector<cv::Point2f> givenPoints;
 				givenPoints.push_back(cv::Point2f(-0.5,-0.5));
 				givenPoints.push_back(cv::Point2f(-0.5,5.5));
 				givenPoints.push_back(cv::Point2f(5.5,5.5));
@@ -157,7 +157,11 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				//Do pose estimation, marker is 4.5cm wide
 				float result[16];
 				estimateSquarePose(result, pointArrayforPoseEstimation, 0.045);
-				Marker marker(newCorners,code,(double)result[11],angle);
+        std::vector<cv::Point2d> cornerPoints;
+        for(unsigned i=0; i<newCorners.size(); i++){
+          cornerPoints.push_back(cv::Point2d(newCorners.at(i)));
+        }
+        Marker marker(cornerPoints,code,(double)result[11],angle);
 				detectedMarkers.push_back(marker);
 			}
 		}
@@ -174,8 +178,8 @@ void ImprovedMarkerDetector::printResultMatrix(float* resultmatrix){
 	
 }
 
-std::vector<cv::Vec4f> ImprovedMarkerDetector::computeExactBorderLines(cv::Mat inputFrame, std::vector<cv::Point> &approximatedPolygon){
-	std::vector<cv::Vec4f> borderLines;
+cv::vector<cv::Vec4f> ImprovedMarkerDetector::computeExactBorderLines(cv::Mat inputFrame, cv::vector<cv::Point> &approximatedPolygon){
+	cv::vector<cv::Vec4f> borderLines;
 	for(size_t j = 0; j < 4; j++){
 		//circle(image, approx[j], 3, Scalar(0,255,0), 1, CV_AA, 0);
 		//Divide edges in 7 equal pieces
@@ -213,7 +217,7 @@ std::vector<cv::Vec4f> ImprovedMarkerDetector::computeExactBorderLines(cv::Mat i
 		vecY.y = -vecX.x;
 		
 		//Array for exact points
-		std::vector<cv::Point2f> exactPoints;
+		cv::vector<cv::Point2f> exactPoints;
 		
 		for(size_t k = 1; k < 7; k++){
 			//Distance point

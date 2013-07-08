@@ -17,10 +17,10 @@ FretBoard FretBoardSerializer::deserialize(QString serializedData){
     readFretboard.setMarkerRotation(fileLines[0].toDouble());
     readFretboard.setMarkerScale(fileLines[1].toDouble());
     std::vector<std::vector<cv::Point2d> > intersectionPoints;
-    for(int i=2; i<fileLines.size(); i++){
+    for(int i=2; i<fileLines.size()-1; i++){
       std::vector<cv::Point2d> fret;
       QStringList splittedLine = fileLines[i].split(";");
-      if(splittedLine.size()==2){
+      if(splittedLine.size()>0){
         for(int j=0;j<splittedLine.size();j++){
           QStringList pointVals = splittedLine[j].split(",");
           fret.push_back(cv::Point2d(pointVals[0].toDouble(),pointVals[1].toDouble()));

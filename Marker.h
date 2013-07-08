@@ -7,8 +7,6 @@ class Marker
 public:
   Marker();
   Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations);
-  Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance, int detectionRotations);
-  Marker(cv::vector<cv::Point2f> cornerPoints, int markerID, double distance, int detectionRotations);
 
   ~Marker(void);
 

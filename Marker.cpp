@@ -23,32 +23,6 @@ Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distan
   indexMarkerCorners();  
 }
 
-Marker::Marker(cv::vector<cv::Point2f> cornerPoints, int markerID, double distance, int detectionRotations)
-:_markerID(markerID),
-_distance(distance),
-_detectionRotations(detectionRotations),
-_valid(true)
-{
-  _cornerPoints.clear();
-  for(size_t i=0; i<cornerPoints.size(); i++){
-    _cornerPoints.push_back(cornerPoints[i]);
-  }
-  indexMarkerCorners();
-}
-
-
-Marker::Marker(cv::vector<CvPoint2D32f> cornerPoints, int markerID, double distance, int detectionRotations)
-  :_markerID(markerID),
-  _distance(distance),
-  _detectionRotations(detectionRotations),
-  _valid(true)
-{
-  _cornerPoints.clear();
-  for(size_t i=0; i<cornerPoints.size(); i++){
-    _cornerPoints.push_back(cvPointFrom32f(cornerPoints[i]));
-  }
-  indexMarkerCorners();
-}
 
 Marker::~Marker(void)
 {

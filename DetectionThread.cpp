@@ -31,7 +31,7 @@ DetectionThread::~DetectionThread(void)
 
 void DetectionThread::run(){
   while(_terminateThread==false){
-    QReadLocker locker(&_lock);
+    QWriteLocker locker(&_lock);
     if(_currentInputFrame!=0){
 
       //detect markers in input frame
@@ -69,6 +69,7 @@ void DetectionThread::setInputFrame(cv::Mat* inputFrame){
 }
 
 Marker DetectionThread::getCurrentMarker(){
+  //QReadLocker locker(&_lock);
   return _currentMarker;
 }
 

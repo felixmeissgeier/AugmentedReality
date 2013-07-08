@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init2.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath("sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -65,13 +65,13 @@ void ARExercise::refresh(){
   if(_cap!=0 && _cap->isOpened()){
 
     *_cap >> _currentInputFrame;
-    //drawFrame = _currentInputFrame.clone();
-    
+ 
     if(_currentInputFrame.empty()==false){
       QImage::Format imgFormat;
       imgFormat = QImage::Format_RGB888;
       
       _detectionThread.setInputFrame(&_currentInputFrame);
+
       _currentMarker = _detectionThread.getCurrentMarker();
       drawCalibration();
 
@@ -86,6 +86,9 @@ void ARExercise::refresh(){
       img = img.rgbSwapped();
    
       ui.imageLabel->setPixmap(QPixmap::fromImage(img));
+    }
+    else{
+      _detectionThread.setInputFrame(0);
     }
   }
   else{
