@@ -45,7 +45,7 @@ public slots:
   void fretBoardDetected();
   void calibrateGuitar();
   void saveFretboardToFile();
-  cv::Mat drawCalibration(cv::Mat image);
+  void drawCalibration();
   void updateTabulatureDataSetIndex(int);
 
 private:

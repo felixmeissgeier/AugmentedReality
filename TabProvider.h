@@ -35,7 +35,7 @@ private:
   QTimer _tabDataSetUpdateTimer;
 	Tabulature					_tabulature;
 	size_t							_tabulatureSize;
-	size_t							_tabCounter;
+	int							_tabCounter;
 	
 private slots:
 	void provideNextTabulatureDataSet();

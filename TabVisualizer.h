@@ -11,7 +11,7 @@ public:
   TabVisualizer(Tabulature);
   ~TabVisualizer(void);
   void setTabulatureDataSetIndex(int tabulatureDataSetIndex);
-  void drawTabulature(cv::Mat& frame);
+  void drawTabulature(cv::Mat* frame);
 
 private:
   Tabulature _tabulature;

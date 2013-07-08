@@ -19,7 +19,7 @@ public:
   MarkerDetector(void);
   ~MarkerDetector(void);
 
-  std::vector<Marker> detectMarkers(cv::Mat inputFrame, ThresholdSettings thresholdSettings);
+  std::vector<Marker> detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings);
 
 private:
   void computeSamplingPoints(cv::vector<cv::Point> approximatedPolygon, cv::vector<cv::vector<cv::Point2f> > &computedSamplingPoints, cv::Mat thresholdFrame);

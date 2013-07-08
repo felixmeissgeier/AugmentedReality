@@ -19,7 +19,7 @@ protected:
 public:
   DetectionThread(void);
   ~DetectionThread(void);
-  void setInputFrame(cv::Mat inputFrame);
+  void setInputFrame(cv::Mat* inputFrame);
   Marker getCurrentMarker();
   void setCalibrationMode(bool calibrationModeOn);
   FretBoard getCurrentFretBoard();
@@ -30,7 +30,7 @@ private:
   int _refreshInterval;
   bool _terminateThread;
   bool _calibrationModeOn;
-  cv::Mat _currentInputFrame;
+  cv::Mat* _currentInputFrame;
   Marker _currentMarker;
   ImprovedMarkerDetector _markerDetector;
   GuitarDetector _guitarDetector;

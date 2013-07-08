@@ -13,12 +13,12 @@ MarkerDetector::~MarkerDetector(void)
 {
 }
 
-std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdSettings thresholdSettings){
+std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings){
   std::vector<Marker> detectedMarkers;
-  if(!inputFrame.empty()){
+  if(inputFrame!=0){
     cv::Mat grayscaleFrame,contourFrame,thresholdFrame;
 
-    cv::cvtColor(inputFrame,grayscaleFrame,CV_BGR2GRAY);
+    cv::cvtColor(*inputFrame,grayscaleFrame,CV_BGR2GRAY);
     if(thresholdSettings.useAdaptiveThreshold==false){
       cv::threshold(grayscaleFrame,thresholdFrame,(double)thresholdSettings.thresholdValue,255.0,thresholdSettings.thresholdType);
     }
@@ -118,8 +118,8 @@ std::vector<Marker> MarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdS
         // transfer camera coords to screen coords
         for(int i = 0; i<4; i++)
         {
-          cornerPointsNew[i].x -= inputFrame.cols/2;
-          cornerPointsNew[i].y = -cornerPointsNew[i].y + inputFrame.rows/2;
+          cornerPointsNew[i].x -= inputFrame->cols/2;
+          cornerPointsNew[i].y = -cornerPointsNew[i].y + inputFrame->rows/2;
         }
 
         cv::Mat transformMat = cv::getPerspectiveTransform(srcPoints,dstPoints);

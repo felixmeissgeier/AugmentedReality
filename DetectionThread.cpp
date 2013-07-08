@@ -4,7 +4,8 @@
 DetectionThread::DetectionThread(void)
   :_terminateThread(false),
   _refreshInterval(33),
-  _calibrationModeOn(false)
+  _calibrationModeOn(false),
+  _currentInputFrame(0)
 {
   //cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
 
@@ -30,8 +31,8 @@ DetectionThread::~DetectionThread(void)
 
 void DetectionThread::run(){
   while(_terminateThread==false){
-    QWriteLocker locker(&_lock);
-    if(!_currentInputFrame.empty()){
+    QReadLocker locker(&_lock);
+    if(_currentInputFrame!=0){
 
       //detect markers in input frame
       std::vector<Marker> detectedMarkers = _markerDetector.detectMarkers(_currentInputFrame,_markerDetectionThresholdSettings);
@@ -54,33 +55,28 @@ void DetectionThread::run(){
 
       if(_calibrationModeOn==true && _currentMarker.isValid()==true){
         //detect fret board
-        cv::Mat fretDetectionFrame = _guitarDetector.detectFretBoard(_currentInputFrame,_guitarDetectionThresholdSettings,_currentMarker,_currentFretBoard);
+        cv::Mat fretDetectionFrame = _guitarDetector.detectFretBoard(*_currentInputFrame,_guitarDetectionThresholdSettings,_currentMarker,_currentFretBoard);
         //cv::imshow("subwindow",fretDetectionFrame);
       }
 
     }
-    locker.unlock();
     this->msleep(_refreshInterval);
   }
 }
 
-void DetectionThread::setInputFrame(cv::Mat inputFrame){
-  QWriteLocker locker(&_lock);
+void DetectionThread::setInputFrame(cv::Mat* inputFrame){
   _currentInputFrame = inputFrame;
 }
 
 Marker DetectionThread::getCurrentMarker(){
-  QReadLocker locker(&_lock);
   return _currentMarker;
 }
 
 void DetectionThread::setCalibrationMode(bool calibrationModeOn){
-  QWriteLocker locker(&_lock);
   _calibrationModeOn = calibrationModeOn;
 }
 
 FretBoard DetectionThread::getCurrentFretBoard(){
-  QReadLocker locker(&_lock);
   return _currentFretBoard;
 }
 

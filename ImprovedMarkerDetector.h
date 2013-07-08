@@ -27,7 +27,7 @@ public:
   ImprovedMarkerDetector(void);
   ~ImprovedMarkerDetector(void);
 	
-  std::vector<Marker> detectMarkers(cv::Mat inputFrame, ThresholdSettings thresholdSettings);
+  std::vector<Marker> detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings);
 	
 private:
   std::vector<cv::Vec4f> computeExactBorderLines(cv::Mat inputFrame, cv::vector<cv::Point> &approximatedPolygon);

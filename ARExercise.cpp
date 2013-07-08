@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init2.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath("sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -62,29 +62,27 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
 
 void ARExercise::refresh(){
   
-  cv::Mat drawFrame;
-  
   if(_cap!=0 && _cap->isOpened()){
 
     *_cap >> _currentInputFrame;
-    drawFrame = _currentInputFrame.clone();
+    //drawFrame = _currentInputFrame.clone();
     
-    if(drawFrame.empty()==false){
+    if(_currentInputFrame.empty()==false){
       QImage::Format imgFormat;
       imgFormat = QImage::Format_RGB888;
       
-      _detectionThread.setInputFrame(drawFrame);
+      _detectionThread.setInputFrame(&_currentInputFrame);
       _currentMarker = _detectionThread.getCurrentMarker();
-      drawFrame = drawCalibration(drawFrame);
+      drawCalibration();
 
       //just mark right top corner of marker
       if(_currentMarker.isValid()){
-        cv::circle(drawFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
+        cv::circle(_currentInputFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
       }
 
-      _tabVisualizer->drawTabulature(drawFrame);
+      _tabVisualizer->drawTabulature(&_currentInputFrame);
 
-      QImage img(drawFrame.data,drawFrame.size[1],drawFrame.size[0],imgFormat);
+      QImage img(_currentInputFrame.data,_currentInputFrame.size[1],_currentInputFrame.size[0],imgFormat);
       img = img.rgbSwapped();
    
       ui.imageLabel->setPixmap(QPixmap::fromImage(img));
@@ -104,7 +102,7 @@ void ARExercise::updateTabulatureDataSetIndex(int index){
 /*
 *   This method draws detected sampling points of current fretboard calibration
 */
-cv::Mat ARExercise::drawCalibration(cv::Mat image){
+void ARExercise::drawCalibration(){
   QString succesfulSaved = "";
   if(_showSavedLabelCounter>=0 && _showSavedLabelCounter<100){
     _showSavedLabelCounter++;
@@ -113,20 +111,20 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
   else if(_showSavedLabelCounter>=0 && _showSavedLabelCounter>100){
     _showSavedLabelCounter = -1;
   }
-  cv::Mat mat = image.clone();
-  if(_currentMarker.isValid()){
+
+  if(_currentMarker.isValid() && !_currentInputFrame.empty()){
     if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
       std::vector<std::vector<cv::Point2d> > intersectionPoints;
       cv::Scalar markColor;
       if(_fretBoardDetected==true){
-        cv::putText(mat,"Fretboard Detected"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
+        cv::putText(_currentInputFrame,"Fretboard Detected"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
         intersectionPoints =  _detectedFretBoard.getIntersectionPoints();
         markColor[0]=0;
         markColor[1]=230;
         markColor[2]=0;
       }
       else if(_calibrationModeOn==true){
-        cv::putText(mat,"Calibration Mode"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
+        cv::putText(_currentInputFrame,"Calibration Mode"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
         _currentFretBoard = _detectionThread.getCurrentFretBoard();
         intersectionPoints =  _currentFretBoard.getIntersectionPoints();
         markColor[0]=0;
@@ -142,7 +140,7 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
         cv::Point2d leftCorner = cv::Point2d(_currentMarker.getRightTopCorner().x-_currentMarker.getTopEdgeLength(),_currentMarker.getRightTopCorner().y);
         cv::Point2d rotatedLeftCorner1 = cv::Point2d(leftCorner.x-origin.x,leftCorner.y-origin.y);
         cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
-        cv::circle(mat,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
+        cv::circle(_currentInputFrame,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
       
         for(uint fret=0; fret<intersectionPoints.size(); fret++){
           for(uint string=0; string<intersectionPoints[fret].size(); string++){
@@ -161,19 +159,18 @@ cv::Mat ARExercise::drawCalibration(cv::Mat image){
               cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
               fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
             }
-            cv::circle(mat,fretboardPoint,3,markColor);
+            cv::circle(_currentInputFrame,fretboardPoint,3,markColor);
           }
         }
       }
     }
   }
-
-  return mat;
 }
 
 void ARExercise::inputDeviceChanged(){
   _currentMarker = Marker();
   _captureTimer->stop();
+
   if(_cap!=0){
     _cap->release();
   }

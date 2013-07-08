@@ -23,12 +23,12 @@ ImprovedMarkerDetector::~ImprovedMarkerDetector(void)
 {
 }
 
-std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat inputFrame, ThresholdSettings thresholdSettings){
+std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings){
   std::vector<Marker> detectedMarkers;
-  if(!inputFrame.empty()){
+  if(inputFrame!=0){
 		cv::Mat greyClone, greyFrame;
-		greyFrame = inputFrame.clone();
-		cv::cvtColor(inputFrame,greyFrame,CV_RGB2GRAY);
+		//greyFrame = inputFrame.clone();
+		cv::cvtColor(*inputFrame,greyFrame,CV_RGB2GRAY);
 		greyClone = greyFrame.clone();
 		
 		//Thresholding
@@ -66,10 +66,10 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat inputFrame, Th
 			//just rectangles
 			if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30)){
 				//Rectangle found - might be a marker
-				polylines(inputFrame, approx, true, cv::Scalar(0,0,255), 1, CV_AA, 0);
+				polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, CV_AA, 0);
 				
 				//Computed border lines which will be intersected later to get exact corners
-				std::vector<cv::Vec4f> borderLines = computeExactBorderLines(inputFrame, approx);
+				std::vector<cv::Vec4f> borderLines = computeExactBorderLines(*inputFrame, approx);
 
 				
 				
