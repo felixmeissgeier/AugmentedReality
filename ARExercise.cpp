@@ -173,6 +173,7 @@ void ARExercise::drawCalibration(){
 void ARExercise::inputDeviceChanged(){
   _currentMarker = Marker();
   _captureTimer->stop();
+  _currentInputFrame = 0;
 
   if(_cap!=0){
     _cap->release();

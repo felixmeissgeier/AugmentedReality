@@ -57,7 +57,8 @@ cv::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, Th
 		//Data for approximation
 		cv::vector<cv::Point> approx;
 		cv::vector<cv::Rect> rectangles (contours.size());
-		
+		cv::Mat frame = inputFrame->clone();
+        
 		//Check all contours
 		for(size_t i = 0; i < contours.size(); i++){
 			//Approximation
@@ -65,14 +66,14 @@ cv::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, Th
 			rectangles[i] = boundingRect(approx);
 			//just rectangles
 			if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30)){
-				//Rectangle found - might be a marker
-				polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, CV_AA, 0);
+				
+        
+        //Rectangle found - might be a marker
+				polylines(frame, approx, true, cv::Scalar(0,0,255), 1, CV_AA, 0);
 				
 				//Computed border lines which will be intersected later to get exact corners
-				cv::vector<cv::Vec4f> borderLines = computeExactBorderLines(*inputFrame, approx);
-
-				
-				
+        cv::vector<cv::Vec4f> borderLines = computeExactBorderLines(frame, approx);
+        			
 				if(borderLines.size() == 0){
 					continue;
 				}
