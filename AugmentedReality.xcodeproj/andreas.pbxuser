@@ -156,6 +156,9 @@
 			E1D6C082178C240D00F0BF4D /* PBXTextBookmark */ = E1D6C082178C240D00F0BF4D /* PBXTextBookmark */;
 			E1D6C083178C240D00F0BF4D /* PBXTextBookmark */ = E1D6C083178C240D00F0BF4D /* PBXTextBookmark */;
 			E1D6C084178C240D00F0BF4D /* PBXTextBookmark */ = E1D6C084178C240D00F0BF4D /* PBXTextBookmark */;
+			E1D6C090178C25CA00F0BF4D /* PBXTextBookmark */ = E1D6C090178C25CA00F0BF4D /* PBXTextBookmark */;
+			E1D6C092178C279C00F0BF4D /* PBXTextBookmark */ = E1D6C092178C279C00F0BF4D /* PBXTextBookmark */;
+			E1D6C099178C27F200F0BF4D /* PBXTextBookmark */ = E1D6C099178C27F200F0BF4D /* PBXTextBookmark */;
 		};
 		sourceControlManager = E1D6BE691789656300F0BF4D /* Source Control */;
 		userBuildSettings = {
@@ -480,7 +483,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 162";
 		rLen = 0;
-		rLoc = 5163;
+		rLoc = 5155;
 		rType = 0;
 		vrLen = 464;
 		vrLoc = 4879;
@@ -528,7 +531,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 162";
 		rLen = 0;
-		rLoc = 5163;
+		rLoc = 5155;
 		rType = 0;
 		vrLen = 460;
 		vrLoc = 4885;
@@ -547,7 +550,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 162";
 		rLen = 0;
-		rLoc = 5215;
+		rLoc = 5207;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 4885;
@@ -576,7 +579,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 163";
 		rLen = 0;
-		rLoc = 5162;
+		rLoc = 5154;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 4581;
@@ -586,7 +589,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 162";
 		rLen = 0;
-		rLoc = 5158;
+		rLoc = 5150;
 		rType = 0;
 		vrLen = 984;
 		vrLoc = 4581;
@@ -596,7 +599,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 163";
 		rLen = 0;
-		rLoc = 5162;
+		rLoc = 5154;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 4581;
@@ -606,7 +609,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 166";
 		rLen = 0;
-		rLoc = 5215;
+		rLoc = 5207;
 		rType = 0;
 		vrLen = 506;
 		vrLoc = 4879;
@@ -645,7 +648,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 166";
 		rLen = 0;
-		rLoc = 5163;
+		rLoc = 5155;
 		rType = 0;
 		vrLen = 506;
 		vrLoc = 4879;
@@ -674,7 +677,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 165";
 		rLen = 0;
-		rLoc = 5162;
+		rLoc = 5154;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 4630;
@@ -743,7 +746,7 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 165";
 		rLen = 0;
-		rLoc = 5162;
+		rLoc = 5154;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 4630;
@@ -753,16 +756,46 @@
 		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
 		name = "ImprovedMarkerDetector.cpp: 163";
 		rLen = 0;
-		rLoc = 5215;
+		rLoc = 5207;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 4779;
 	};
+	E1D6C090178C25CA00F0BF4D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
+		name = "ImprovedMarkerDetector.cpp: 30";
+		rLen = 0;
+		rLoc = 618;
+		rType = 0;
+		vrLen = 861;
+		vrLoc = 407;
+	};
+	E1D6C092178C279C00F0BF4D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
+		name = "ImprovedMarkerDetector.cpp: 28";
+		rLen = 0;
+		rLoc = 594;
+		rType = 0;
+		vrLen = 965;
+		vrLoc = 409;
+	};
+	E1D6C099178C27F200F0BF4D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */;
+		name = "ImprovedMarkerDetector.cpp: 30";
+		rLen = 0;
+		rLoc = 627;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 526;
+	};
 	E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 5382}}";
-			sepNavSelRange = "{5215, 0}";
-			sepNavVisRange = "{4779, 1055}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 5590}}";
+			sepNavSelRange = "{627, 0}";
+			sepNavVisRange = "{526, 858}";
 		};
 	};
 }

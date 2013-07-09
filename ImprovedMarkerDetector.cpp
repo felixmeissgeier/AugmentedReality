@@ -25,10 +25,10 @@ ImprovedMarkerDetector::~ImprovedMarkerDetector(void)
 
 cv::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, ThresholdSettings thresholdSettings){
   cv::vector<Marker> detectedMarkers;
+	cv::Mat greyFrame, greyClone;
   if(inputFrame!=0){
-		cv::Mat greyClone, greyFrame;
-		//greyFrame = inputFrame.clone();
-		cv::cvtColor(*inputFrame,greyFrame,CV_RGB2GRAY);
+		greyFrame = inputFrame->clone();
+		cvtColor(greyFrame,greyFrame,CV_RGB2GRAY);
 		greyClone = greyFrame.clone();
 		
 		//Thresholding
