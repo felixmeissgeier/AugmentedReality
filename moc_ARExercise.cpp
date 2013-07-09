@@ -22,7 +22,7 @@ static const uint qt_meta_data_ARExercise[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -38,7 +38,8 @@ static const uint qt_meta_data_ARExercise[] = {
      105,   11,   11,   11, 0x0a,
      125,   11,   11,   11, 0x0a,
      143,   11,   11,   11, 0x0a,
-     179,  173,  165,   11, 0x0a,
+     165,   11,   11,   11, 0x0a,
+     183,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -48,8 +49,8 @@ static const char qt_meta_stringdata_ARExercise[] = {
     "showCalibrationChanged()\0"
     "reloadFileInputPushed()\0pauseVideo()\0"
     "fretBoardDetected()\0calibrateGuitar()\0"
-    "saveFretboardToFile()\0cv::Mat\0image\0"
-    "drawCalibration(cv::Mat)\0"
+    "saveFretboardToFile()\0drawCalibration()\0"
+    "updateTabulatureDataSetIndex(int)\0"
 };
 
 void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -66,8 +67,8 @@ void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->fretBoardDetected(); break;
         case 6: _t->calibrateGuitar(); break;
         case 7: _t->saveFretboardToFile(); break;
-        case 8: { cv::Mat _r = _t->drawCalibration((*reinterpret_cast< cv::Mat(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< cv::Mat*>(_a[0]) = _r; }  break;
+        case 8: _t->drawCalibration(); break;
+        case 9: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -105,9 +106,9 @@ int ARExercise::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

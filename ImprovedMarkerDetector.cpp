@@ -159,7 +159,8 @@ cv::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, Th
 				estimateSquarePose(result, pointArrayforPoseEstimation, 0.045);
         std::vector<cv::Point2d> cornerPoints;
         for(unsigned i=0; i<newCorners.size(); i++){
-          cornerPoints.push_back(cv::Point2d(newCorners.at(i)));
+					cv::Point2f p_f = newCorners.at(i);
+          cornerPoints.push_back(cvPointFrom32f(p_f));
         }
         Marker marker(cornerPoints,code,(double)result[11],angle);
 				detectedMarkers.push_back(marker);
