@@ -57,7 +57,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
       _tabProvider->start();
     }
   }
-  _detectionThread.start();
+  //_detectionThread.start();
 }
 
 void ARExercise::refresh(){

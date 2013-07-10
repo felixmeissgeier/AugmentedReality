@@ -69,7 +69,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 		approxPolyDP(cv::Mat(contours[i]), approx, 5, true);
 		rectangles[i] = boundingRect(approx);
 		//just rectangles
-		if(approx.size() == 4 && (rectangles[i].height > 40 && rectangles[i].width > 40)){
+		if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30)){
 			//polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, cv::CV_AA, 0);
 			
 			//Fitted lines
@@ -124,12 +124,8 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 						//Stripe length
 						for(int n = nStart; n <= nStop; n++){
 							cv::Point2f subPixel;
-							subPixel.x = (double)point.x + ((double)m * vecX.x) + ((double)n * vecY.x);
-							subPixel.y = (double)point.y + ((double)m * vecX.y) + ((double)n * vecY.y);
-							
-							cv::Point2d drawingSubpixel;
-							drawingSubpixel.x = (double)subPixel.x;
-							drawingSubpixel.y = (double)subPixel.y;
+							subPixel.x = point.x + ((float)m * vecX.x) + ((float)n * vecY.x);
+							subPixel.y = point.y + ((float)m * vecX.y) + ((float)n * vecY.y);
 							
 							int value = subpixSampleSafe(*inputFrame, subPixel);
 							
@@ -173,17 +169,17 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 					y2 = (maxIndex >= stripeSize.height-3) ? 0 : result[maxIndex+1];
 					
 					double pos = (y2 - y0) / (4*y1 - 2*y0 - 2*y2 );
-					
+					/*
 					if(std::isnan(pos) || std::isinf(pos)){
 						continue;
 					}
-					
+					*/
 					cv::Point2f exactPoint;
 					int maxIndexShift = maxIndex - stripeSize.height>>1 + 1;
 					
 					//shift the original edgepoint accordingly
-					exactPoint.x = (float)point.x + (((float)maxIndexShift+pos) * vecY.x);
-					exactPoint.y = (float)point.y + (((float)maxIndexShift+pos) * vecY.y);
+					exactPoint.x = point.x + (((float)maxIndexShift+pos) * vecY.x);
+					exactPoint.y = point.y + (((float)maxIndexShift+pos) * vecY.y);
 					
 					exactPoints.push_back(exactPoint);
 					
@@ -195,7 +191,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 					borderLines.push_back(fittedLine);
 				}
 			}
-			if(borderLines.size() == 0){
+			if(borderLines.size() < 4){
 				continue;
 			}
 			std::vector<cv::Point2f> newCorners;
@@ -206,6 +202,8 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				cv::Point2f corner = intersect(line1, line2);
 				newCorners.push_back(corner);
 			}
+			
+			if(newCorners.size() < 4) continue;
 			
 			//Do perspective transformation
 			//Marker-Image
@@ -292,6 +290,13 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				for(int i = 0; i < 4; i++)	corrected_corners[(i + angle)%4] = newCorners[i];
 				for(int i = 0; i < 4; i++)	newCorners[i] = corrected_corners[i];
 			}
+			
+			//Output Marker
+			cv::Size outputSize(100,100);
+			cv::Mat tmp(outputSize, CV_8UC1);
+			flip(markerImage, markerImage, 1);
+			resize(markerImage, tmp, outputSize, 0, 0, CV_INTER_NN);
+			imshow("Marker", tmp);
 			
 			//Pose estimation
 			//Array of CVPoint2D32f
