@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath("sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -71,7 +71,7 @@ void ARExercise::refresh(){
       imgFormat = QImage::Format_RGB888;
       
       _detectionThread.setInputFrame(&_currentInputFrame);
-
+			_detectionThread.run();
       _currentMarker = _detectionThread.getCurrentMarker();
       drawCalibration();
 
@@ -79,8 +79,8 @@ void ARExercise::refresh(){
       if(_currentMarker.isValid()){
         cv::Point pt1 = _currentMarker.getRightTopCorner();
 				cv::Point pt2 = _currentMarker.getLeftTopCorner();
-				cv::Point pt3 = _currentMarker.getRightBottomCorner();
-				cv::Point pt4 = _currentMarker.getLeftBottomCorner();
+				cv::Point pt3 = _currentMarker.getLeftBottomCorner();
+				cv::Point pt4 = _currentMarker.getRightBottomCorner();
         cv::circle(_currentInputFrame,pt1,3,cv::Scalar(230,0,0));
         cv::circle(_currentInputFrame,pt2,3,cv::Scalar(230,0,0));
         cv::circle(_currentInputFrame,pt3,3,cv::Scalar(230,0,0));

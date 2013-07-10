@@ -7,13 +7,12 @@
 #include "ThresholdSettings.h"
 #include "Marker.h"
 #include "ImprovedMarkerDetector.h"
-#include "MarkerDetector.h"
 #include "GuitarDetector.h"
 #include "FretBoard.h"
 
 class DetectionThread : public QThread
 {
-protected:
+public:
   void run();
 
 public:

@@ -30,7 +30,7 @@ DetectionThread::~DetectionThread(void)
 }
 
 void DetectionThread::run(){
-  while(_terminateThread==false){
+  //while(_terminateThread==false){
     QWriteLocker locker(&_lock);
     if(_currentInputFrame!=0){
 
@@ -60,8 +60,8 @@ void DetectionThread::run(){
       }
 
     }
-    this->msleep(_refreshInterval);
-  }
+    //this->msleep(_refreshInterval);
+  //}
 }
 
 void DetectionThread::setInputFrame(cv::Mat* inputFrame){
