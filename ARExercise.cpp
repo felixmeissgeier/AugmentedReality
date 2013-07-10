@@ -77,7 +77,18 @@ void ARExercise::refresh(){
 
       //just mark right top corner of marker
       if(_currentMarker.isValid()){
-        cv::circle(_currentInputFrame,_currentMarker.getRightTopCorner(),3,cv::Scalar(230,0,0));
+        cv::Point pt1 = _currentMarker.getRightTopCorner();
+				cv::Point pt2 = _currentMarker.getLeftTopCorner();
+				cv::Point pt3 = _currentMarker.getRightBottomCorner();
+				cv::Point pt4 = _currentMarker.getLeftBottomCorner();
+        cv::circle(_currentInputFrame,pt1,3,cv::Scalar(230,0,0));
+        cv::circle(_currentInputFrame,pt2,3,cv::Scalar(230,0,0));
+        cv::circle(_currentInputFrame,pt3,3,cv::Scalar(230,0,0));
+        cv::circle(_currentInputFrame,pt4,3,cv::Scalar(230,0,0));
+				cv::line(_currentInputFrame, pt1, pt2, cv::Scalar(230,0,0), 2, 8, 0);
+				cv::line(_currentInputFrame, pt2, pt3, cv::Scalar(230,0,0), 2, 8, 0);
+				cv::line(_currentInputFrame, pt3, pt4, cv::Scalar(230,0,0), 2, 8, 0);
+				cv::line(_currentInputFrame, pt4, pt1, cv::Scalar(230,0,0), 2, 8, 0);
       }
 
       _tabVisualizer->drawTabulature(&_currentInputFrame);
@@ -173,7 +184,6 @@ void ARExercise::drawCalibration(){
 void ARExercise::inputDeviceChanged(){
   _currentMarker = Marker();
   _captureTimer->stop();
-  _currentInputFrame = 0;
 
   if(_cap!=0){
     _cap->release();
