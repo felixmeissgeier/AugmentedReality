@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath("sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -57,7 +57,8 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
       _tabProvider->start();
     }
   }
-  //_detectionThread.start();
+  _detectionThread = new DetectionThread(this);
+  _detectionThread->start();
 }
 
 void ARExercise::refresh(){
@@ -65,14 +66,16 @@ void ARExercise::refresh(){
   if(_cap!=0 && _cap->isOpened()){
 
     *_cap >> _currentInputFrame;
- 
+
     if(_currentInputFrame.empty()==false){
+      _lock.lockForWrite();
+      _bufferFrame = _currentInputFrame.clone();
+      _lock.unlock();
       QImage::Format imgFormat;
       imgFormat = QImage::Format_RGB888;
       
-      _detectionThread.setInputFrame(&_currentInputFrame);
-			_detectionThread.run();
-      _currentMarker = _detectionThread.getCurrentMarker();
+      //_detectionThread.setInputFrame(&_currentInputFrame);
+      _currentMarker = _detectionThread->getCurrentMarker();
       drawCalibration();
 
       //just mark right top corner of marker
@@ -99,7 +102,7 @@ void ARExercise::refresh(){
       ui.imageLabel->setPixmap(QPixmap::fromImage(img));
     }
     else{
-      _detectionThread.setInputFrame(0);
+      //_detectionThread.setInputFrame(0);
     }
   }
   else{
@@ -107,6 +110,10 @@ void ARExercise::refresh(){
   }
 }
 
+cv::Mat ARExercise::getBufferFrame(){
+  QReadLocker locker(&_lock);
+  return _bufferFrame;
+}
 void ARExercise::updateTabulatureDataSetIndex(int index){
   if(_tabVisualizer!=0){
     _tabVisualizer->setTabulatureDataSetIndex(index);
@@ -139,7 +146,7 @@ void ARExercise::drawCalibration(){
       }
       else if(_calibrationModeOn==true){
         cv::putText(_currentInputFrame,"Calibration Mode"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
-        _currentFretBoard = _detectionThread.getCurrentFretBoard();
+        _currentFretBoard = _detectionThread->getCurrentFretBoard();
         intersectionPoints =  _currentFretBoard.getIntersectionPoints();
         markColor[0]=0;
         markColor[1]=0;
@@ -241,14 +248,14 @@ void ARExercise::showCalibrationChanged(){
 void ARExercise::calibrateGuitar(){
   _calibrationModeOn = true;
   _fretBoardDetected = false;
-  _detectionThread.setCalibrationMode(_calibrationModeOn);
+  _detectionThread->setCalibrationMode(_calibrationModeOn);
 }
 
 void ARExercise::fretBoardDetected(){
   _detectedFretBoard = _currentFretBoard;
   _fretBoardDetected = true;
   _calibrationModeOn = false;
-  _detectionThread.setCalibrationMode(_calibrationModeOn);
+  _detectionThread->setCalibrationMode(_calibrationModeOn);
   ui.pushSaveFretboard2File->setEnabled(true);
 }
 
@@ -265,10 +272,54 @@ void ARExercise::saveFretboardToFile(){
   }
 }
 
+void ARExercise::thresholdTypeChanged(){
+  if(ui.radioFixedLevelThreshold->isChecked()){
+    _detectionThread->_markerDetectionThresholdSettings.useAdaptiveThreshold = false;
+  }
+  else if(ui.radioAdaptiveThreshold->isChecked()){
+    _detectionThread->_markerDetectionThresholdSettings.useAdaptiveThreshold = true;
+  }
+  if(ui.comboThresholdType->currentText().compare("BINARY")==0){
+    _detectionThread->_markerDetectionThresholdSettings.thresholdType = cv::THRESH_BINARY;
+  }
+  else if(ui.comboThresholdType->currentText().compare("INVERSE BINARY")==0){
+    _detectionThread->_markerDetectionThresholdSettings.thresholdType = cv::THRESH_BINARY_INV;
+  }
+}
+
+void ARExercise::thresholdValueChanged(int value){
+  _detectionThread->_markerDetectionThresholdSettings.thresholdValue = ui.sliderThresholdValue->value();
+  ui.labelThresholdValue->setText("threshold value: "+QString::number(_detectionThread->_markerDetectionThresholdSettings.thresholdValue));
+}
+
+void ARExercise::adaptiveThresholdSettingsChanged(){
+  if(ui.comboAdaptiveMode->currentText().compare("MEAN")==0){
+    _detectionThread->_markerDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
+  }
+  else if(ui.comboAdaptiveMode->currentText().compare("GAUSSIAN")==0){
+    _detectionThread->_markerDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_GAUSSIAN_C;
+  }
+  int adaptiveThresholdBlocksize = ui.spinBlocksize->value();
+  if(adaptiveThresholdBlocksize%2 == 0){
+    QMessageBox::warning(this,"Warning","Blocksize has to be odd number !!");
+    adaptiveThresholdBlocksize++;
+    ui.spinBlocksize->setValue(adaptiveThresholdBlocksize);
+  }
+  if(adaptiveThresholdBlocksize<3){
+    QMessageBox::warning(this,"Warning","Blocksize minimum: 3 !!");
+    adaptiveThresholdBlocksize = 3;
+    ui.spinBlocksize->setValue(adaptiveThresholdBlocksize);
+  }
+
+  _detectionThread->_markerDetectionThresholdSettings.adaptiveThresholdBlocksize = adaptiveThresholdBlocksize;
+
+  _detectionThread->_markerDetectionThresholdSettings.adaptiveThresholdConstantC = ui.spinConstantC->value();
+}
+
 ARExercise::~ARExercise()
 {
-  _detectionThread.terminateThread();
-  _detectionThread.wait();
+  _detectionThread->terminateThread();
+  _detectionThread->wait();
   delete _captureTimer;
   delete _cap;
 }

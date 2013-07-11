@@ -1,20 +1,22 @@
 #include "DetectionThread.h"
+#include "ARExercise.h"
 
 
-DetectionThread::DetectionThread(void)
-  :_terminateThread(false),
-  _refreshInterval(33),
+DetectionThread::DetectionThread(ARExercise* parent)
+  :_parent(parent),
+  _terminateThread(false),
+  _refreshInterval(10),
   _calibrationModeOn(false),
   _currentInputFrame(0)
 {
   //cv::namedWindow( "subwindow", CV_WINDOW_AUTOSIZE );
 
   _markerDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
-  _markerDetectionThresholdSettings.adaptiveThresholdBlocksize = 101;
+  _markerDetectionThresholdSettings.adaptiveThresholdBlocksize = 201;
   _markerDetectionThresholdSettings.adaptiveThresholdConstantC = 5;
   _markerDetectionThresholdSettings.thresholdType = cv::THRESH_BINARY;
-  _markerDetectionThresholdSettings.thresholdValue = 150;
-  _markerDetectionThresholdSettings.useAdaptiveThreshold = true;
+  _markerDetectionThresholdSettings.thresholdValue = 80;
+  _markerDetectionThresholdSettings.useAdaptiveThreshold = false;
 
   _guitarDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
   _guitarDetectionThresholdSettings.useAdaptiveThreshold = true;
@@ -30,8 +32,7 @@ DetectionThread::~DetectionThread(void)
 }
 
 void DetectionThread::run(){
-  //while(_terminateThread==false){
-    QWriteLocker locker(&_lock);
+  while(_terminateThread==false){
     if(_currentInputFrame!=0){
 
       //detect markers in input frame
@@ -60,8 +61,16 @@ void DetectionThread::run(){
       }
 
     }
-    //this->msleep(_refreshInterval);
-  //}
+    this->msleep(_refreshInterval);
+
+    _tmp = _parent->getBufferFrame();
+    if(!_tmp.empty()){
+      _currentInputFrame = &_tmp;
+    }
+    else{
+      _currentInputFrame = 0;
+    }
+  }
 }
 
 void DetectionThread::setInputFrame(cv::Mat* inputFrame){
@@ -69,7 +78,7 @@ void DetectionThread::setInputFrame(cv::Mat* inputFrame){
 }
 
 Marker DetectionThread::getCurrentMarker(){
-  //QReadLocker locker(&_lock);
+  QReadLocker locker(&_lock);
   return _currentMarker;
 }
 

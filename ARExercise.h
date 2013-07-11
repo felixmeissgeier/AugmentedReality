@@ -33,10 +33,13 @@ public:
     ARExercise(QWidget *parent = 0, Qt::WFlags flags = 0);
     ~ARExercise();
     Ui::AugmentedRealityTutorialClass getUI(){return ui;}
-
+    cv::Mat getBufferFrame();
 public slots:
   void refresh();
-  //void recomputeMarkerPosition();
+
+  void thresholdTypeChanged();
+  void thresholdValueChanged(int value);
+  void adaptiveThresholdSettingsChanged();
 
   void inputDeviceChanged();
   void showCalibrationChanged();
@@ -50,7 +53,7 @@ public slots:
 
 private:
     Ui::AugmentedRealityTutorialClass ui;
-    DetectionThread _detectionThread;
+    DetectionThread* _detectionThread;
 		TabProvider* _tabProvider;
     TabVisualizer* _tabVisualizer;
     Marker _currentMarker;
@@ -58,6 +61,7 @@ private:
     int _showSavedLabelCounter;
     cv::VideoCapture* _cap;
     cv::Mat _currentInputFrame, _currentThresholdFrame;
+    cv::Mat _bufferFrame;
     int _camDeviceID;
     QString _inputFilePath;
     QString _tabFilePath;

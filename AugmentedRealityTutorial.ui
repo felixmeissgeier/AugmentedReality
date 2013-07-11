@@ -23,7 +23,7 @@
       <x>10</x>
       <y>10</y>
       <width>941</width>
-      <height>521</height>
+      <height>662</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -129,6 +129,184 @@
             <property name="checked">
              <bool>true</bool>
             </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Threshold Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QFormLayout" name="formLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Threshold Type:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboThresholdType">
+              <item>
+               <property name="text">
+                <string>BINARY</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>INVERSE BINARY</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioFixedLevelThreshold">
+            <property name="text">
+             <string>Fixed-Level Threshold</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="title">
+             <string>Fixed-Level Threshold Settings</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="labelThresholdValue">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="text">
+                <string>threshold value: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="sliderThresholdValue">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="value">
+                <number>60</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioAdaptiveThreshold">
+            <property name="text">
+             <string>Adaptive Threshold</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="title">
+             <string>Adaptive Threshold Settings</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="1">
+              <widget class="QComboBox" name="comboAdaptiveMode">
+               <item>
+                <property name="text">
+                 <string>MEAN</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>GAUSSIAN</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Adaptive Mode:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="spinBlocksize">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+               <property name="singleStep">
+                <number>2</number>
+               </property>
+               <property name="value">
+                <number>101</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Blocksize:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="spinConstantC">
+               <property name="maximum">
+                <double>9999.989999999999782</double>
+               </property>
+               <property name="value">
+                <double>5.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>constant C:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -293,8 +471,8 @@
    <slot>fretBoardDetected()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>867</x>
-     <y>300</y>
+     <x>938</x>
+     <y>620</y>
     </hint>
     <hint type="destinationlabel">
      <x>713</x>
@@ -309,12 +487,140 @@
    <slot>saveFretboardToFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>833</x>
-     <y>328</y>
+     <x>938</x>
+     <y>649</y>
     </hint>
     <hint type="destinationlabel">
      <x>739</x>
      <y>376</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboThresholdType</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>thresholdTypeChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>829</x>
+     <y>298</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>457</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioFixedLevelThreshold</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>thresholdTypeChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>691</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioFixedLevelThreshold</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_3</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>809</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>809</x>
+     <y>376</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioAdaptiveThreshold</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>809</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>809</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderThresholdValue</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>thresholdValueChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>753</x>
+     <y>390</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>468</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboAdaptiveMode</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>adaptiveThresholdSettingsChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>788</x>
+     <y>485</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>280</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBlocksize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>adaptiveThresholdSettingsChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>795</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>515</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinConstantC</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>adaptiveThresholdSettingsChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>815</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>612</x>
+     <y>539</y>
     </hint>
    </hints>
   </connection>

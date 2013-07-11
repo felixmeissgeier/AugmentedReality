@@ -15,6 +15,7 @@ ImprovedMarkerDetector::ImprovedMarkerDetector(void)
 :_stripeSizeRows(9),
 _stripeSizeCols(3)
 {
+  cv::namedWindow( "Threshold", CV_WINDOW_AUTOSIZE );
   initMarkerList();
 }
 
@@ -52,8 +53,13 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 	*/ 
 	
 	//Normal threshold
-	adaptiveThreshold(greyImage,greyImage,255,cv::ADAPTIVE_THRESH_MEAN_C,cv::THRESH_BINARY,211,20);
-	
+  if(thresholdSettings.useAdaptiveThreshold){
+    adaptiveThreshold(greyImage,greyImage,255,thresholdSettings.adaptiveMode,thresholdSettings.thresholdType,thresholdSettings.adaptiveThresholdBlocksize,thresholdSettings.adaptiveThresholdConstantC);
+  }
+  else{
+    cv::threshold(greyImage,greyImage,(double)thresholdSettings.thresholdValue,255.0,thresholdSettings.thresholdType);
+  }
+	imshow("Threshold", greyImage);
 	//Preparations for contour finding
 	std::vector<std::vector<cv::Point> > contours;
 	std::vector<cv::Vec4i> hierarchies;
@@ -296,7 +302,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 			cv::Mat tmp(outputSize, CV_8UC1);
 			flip(markerImage, markerImage, 1);
 			resize(markerImage, tmp, outputSize, 0, 0, CV_INTER_NN);
-			imshow("Marker", tmp);
+			//imshow("Marker", tmp);
 			
 			//Pose estimation
 			//Array of CVPoint2D32f
