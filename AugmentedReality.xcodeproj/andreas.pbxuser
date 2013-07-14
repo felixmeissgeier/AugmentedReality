@@ -2,14 +2,14 @@
 {
 	05F87C6BF79B165D3284B5A6 /* TabProvider.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 611}}";
-			sepNavSelRange = "{773, 0}";
-			sepNavVisRange = "{301, 552}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 637}}";
+			sepNavSelRange = "{522, 27}";
+			sepNavVisRange = "{48, 837}";
 		};
 	};
 	0AA6070957D2EDE87F5DB0F9 /* Tabulature.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 404}}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 560}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 332}";
 		};
@@ -44,9 +44,9 @@
 	};
 	1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {902, 4459}}";
-			sepNavSelRange = "{202, 0}";
-			sepNavVisRange = "{1946, 1707}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 4537}}";
+			sepNavSelRange = "{1792, 0}";
+			sepNavVisRange = "{2762, 1492}";
 			sepNavWindowFrame = "{{15, 60}, {750, 718}}";
 		};
 	};
@@ -72,9 +72,9 @@
 	};
 	30A3788331A7E7B3A8CBEFD4 /* TabProvider.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 598}}";
-			sepNavSelRange = "{650, 0}";
-			sepNavVisRange = "{149, 800}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 676}}";
+			sepNavSelRange = "{1270, 0}";
+			sepNavVisRange = "{156, 1116}";
 		};
 	};
 	5412BADA36D58BD7E672FEF6 /* GP4Decoder.cpp */ = {
@@ -130,7 +130,7 @@
 			E1D6C38417919F6E00F0BF4D /* ImprovedMarkerDetector.cpp:453 */,
 			E1D6C3AC1792B2E200F0BF4D /* ImprovedMarkerDetector.cpp:290 */,
 			E1D6C3D91792E2E800F0BF4D /* DetectionThread.cpp:42 */,
-			E1D6C3E91792E30400F0BF4D /* ARExercise.cpp:82 */,
+			E1D6C3E91792E30400F0BF4D /* ARExercise.cpp:83 */,
 		);
 		codeSenseManager = E1D6BE6A1789656300F0BF4D /* Code sense */;
 		executables = (
@@ -347,9 +347,9 @@
 	};
 	E1D6BF95178B779C00F0BF4D /* TabVisualizer.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1489, 1040}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1587, 1027}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1755}";
+			sepNavVisRange = "{483, 2331}";
 		};
 	};
 	E1D6C307178E1B5500F0BF4D /* PBXTextBookmark */ = {
@@ -417,7 +417,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 60";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 1861;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 930;
@@ -835,7 +835,7 @@
 		vrLen = 1740;
 		vrLoc = 508;
 	};
-	E1D6C3E91792E30400F0BF4D /* ARExercise.cpp:82 */ = {
+	E1D6C3E91792E30400F0BF4D /* ARExercise.cpp:83 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -847,7 +847,7 @@
 		functionName = "ARExercise::refresh()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 82;
+		lineNumber = 83;
 		location = AugmentedReality;
 		modificationTime = 395502587.286669;
 		originalNumberOfMultipleMatches = 1;

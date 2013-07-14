@@ -54,6 +54,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _tabVisualizer = new TabVisualizer(_tabulature);
     _tabProvider = new TabProvider(this,_tabulature);
     if(_tabProvider!=0 && _tabVisualizer!=0){
+			_tabProvider->setMetronom(1);
       _tabProvider->start();
     }
   }

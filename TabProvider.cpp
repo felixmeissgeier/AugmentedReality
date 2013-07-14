@@ -13,6 +13,7 @@ TabProvider::TabProvider(QObject* consumer, Tabulature tab)
   :_consumer(consumer),
    _tabulature(tab),
    _tabCounter(-70),
+	 _metronom(1),
    _tabulatureSize(tab.size())
 {
   QObject::connect(this,SIGNAL(tabulatureDataSetIndexChanged(int)),consumer,SLOT(updateTabulatureDataSetIndex(int)));
@@ -37,12 +38,15 @@ void TabProvider::provideNextTabulatureDataSet(){
       currentTabDS = _tabulature.at((size_t)_tabCounter);
     }
 		int tabDuration = currentTabDS.getDurationMs();
-    _tabDataSetUpdateTimer.setInterval(tabDuration);
+    _tabDataSetUpdateTimer.setInterval(tabDuration*_metronom);
     //restarttimer
     _tabDataSetUpdateTimer.start();
 
     emit tabulatureDataSetIndexChanged(_tabCounter);
     _tabCounter++;
   }
+}
 
+void TabProvider::setMetronom(int val){
+	_metronom = val;
 }

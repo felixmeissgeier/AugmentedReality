@@ -34,7 +34,6 @@ void TabVisualizer::drawTabulature(cv::Mat* frame){
   }
 
   //print next tabsets
-  int durationToShowMS = 10000;
   double pxlPerMS = tabShowPxlInnerWidth/10000.0;
   int dataSetIterator = _tabulatureDataSetIndex;
   int pxlIterator = 0;

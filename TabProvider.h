@@ -27,15 +27,17 @@ public:
   TabProvider(QObject* consumer, Tabulature tab);
 	~TabProvider();
 	void start();
+	void setMetronom(int val);
 
 	
 private:
-  QObject* _consumer;
+  QObject*						_consumer;
 	QReadWriteLock			_tabDSLock;
-  QTimer _tabDataSetUpdateTimer;
+  QTimer							_tabDataSetUpdateTimer;
 	Tabulature					_tabulature;
 	size_t							_tabulatureSize;
-	int							_tabCounter;
+	int									_tabCounter;
+	int									_metronom;
 	
 private slots:
 	void provideNextTabulatureDataSet();
