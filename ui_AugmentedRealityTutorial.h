@@ -14,6 +14,9 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
+#include <QtGui/QComboBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QFormLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
@@ -22,7 +25,9 @@
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
+#include <QtGui/QSlider>
 #include <QtGui/QSpacerItem>
+#include <QtGui/QSpinBox>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QVBoxLayout>
@@ -50,6 +55,26 @@ public:
     QVBoxLayout *verticalLayout_5;
     QPushButton *pushCalibrateGuitar;
     QCheckBox *checkShowCalibration;
+    QGroupBox *groupBox;
+    QVBoxLayout *verticalLayout_2;
+    QFormLayout *formLayout_2;
+    QLabel *label_4;
+    QComboBox *comboThresholdType;
+    QRadioButton *radioFixedLevelThreshold;
+    QGroupBox *groupBox_3;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *labelThresholdValue;
+    QSlider *sliderThresholdValue;
+    QSpacerItem *verticalSpacer_2;
+    QRadioButton *radioAdaptiveThreshold;
+    QGroupBox *groupBox_2;
+    QFormLayout *formLayout;
+    QComboBox *comboAdaptiveMode;
+    QLabel *label_3;
+    QSpinBox *spinBlocksize;
+    QLabel *label_2;
+    QDoubleSpinBox *spinConstantC;
+    QLabel *label_5;
     QGroupBox *groupBox_6;
     QVBoxLayout *verticalLayout_6;
     QPushButton *pushFretBoardDetected;
@@ -69,7 +94,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 10, 941, 521));
+        horizontalLayoutWidget->setGeometry(QRect(10, 10, 941, 662));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -143,6 +168,118 @@ public:
 
         verticalLayout->addWidget(groupBox_5);
 
+        groupBox = new QGroupBox(horizontalLayoutWidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        verticalLayout_2 = new QVBoxLayout(groupBox);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        formLayout_2 = new QFormLayout();
+        formLayout_2->setSpacing(6);
+        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        formLayout_2->setWidget(0, QFormLayout::LabelRole, label_4);
+
+        comboThresholdType = new QComboBox(groupBox);
+        comboThresholdType->setObjectName(QString::fromUtf8("comboThresholdType"));
+
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, comboThresholdType);
+
+
+        verticalLayout_2->addLayout(formLayout_2);
+
+        radioFixedLevelThreshold = new QRadioButton(groupBox);
+        radioFixedLevelThreshold->setObjectName(QString::fromUtf8("radioFixedLevelThreshold"));
+        radioFixedLevelThreshold->setChecked(false);
+
+        verticalLayout_2->addWidget(radioFixedLevelThreshold);
+
+        groupBox_3 = new QGroupBox(groupBox);
+        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        groupBox_3->setEnabled(true);
+        verticalLayout_3 = new QVBoxLayout(groupBox_3);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        labelThresholdValue = new QLabel(groupBox_3);
+        labelThresholdValue->setObjectName(QString::fromUtf8("labelThresholdValue"));
+        labelThresholdValue->setEnabled(true);
+
+        verticalLayout_3->addWidget(labelThresholdValue);
+
+        sliderThresholdValue = new QSlider(groupBox_3);
+        sliderThresholdValue->setObjectName(QString::fromUtf8("sliderThresholdValue"));
+        sliderThresholdValue->setEnabled(true);
+        sliderThresholdValue->setMaximum(255);
+        sliderThresholdValue->setValue(60);
+        sliderThresholdValue->setOrientation(Qt::Horizontal);
+
+        verticalLayout_3->addWidget(sliderThresholdValue);
+
+
+        verticalLayout_2->addWidget(groupBox_3);
+
+        verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_2->addItem(verticalSpacer_2);
+
+        radioAdaptiveThreshold = new QRadioButton(groupBox);
+        radioAdaptiveThreshold->setObjectName(QString::fromUtf8("radioAdaptiveThreshold"));
+        radioAdaptiveThreshold->setChecked(true);
+
+        verticalLayout_2->addWidget(radioAdaptiveThreshold);
+
+        groupBox_2 = new QGroupBox(groupBox);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        groupBox_2->setEnabled(true);
+        formLayout = new QFormLayout(groupBox_2);
+        formLayout->setSpacing(6);
+        formLayout->setContentsMargins(11, 11, 11, 11);
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        comboAdaptiveMode = new QComboBox(groupBox_2);
+        comboAdaptiveMode->setObjectName(QString::fromUtf8("comboAdaptiveMode"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, comboAdaptiveMode);
+
+        label_3 = new QLabel(groupBox_2);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_3);
+
+        spinBlocksize = new QSpinBox(groupBox_2);
+        spinBlocksize->setObjectName(QString::fromUtf8("spinBlocksize"));
+        spinBlocksize->setMinimum(1);
+        spinBlocksize->setMaximum(9999);
+        spinBlocksize->setSingleStep(2);
+        spinBlocksize->setValue(101);
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, spinBlocksize);
+
+        label_2 = new QLabel(groupBox_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
+
+        spinConstantC = new QDoubleSpinBox(groupBox_2);
+        spinConstantC->setObjectName(QString::fromUtf8("spinConstantC"));
+        spinConstantC->setMaximum(9999.99);
+        spinConstantC->setValue(5);
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, spinConstantC);
+
+        label_5 = new QLabel(groupBox_2);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_5);
+
+
+        verticalLayout_2->addWidget(groupBox_2);
+
+
+        verticalLayout->addWidget(groupBox);
+
         groupBox_6 = new QGroupBox(horizontalLayoutWidget);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
         verticalLayout_6 = new QVBoxLayout(groupBox_6);
@@ -191,6 +328,14 @@ public:
         QObject::connect(pushCalibrateGuitar, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(calibrateGuitar()));
         QObject::connect(pushFretBoardDetected, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(fretBoardDetected()));
         QObject::connect(pushSaveFretboard2File, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(saveFretboardToFile()));
+        QObject::connect(comboThresholdType, SIGNAL(currentIndexChanged(QString)), AugmentedRealityTutorialClass, SLOT(thresholdTypeChanged()));
+        QObject::connect(radioFixedLevelThreshold, SIGNAL(toggled(bool)), AugmentedRealityTutorialClass, SLOT(thresholdTypeChanged()));
+        QObject::connect(radioFixedLevelThreshold, SIGNAL(toggled(bool)), groupBox_3, SLOT(setEnabled(bool)));
+        QObject::connect(radioAdaptiveThreshold, SIGNAL(toggled(bool)), groupBox_2, SLOT(setEnabled(bool)));
+        QObject::connect(sliderThresholdValue, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(thresholdValueChanged(int)));
+        QObject::connect(comboAdaptiveMode, SIGNAL(currentIndexChanged(int)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
+        QObject::connect(spinBlocksize, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
+        QObject::connect(spinConstantC, SIGNAL(valueChanged(double)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
 
         QMetaObject::connectSlotsByName(AugmentedRealityTutorialClass);
     } // setupUi
@@ -207,6 +352,26 @@ public:
         groupBox_5->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Basic Settings", 0, QApplication::UnicodeUTF8));
         pushCalibrateGuitar->setText(QApplication::translate("AugmentedRealityTutorialClass", "Calibrate Guitar", 0, QApplication::UnicodeUTF8));
         checkShowCalibration->setText(QApplication::translate("AugmentedRealityTutorialClass", "Show Calibration", 0, QApplication::UnicodeUTF8));
+        groupBox->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Settings", 0, QApplication::UnicodeUTF8));
+        label_4->setText(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Type:", 0, QApplication::UnicodeUTF8));
+        comboThresholdType->clear();
+        comboThresholdType->insertItems(0, QStringList()
+         << QApplication::translate("AugmentedRealityTutorialClass", "BINARY", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("AugmentedRealityTutorialClass", "INVERSE BINARY", 0, QApplication::UnicodeUTF8)
+        );
+        radioFixedLevelThreshold->setText(QApplication::translate("AugmentedRealityTutorialClass", "Fixed-Level Threshold", 0, QApplication::UnicodeUTF8));
+        groupBox_3->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Fixed-Level Threshold Settings", 0, QApplication::UnicodeUTF8));
+        labelThresholdValue->setText(QApplication::translate("AugmentedRealityTutorialClass", "threshold value: ", 0, QApplication::UnicodeUTF8));
+        radioAdaptiveThreshold->setText(QApplication::translate("AugmentedRealityTutorialClass", "Adaptive Threshold", 0, QApplication::UnicodeUTF8));
+        groupBox_2->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Adaptive Threshold Settings", 0, QApplication::UnicodeUTF8));
+        comboAdaptiveMode->clear();
+        comboAdaptiveMode->insertItems(0, QStringList()
+         << QApplication::translate("AugmentedRealityTutorialClass", "MEAN", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("AugmentedRealityTutorialClass", "GAUSSIAN", 0, QApplication::UnicodeUTF8)
+        );
+        label_3->setText(QApplication::translate("AugmentedRealityTutorialClass", "Adaptive Mode:", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("AugmentedRealityTutorialClass", "Blocksize:", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("AugmentedRealityTutorialClass", "constant C:", 0, QApplication::UnicodeUTF8));
         groupBox_6->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Calibration Settings", 0, QApplication::UnicodeUTF8));
         pushFretBoardDetected->setText(QApplication::translate("AugmentedRealityTutorialClass", "Fretboard Detected", 0, QApplication::UnicodeUTF8));
         pushSaveFretboard2File->setText(QApplication::translate("AugmentedRealityTutorialClass", "Save Fretboard To File", 0, QApplication::UnicodeUTF8));

@@ -97,7 +97,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				//Prepare stripes
 				cv::Size stripeSize;
 				stripeSize.width = 3;
-				stripeSize.height = (int)(0.8*sqrt (step_x*step_x+step_y*step_y));
+				stripeSize.height = (int)(12);
 				if(stripeSize.height < 5){
 					stripeSize.height = 5;
 				}
@@ -202,14 +202,12 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 			}
 			std::vector<cv::Point2f> newCorners;
 			//Calculate new corners
-			for(int i= 0; i < 4; i++){
+			for(int i = 0; i < 4; i++){
 				cv::Vec4f line1 = borderLines[i];
 				cv::Vec4f line2 = borderLines[(i+1)%4];
 				cv::Point2f corner = intersect(line1, line2);
 				newCorners.push_back(corner);
 			}
-			
-			if(newCorners.size() < 4) continue;
 			
 			//Do perspective transformation
 			//Marker-Image
@@ -245,6 +243,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 			
 			if(hasBorder == false)
 				continue;
+			
 			//copy the BW values into cP
 			int cP[4][4];
 			for ( int i=0; i < 4; ++i)
@@ -289,6 +288,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 					angle = i;
 				}
 			}
+			
 			printf ("Found: %04x\n", code);
 			if(angle != 0)
 			{
@@ -297,13 +297,14 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				for(int i = 0; i < 4; i++)	newCorners[i] = corrected_corners[i];
 			}
 			
+			/*
 			//Output Marker
 			cv::Size outputSize(100,100);
 			cv::Mat tmp(outputSize, CV_8UC1);
 			flip(markerImage, markerImage, 1);
 			resize(markerImage, tmp, outputSize, 0, 0, CV_INTER_NN);
 			//imshow("Marker", tmp);
-			
+			*/
 			//Pose estimation
 			//Array of CVPoint2D32f
 			CvPoint2D32f pointArrayforPoseEstimation[4];
@@ -430,19 +431,19 @@ cv::Point2f ImprovedMarkerDetector::intersect(cv::Vec4f &line1, cv::Vec4f &line2
 	cv::Point2f result;
 	
 	//coefficients line 1
-	double a1 = line1[0];
-	double a2 = line1[1];
-	double x1 = line1[2];
-	double y1 = line1[3];
+	float a1 = line1[0];
+	float a2 = line1[1];
+	float x1 = line1[2];
+	float y1 = line1[3];
 	
 	//coefficients line 2
-	double b1 = line2[0];
-	double b2 = line2[1];
-	double x2 = line2[2];
-	double y2 = line2[3];
+	float b1 = line2[0];
+	float b2 = line2[1];
+	float x2 = line2[2];
+	float y2 = line2[3];
 	
 	//Vector scalar for line 2
-	double s = (a1*y2-a2*x2-a1*y1+a2*x1)/(a2*b1-a1*b2);
+	float s = (a1*y2-a2*x2-a1*y1+a2*x1)/(a2*b1-a1*b2);
 	
 	//insert s in line 2
 	result.x = (x2 + s * b1);

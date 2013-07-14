@@ -22,7 +22,7 @@ static const uint qt_meta_data_ARExercise[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,21 +32,26 @@ static const uint qt_meta_data_ARExercise[] = {
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x0a,
       22,   11,   11,   11, 0x0a,
-      43,   11,   11,   11, 0x0a,
-      68,   11,   11,   11, 0x0a,
-      92,   11,   11,   11, 0x0a,
-     105,   11,   11,   11, 0x0a,
-     125,   11,   11,   11, 0x0a,
-     143,   11,   11,   11, 0x0a,
-     165,   11,   11,   11, 0x0a,
+      51,   45,   11,   11, 0x0a,
+      78,   11,   11,   11, 0x0a,
+     113,   11,   11,   11, 0x0a,
+     134,   11,   11,   11, 0x0a,
+     159,   11,   11,   11, 0x0a,
      183,   11,   11,   11, 0x0a,
+     196,   11,   11,   11, 0x0a,
+     216,   11,   11,   11, 0x0a,
+     234,   11,   11,   11, 0x0a,
+     256,   11,   11,   11, 0x0a,
+     274,   11,   11,   11, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_ARExercise[] = {
-    "ARExercise\0\0refresh()\0inputDeviceChanged()\0"
-    "showCalibrationChanged()\0"
+    "ARExercise\0\0refresh()\0thresholdTypeChanged()\0"
+    "value\0thresholdValueChanged(int)\0"
+    "adaptiveThresholdSettingsChanged()\0"
+    "inputDeviceChanged()\0showCalibrationChanged()\0"
     "reloadFileInputPushed()\0pauseVideo()\0"
     "fretBoardDetected()\0calibrateGuitar()\0"
     "saveFretboardToFile()\0drawCalibration()\0"
@@ -60,15 +65,18 @@ void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         ARExercise *_t = static_cast<ARExercise *>(_o);
         switch (_id) {
         case 0: _t->refresh(); break;
-        case 1: _t->inputDeviceChanged(); break;
-        case 2: _t->showCalibrationChanged(); break;
-        case 3: _t->reloadFileInputPushed(); break;
-        case 4: _t->pauseVideo(); break;
-        case 5: _t->fretBoardDetected(); break;
-        case 6: _t->calibrateGuitar(); break;
-        case 7: _t->saveFretboardToFile(); break;
-        case 8: _t->drawCalibration(); break;
-        case 9: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->thresholdTypeChanged(); break;
+        case 2: _t->thresholdValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->adaptiveThresholdSettingsChanged(); break;
+        case 4: _t->inputDeviceChanged(); break;
+        case 5: _t->showCalibrationChanged(); break;
+        case 6: _t->reloadFileInputPushed(); break;
+        case 7: _t->pauseVideo(); break;
+        case 8: _t->fretBoardDetected(); break;
+        case 9: _t->calibrateGuitar(); break;
+        case 10: _t->saveFretboardToFile(); break;
+        case 11: _t->drawCalibration(); break;
+        case 12: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -106,9 +114,9 @@ int ARExercise::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 13;
     }
     return _id;
 }

@@ -29,7 +29,43 @@ Marker::~Marker(void)
 }
 
 bool Marker::isValid(){
-  return _valid;
+	if (_cornerPoints.size() == 0) {
+		return false;
+	}
+	for(int i = 0; i < 4; i++){
+		cv::Point2f anchor = _cornerPoints[(i+1)%4];
+		cv::Point2f p1 = _cornerPoints[i];
+		cv::Point2f p2 = _cornerPoints[(i+2)%4];
+		//Vector of line 1
+		double x1 = (double)p1.x - (double)anchor.x;
+		double y1 = (double)p1.y - (double)anchor.y;
+		
+		//Vector of line 2
+		double x2 = (double)p2.x - (double)anchor.x;
+		double y2 = (double)p2.y - (double)anchor.y;
+		
+		//length
+		double l1 = sqrt(pow(x1,2.0) + pow(y1,2.0));
+		double l2 = sqrt(pow(x2,2.0) + pow(y2,2.0));
+		double product = l1*l2;
+		
+		//vector multiplication v1*v2
+		double scalar = x1*x2+y1*y2;
+		
+		//division
+		double result = scalar/product;
+		
+		//arccos to get the angle -> bogenmaß
+		double angle = acos(result);
+		
+		double PI = atan(1)*4;
+		angle = (angle * 180.0)/PI;
+		
+		if(angle > 100.0 || angle < 80.0){
+			return false;
+		}		
+	}
+	return true;
 }
 
 void Marker::setParameters(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations){
@@ -88,12 +124,12 @@ void Marker::indexMarkerCorners(){
   _leftBottomCornerIndex=-1;
   _rightBottomCornerIndex=-1;
 
-  for(int i = 0; i<_cornerPoints.size(); i++){
+  for(ssize_t i = 0; i<_cornerPoints.size(); i++){
     if(_cornerPoints.at(i).y < _cornerPoints.at(_leftTopCornerIndex).y){
       _leftTopCornerIndex = i;
     }
   }
-  for(int i = 0; i<_cornerPoints.size(); i++){
+  for(size_t i = 0; i<_cornerPoints.size(); i++){
     if(i!=_leftTopCornerIndex){
       if(_cornerPoints.at(i).y < _cornerPoints.at(_rightTopCornerIndex).y){
         _rightTopCornerIndex = i;
@@ -106,7 +142,7 @@ void Marker::indexMarkerCorners(){
     _rightTopCornerIndex = tmp;
   }
 
-  for(int i = 0; i<_cornerPoints.size(); i++){
+  for(size_t i = 0; i<_cornerPoints.size(); i++){
     if(i!=_leftTopCornerIndex && i!=_rightTopCornerIndex){
       if(_leftBottomCornerIndex==-1){
         _leftBottomCornerIndex = i;
