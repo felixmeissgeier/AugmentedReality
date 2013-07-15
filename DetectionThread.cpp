@@ -5,7 +5,7 @@
 DetectionThread::DetectionThread(ARExercise* parent)
   :_parent(parent),
   _terminateThread(false),
-  _refreshInterval(10),
+  _refreshInterval(33),
   _calibrationModeOn(false),
   _currentInputFrame(0)
 {
@@ -42,12 +42,16 @@ void DetectionThread::run(){
         if(_currentMarker.isValid()){
           if(abs(_currentMarker.getLeftBottomCorner().x-detectedMarkers.at(0).getLeftBottomCorner().x)>1
             || abs(_currentMarker.getLeftBottomCorner().y-detectedMarkers.at(0).getLeftBottomCorner().y)>1){
+            _lock.lockForWrite();
             _currentMarker = detectedMarkers.at(0);
+            _lock.unlock();
             //qDebug()<<detectedMarkers.at(0).getMarkerID();
           }
         }
         else{
+          _lock.lockForWrite();
           _currentMarker = detectedMarkers.at(0);
+          _lock.unlock();
         }
       }
       else{
@@ -78,8 +82,10 @@ void DetectionThread::setInputFrame(cv::Mat* inputFrame){
 }
 
 Marker DetectionThread::getCurrentMarker(){
- // QReadLocker locker(&_lock);
-  return _currentMarker;
+  _lock.lockForRead();
+  Marker returnMarker = _currentMarker;
+  _lock.unlock();
+  return returnMarker;
 }
 
 void DetectionThread::setCalibrationMode(bool calibrationModeOn){

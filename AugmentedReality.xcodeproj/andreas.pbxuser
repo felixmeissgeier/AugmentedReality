@@ -44,9 +44,9 @@
 	};
 	1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1979, 6123}}";
-			sepNavSelRange = "{6610, 0}";
-			sepNavVisRange = "{5269, 1826}";
+			sepNavIntBoundsRect = "{{0, 0}, {1979, 6513}}";
+			sepNavSelRange = "{7620, 0}";
+			sepNavVisRange = "{14005, 2540}";
 			sepNavWindowFrame = "{{15, 60}, {750, 718}}";
 		};
 	};
@@ -232,6 +232,7 @@
 			E1D6C4B91794033200F0BF4D /* PBXTextBookmark */ = E1D6C4B91794033200F0BF4D /* PBXTextBookmark */;
 			E1D6C4BA1794033200F0BF4D /* PBXTextBookmark */ = E1D6C4BA1794033200F0BF4D /* PBXTextBookmark */;
 			E1D6C4BB1794033200F0BF4D /* PBXTextBookmark */ = E1D6C4BB1794033200F0BF4D /* PBXTextBookmark */;
+			E1D6C4BD179458E800F0BF4D /* PBXTextBookmark */ = E1D6C4BD179458E800F0BF4D /* PBXTextBookmark */;
 		};
 		sourceControlManager = E1D6BE691789656300F0BF4D /* Source Control */;
 		userBuildSettings = {
@@ -464,7 +465,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 25";
 		rLen = 0;
-		rLoc = 842;
+		rLoc = 834;
 		rType = 0;
 		vrLen = 1815;
 		vrLoc = 16376;
@@ -624,7 +625,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 25";
 		rLen = 0;
-		rLoc = 842;
+		rLoc = 834;
 		rType = 0;
 		vrLen = 1720;
 		vrLoc = 16364;
@@ -634,7 +635,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 7";
 		rLen = 0;
-		rLoc = 195;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 0;
@@ -664,7 +665,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 89";
 		rLen = 22;
-		rLoc = 2742;
+		rLoc = 2734;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 2117;
@@ -824,7 +825,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 89";
 		rLen = 22;
-		rLoc = 2742;
+		rLoc = 2734;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 2117;
@@ -994,7 +995,7 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 89";
 		rLen = 22;
-		rLoc = 2742;
+		rLoc = 2734;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 2117;
@@ -1004,10 +1005,20 @@
 		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
 		name = "ARExercise.cpp: 179";
 		rLen = 0;
-		rLoc = 6610;
+		rLoc = 6602;
 		rType = 0;
 		vrLen = 1826;
 		vrLoc = 5269;
+	};
+	E1D6C4BD179458E800F0BF4D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1ACA03CFB87CEA2D3C48B5E3 /* ARExercise.cpp */;
+		name = "ARExercise.cpp: 205";
+		rLen = 0;
+		rLoc = 7620;
+		rType = 0;
+		vrLen = 2540;
+		vrLoc = 14005;
 	};
 	E34F923143A19EA456C43CA5 /* ImprovedMarkerDetector.cpp */ = {
 		uiCtxt = {
