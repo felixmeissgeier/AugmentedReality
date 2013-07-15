@@ -4,7 +4,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("guitar_init8.wmv"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath(/*"test.gp4"*/"sportfreunde_stiller_ein_kompliment.gp4"),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -16,8 +16,8 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     _tabVisualizer(0),
     _tabProvider(0)
 {
-  cv::namedWindow( "fret", CV_WINDOW_AUTOSIZE );
-  cv::namedWindow( "sub", CV_WINDOW_AUTOSIZE );
+  //cv::namedWindow( "fret", CV_WINDOW_AUTOSIZE );
+  //cv::namedWindow( "sub1", CV_WINDOW_AUTOSIZE );
   QFile fretboardFile(_fretboardFilePath);
   if (fretboardFile.open(QIODevice::ReadOnly | QIODevice::Text)){
     FretBoard readFretboard;
@@ -64,6 +64,9 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   _detectionThread->start();
 }
 
+/*
+*   Refresh function which is called every refreshInterval 
+*/
 void ARExercise::refresh(){
   
   if(_cap!=0 && _cap->isOpened()){
@@ -96,12 +99,13 @@ void ARExercise::refresh(){
 				cv::line(_currentInputFrame, pt2, pt3, cv::Scalar(230,0,0), 2, 8, 0);
 				cv::line(_currentInputFrame, pt3, pt4, cv::Scalar(230,0,0), 2, 8, 0);
 				cv::line(_currentInputFrame, pt4, pt1, cv::Scalar(230,0,0), 2, 8, 0);
+
+        //get scale for scaling tab bobbels
         scale = getDeltaMarkerScale();
       }
 
       _tabVisualizer->drawTabulature(&_currentInputFrame,_drawIntersectionPoints,scale);
-
-      
+            
       QImage img(_currentInputFrame.data,_currentInputFrame.size[1],_currentInputFrame.size[0],imgFormat);
       img = img.rgbSwapped();
    
@@ -127,6 +131,7 @@ void ARExercise::updateTabulatureDataSetIndex(int index){
 *   This method draws detected sampling points of current fretboard calibration
 */
 void ARExercise::drawCalibration(){
+  //show label if fretboard calibration was detected+stored
   QString succesfulSaved = "";
   if(_showSavedLabelCounter>=0 && _showSavedLabelCounter<100){
     _showSavedLabelCounter++;
@@ -136,17 +141,25 @@ void ARExercise::drawCalibration(){
     _showSavedLabelCounter = -1;
   }
 
+  //compute screen coordinates of intersection points and draw them
   if(_currentMarker.isValid() && !_currentInputFrame.empty()){
     if((_showCalibration=true && _fretBoardDetected==true) || _calibrationModeOn==true){
       std::vector<std::vector<cv::Point2d> > intersectionPoints;
       cv::Scalar markColor;
       if(_fretBoardDetected==true){
         cv::putText(_currentInputFrame,"Fretboard Detected"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(50,205,50));
+        
+        //compute more precise intersection points by trying to detect frets and top-border of fretboard
         computePreciseDrawIntersectionPoints();
+
+        //draw new calculated precise intersection points
         drawIntersectionPoints();
       }
       else if(_calibrationModeOn==true){
         cv::putText(_currentInputFrame,"Calibration Mode"+succesfulSaved.toStdString(),cv::Point2d(5,15),cv::FONT_HERSHEY_PLAIN,1,cv::Scalar(36,127,255));
+        
+        //convert intersection points from marker-relative coordinate system (stored in .gtr-file) to screen coordinates
+        //and draw the points
         computeDrawIntersectionPoints();
         drawIntersectionPoints();
       }
@@ -155,28 +168,41 @@ void ARExercise::drawCalibration(){
   }
 }
 
+/*
+*   Compute more precise intersections points using marker-relative intersection 
+*   points as source
+*/
+void ARExercise::computePreciseDrawIntersectionPoints(){
 
-void ARExercise::computePreciseDrawIntersectionPoints(){  
+  //get intersection points from loaded fretboard configuration
   std::vector<std::vector<cv::Point2d> > intersectionPoints = _detectedFretBoard.getIntersectionPoints();
+  
   if(intersectionPoints.size()>0){
     _drawIntersectionPoints.clear();
     cv::Mat grayFrame,dilateFrame, sobelFrame, cannyFrame;
+
+    //first convert to gray
     cv::cvtColor(_currentInputFrame,grayFrame,CV_BGR2GRAY);
+
+    //some parameter which are used later
     double previousX = _currentInputFrame.cols;
-    cv::Point2d origin(_currentMarker.getRightTopCorner().x,_currentMarker.getRightTopCorner().y);
+    cv::Point2d origin = _currentMarker.getRightTopCorner();
     double deltaMarkerRotationAngle = _detectedFretBoard.getMarkerRotation()-_currentMarker.getMarkerRotationAngle();
     double deltaMarkerScale = getDeltaMarkerScale();
 
+    //concentrate on sub image to obtain line of first string
     cv::Point2d lastFretString0Point = intersectionPoints[intersectionPoints.size()-1][0];
-    cv::Rect roiFretBoard(0,lastFretString0Point.y+origin.y-30,origin.x,getMarkerRealRatio()*0.03);
+    cv::Rect roiFretBoard(0,lastFretString0Point.y+origin.y-30,_currentMarker.getLeftBottomCorner().x,getMarkerRealRatio()*0.03);
     //cv::rectangle(_currentInputFrame,roiFretBoard,cv::Scalar(255,10,23));
     cv::Mat topFretboardSubFrame = cv::Mat(grayFrame,roiFretBoard);
-    //apply canny filter to extract edges
-    cv::Canny( topFretboardSubFrame, cannyFrame, 50, 100, 3 , false);
+    //sobel works better than canny here
+    cv::Sobel(topFretboardSubFrame,cannyFrame,-1,0,1,3);
+    //cv::Canny( topFretboardSubFrame, cannyFrame, 50, 100, 3 , false);
+    cv::threshold(cannyFrame,cannyFrame,100,255,cv::THRESH_BINARY);
     //detect lines using HoughLines
     cv::vector<cv::Vec4i> horizontalLines;
     cv::HoughLinesP( cannyFrame, horizontalLines, 1, CV_PI/180, 20, 50, 5.0 );
-    //cv::imshow("sub",cannyFrame);
+    
     //gradient
     double topLineM = 0;
     //offset
@@ -186,7 +212,7 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
       int maxLineNumber = 0;
       for(int i=0; i<horizontalLines.size(); i++){
         //is it a horizontal line??
-        if(abs(horizontalLines[i][1]-horizontalLines[i][3])<20 && horizontalLines[i][1]<minY){
+        if(abs(horizontalLines[i][1]-horizontalLines[i][3])<20 && horizontalLines[i][1]<minY && horizontalLines[i][1]>0 && horizontalLines[i][3]>0){
           minY = horizontalLines[i][1];
           maxLineNumber = i;
         }
@@ -196,22 +222,29 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
         double deltaY = horizontalLines[maxLineNumber][3]-horizontalLines[maxLineNumber][1];
         double deltaX = horizontalLines[maxLineNumber][2]-horizontalLines[maxLineNumber][0];
         topLineM = deltaY / deltaX;
-        topLineB = horizontalLines[maxLineNumber][1]+roiFretBoard.y - topLineM * horizontalLines[maxLineNumber][0] + getMarkerRealRatio()*0.005;
+        topLineB = horizontalLines[maxLineNumber][1]+roiFretBoard.y - topLineM * horizontalLines[maxLineNumber][0];
+        //cv::imshow("sub1",cannyFrame);
         //cv::line(_currentInputFrame,cv::Point2d(horizontalLines[maxLineNumber][0]+roiFretBoard.x,horizontalLines[maxLineNumber][1]+roiFretBoard.y),cv::Point2d(horizontalLines[maxLineNumber][2]+roiFretBoard.x,horizontalLines[maxLineNumber][3]+roiFretBoard.y),cv::Scalar(0,0,255));
       }
     }
 
+    //go through all frets
     for(uint fret=0; fret<intersectionPoints.size(); fret++){
       std::vector<cv::Point2d> fretPoints;
       double xOffset = 0;
+
+      //compute screen-position of fretboard point of first string after marker rotation and transformation
       cv::Point2d translatePoint = cv::Point2d(intersectionPoints[fret][0].x*deltaMarkerScale,intersectionPoints[fret][0].y*deltaMarkerScale);
       cv::Point2d rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
       cv::Point2d fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
+      
+      //try to avoid, that frets are too close (plausibility check)
       double roiPointX = fretboardPoint.x;
       if((previousX-roiPointX)<(_currentMarker.getBottomEdgeLength()/0.045)*0.02){
         roiPointX = previousX-abs(_currentMarker.getBottomEdgeLength()/0.045)*0.02;
       }
 
+      //get subimage of fret
       cv::Rect roi(roiPointX-10,fretboardPoint.y,20,30);
       if(roi.x>=0 && roi.y>=0 && (roi.x+roi.width)<grayFrame.cols && (roi.y+roi.height)<grayFrame.rows){
         //cv::rectangle(_currentInputFrame,roi,cv::Scalar(255,10,23));
@@ -227,6 +260,7 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
         cv::HoughLinesP( tmpThresholdFrame, fretLines, 10, CV_PI/180,10,20,3.0);
         //cv::imshow("fret",tmpThresholdFrame);
         
+        //compute x-offset taking detected real fret-line into account
         if(fretLines.size()>0){
           int i=0;
           for(i;i<fretLines.size();i++){
@@ -237,23 +271,27 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
             }          
           }
         }
+
         double yOffset = 0;
 
+        //consider every string per fret
         for(uint string=0; string<intersectionPoints[fret].size(); string++){
           translatePoint = cv::Point2d(intersectionPoints[fret][string].x*deltaMarkerScale,intersectionPoints[fret][string].y*deltaMarkerScale);
           rotatedPoint = cv::Point2d(translatePoint.x*cos(deltaMarkerRotationAngle)-translatePoint.y*sin(deltaMarkerRotationAngle),translatePoint.x*sin(deltaMarkerRotationAngle)+translatePoint.y*cos(deltaMarkerRotationAngle));
           fretboardPoint = cv::Point2d(rotatedPoint.x+origin.x,rotatedPoint.y+origin.y);
+
+          //compute y-offset taking detected line of first string into account
           if(string==0){
             if(topLineB!=0){
               yOffset = (fretboardPoint.x*topLineM + topLineB)-fretboardPoint.y;
             }
           }
+
+          //get precise points
           double preciseX = fretboardPoint.x + xOffset;
           double preciseY = fretboardPoint.y + yOffset;
           cv::Point2d fretStringPoint(preciseX,preciseY);
           fretPoints.push_back(fretStringPoint);
-          //intersectionPoints[fret][string].x = intersectionPoints[fret][string].x+xOffset;
-          //intersectionPoints[fret][string].y = intersectionPoints[fret][string].y+yOffset;
         }
         _drawIntersectionPoints.push_back(fretPoints);
       }
@@ -312,7 +350,7 @@ void ARExercise::computeDrawIntersectionPoints(){
     //cv::Point2d rotatedLeftCorner1 = cv::Point2d(leftCorner.x-origin.x,leftCorner.y-origin.y);
     //cv::Point2d rotatedLeftCorner2 = cv::Point2d(rotatedLeftCorner1.x*cos(deltaMarkerRotationAngle)-rotatedLeftCorner1.y*sin(deltaMarkerRotationAngle),rotatedLeftCorner1.x*sin(deltaMarkerRotationAngle)+rotatedLeftCorner1.y*cos(deltaMarkerRotationAngle));
     //cv::circle(_currentInputFrame,cv::Point2d(rotatedLeftCorner2.x+origin.x,rotatedLeftCorner2.y+origin.y),3,markColor);
-      
+
     for(uint fret=0; fret<intersectionPoints.size(); fret++){
       std::vector<cv::Point2d> fretPoints;
       for(uint string=0; string<intersectionPoints[fret].size(); string++){
