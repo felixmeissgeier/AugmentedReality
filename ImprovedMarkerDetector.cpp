@@ -460,7 +460,7 @@ cv::Point2f ImprovedMarkerDetector::intersect(cv::Vec4f &line1, cv::Vec4f &line2
 
 bool ImprovedMarkerDetector::shouldBeEmitted(Marker &m){
 	if(_prevMarker.isValid()){
-		double tolerance = 2.0;
+		double tolerance = 3.0;
 		cv::Point2d oldTopLeft = _prevMarker.getLeftTopCorner();
 		cv::Point2d oldTopRight= _prevMarker.getRightTopCorner();
 		cv::Point2d oldBottomLeft = _prevMarker.getLeftBottomCorner();

@@ -176,7 +176,7 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
     //detect lines using HoughLines
     cv::vector<cv::Vec4i> horizontalLines;
     cv::HoughLinesP( cannyFrame, horizontalLines, 1, CV_PI/180, 20, 50, 5.0 );
-    //cv::imshow("sub",cannyFrame);
+    cv::imshow("sub",cannyFrame);
     //gradient
     double topLineM = 0;
     //offset
