@@ -28,7 +28,6 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 	std::vector<Marker> detectedMarkers;
 	cv::Mat greyClone;
 	cv::Mat greyImage;
-	
 	greyImage = inputFrame->clone();
 	cvtColor(*inputFrame,greyImage,CV_RGB2GRAY);
 	greyClone = greyImage.clone();
@@ -59,8 +58,9 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
   else{
     cv::threshold(greyImage,greyImage,(double)thresholdSettings.thresholdValue,255.0,thresholdSettings.thresholdType);
   }
-	//imshow("Threshold", greyImage);
 	//Preparations for contour finding
+	blur(greyImage, greyImage, cv::Size(2,2), cv::Point(-1,-1), cv::BORDER_DEFAULT );
+		imshow("Threshold", greyImage);
 	std::vector<std::vector<cv::Point> > contours;
 	std::vector<cv::Vec4i> hierarchies;
 	findContours(greyImage, contours, hierarchies, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
@@ -75,7 +75,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 		approxPolyDP(cv::Mat(contours[i]), approx, 5, true);
 		rectangles[i] = boundingRect(approx);
 		//just rectangles
-		if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30) && fabs(cv::contourArea(cv::Mat(approx))) > 100 && cv::isContourConvex(cv::Mat(approx))){
+		if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30) && fabs(cv::contourArea(cv::Mat(approx))) > 80 && cv::isContourConvex(cv::Mat(approx))){
 			//polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, cv::CV_AA, 0);
 			
 			//Fitted lines
@@ -290,6 +290,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 			}
 			
 			printf ("Found: %04x\n", code);
+			
 			if(angle != 0)
 			{
 				cv::Point2f corrected_corners[4];
@@ -390,42 +391,6 @@ bool ImprovedMarkerDetector::isMarker(cv::Mat* markerImg){
   }
 	
   return true;
-}
-
-int ImprovedMarkerDetector::findMarkerID(int cP[4][4], int& detectionRotations){
-  //rotate 4 times and calculate the id
-	//Calculate ID
-	int codes[4];
-	codes[0] = codes[1] = codes[2] = codes[3] = 0;
-	
-	for (int i=0; i < 16; i++) {
-		int row = i>>2;
-		int col = i%4;
-		
-		codes[0] <<= 1;
-		codes[0] |= cP[row][col]; // 0°
-		
-		codes[1] <<= 1;
-		codes[1] |= cP[3-col][row]; // 90°
-		
-		codes[2] <<= 1;
-		codes[2] |= cP[3-row][3-col]; // 180°
-		
-		codes[3] <<= 1;
-		codes[3] |= cP[col][3-row]; // 270°
-	}
-	if ( (codes[0]==0) || (codes[0]==0xffff) ) return -1;
-	int code = codes[0];
-	
-	for ( int i=1; i<4; ++i )
-	{
-		if ( codes[i] < code )
-		{
-			code = codes[i];
-			detectionRotations = i;
-		}
-	}
-	return code;
 }
 
 

@@ -5,7 +5,7 @@
 DetectionThread::DetectionThread(ARExercise* parent)
   :_parent(parent),
   _terminateThread(false),
-  _refreshInterval(33),
+  _refreshInterval(22),
   _calibrationModeOn(false),
   _currentInputFrame(0)
 {
@@ -32,7 +32,7 @@ DetectionThread::~DetectionThread(void)
 }
 
 void DetectionThread::run(){
-  while(_terminateThread==false){
+ while(_terminateThread==false){
     if(_currentInputFrame!=0){
 
       //detect markers in input frame

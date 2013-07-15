@@ -262,8 +262,7 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
         
         //compute x-offset taking detected real fret-line into account
         if(fretLines.size()>0){
-          int i=0;
-          for(i;i<fretLines.size();i++){
+          for(int i=0;i<fretLines.size();i++){
             if((abs(fretLines[i][0]-fretLines[i][2]))<5){
               xOffset = fretLines[i][0]-10;
               //cv::line(_currentInputFrame,cv::Point2d(fretLines[i][0]+roi.x,fretLines[i][1]+roi.y),cv::Point2d(fretLines[i][2]+roi.x,fretLines[i][3]+roi.y),cv::Scalar(255,0,0));

@@ -32,7 +32,6 @@ public:
 private:
   std::vector<cv::Vec4f> computeExactBorderLines(cv::Mat inputFrame, cv::vector<cv::Point> &approximatedPolygon);
   int subpixSampleSafe( cv::Mat &srcImage, cv::Point2d p );
-  int findMarkerID(int cP[4][4], int& detectionRotations);
   bool isMarker(cv::Mat* markerImg);
   bool getMarkerBit(int rawBit);
   void initMarkerList();

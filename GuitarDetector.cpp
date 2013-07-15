@@ -65,6 +65,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     cv::Vec4i topLine(0,grayscaleFrame.rows,0,grayscaleFrame.rows);
     cv::Vec4i bottomLine(0,0,0,0);
     bool bottomLineDefined=false;
+		std::cout<<"blbalblalblb";
     for( size_t i = 0; i < lines.size(); i++ )
     {
       cv::Vec4i l = lines[i];
