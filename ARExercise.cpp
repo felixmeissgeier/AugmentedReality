@@ -191,7 +191,20 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
     double deltaMarkerScale = getDeltaMarkerScale();
 
     //concentrate on sub image to obtain line of first string
+		//double markerFretDistance = 0.005;
     cv::Point2d lastFretString0Point = intersectionPoints[intersectionPoints.size()-1][0];
+		/*
+		//Assume first string 0.5 cm below marker bottom edge
+		cv::Point2d bottomLeft = _currentMarker.getLeftBottomCorner();
+		cv::Point2d bottomRight = _currentMarker.getRightBottomCorner();
+		bottomLeft.y = bottomLeft.y - 20;
+		bottomRight.y = bottomRight.y - 20;
+		std::vector<Point2d> points;
+		points.push_back(bottomLeft);
+		points.push_back(bottomRight);
+		cv::Vec4f fittedLine;
+		fitLine(points, fittedLine, CV_DIST_L2, 0, 0.01, 0.01);
+		*/
     cv::Rect roiFretBoard(0,lastFretString0Point.y+origin.y-30,_currentMarker.getLeftBottomCorner().x,getMarkerRealRatio()*0.03);
     //cv::rectangle(_currentInputFrame,roiFretBoard,cv::Scalar(255,10,23));
     cv::Mat topFretboardSubFrame = cv::Mat(grayFrame,roiFretBoard);
@@ -254,7 +267,7 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
         cv::Sobel(fretFrame,sobelFrame,-1,1,0,3);
         cv::Mat tmpThresholdFrame;
         //better extraction of edges by thresholding image
-        cv::threshold(sobelFrame,tmpThresholdFrame,50,255,cv::THRESH_BINARY);      
+        cv::threshold(sobelFrame,tmpThresholdFrame,128,255,cv::THRESH_BINARY);      
         //get lines
         cv::vector<cv::Vec4i> fretLines;
         cv::HoughLinesP( tmpThresholdFrame, fretLines, 10, CV_PI/180,10,20,3.0);
