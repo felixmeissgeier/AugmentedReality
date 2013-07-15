@@ -258,9 +258,9 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
       }
 
       //get subimage of fret
-      cv::Rect roi(roiPointX-10,fretboardPoint.y,20,30);
+      cv::Rect roi(roiPointX-10,fretboardPoint.y,50,30);
       if(roi.x>=0 && roi.y>=0 && (roi.x+roi.width)<grayFrame.cols && (roi.y+roi.height)<grayFrame.rows){
-        //cv::rectangle(_currentInputFrame,roi,cv::Scalar(255,10,23));
+        cv::rectangle(_currentInputFrame,roi,cv::Scalar(255,10,23));
         cv::Mat fretFrame = cv::Mat(grayFrame,roi);
         //edge detection using sobel
         //cv::dilate(fretFrame,dilateFrame,cv::Mat());
@@ -491,6 +491,11 @@ void ARExercise::thresholdTypeChanged(){
 void ARExercise::thresholdValueChanged(int value){
   _detectionThread->_markerDetectionThresholdSettings.thresholdValue = ui.sliderThresholdValue->value();
   ui.labelThresholdValue->setText("threshold value: "+QString::number(_detectionThread->_markerDetectionThresholdSettings.thresholdValue));
+}
+
+void ARExercise::playSpeedChanged(){
+	_tabProvider->setMetronom(ui.playingSpeedSlider->value());
+	ui.lblCurrentSpeed->setText(QString::number(ui.playingSpeedSlider->value()));
 }
 
 void ARExercise::adaptiveThresholdSettingsChanged(){

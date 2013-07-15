@@ -55,6 +55,9 @@ public:
     QVBoxLayout *verticalLayout_5;
     QPushButton *pushCalibrateGuitar;
     QCheckBox *checkShowCalibration;
+    QLabel *label;
+    QSlider *playingSpeedSlider;
+    QLabel *lblCurrentSpeed;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
     QFormLayout *formLayout_2;
@@ -89,12 +92,12 @@ public:
         if (AugmentedRealityTutorialClass->objectName().isEmpty())
             AugmentedRealityTutorialClass->setObjectName(QString::fromUtf8("AugmentedRealityTutorialClass"));
         AugmentedRealityTutorialClass->setEnabled(true);
-        AugmentedRealityTutorialClass->resize(966, 595);
+        AugmentedRealityTutorialClass->resize(969, 801);
         centralWidget = new QWidget(AugmentedRealityTutorialClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 10, 941, 662));
+        horizontalLayoutWidget->setGeometry(QRect(10, 10, 941, 822));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -164,6 +167,28 @@ public:
         checkShowCalibration->setChecked(true);
 
         verticalLayout_5->addWidget(checkShowCalibration);
+
+        label = new QLabel(groupBox_5);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        verticalLayout_5->addWidget(label);
+
+        playingSpeedSlider = new QSlider(groupBox_5);
+        playingSpeedSlider->setObjectName(QString::fromUtf8("playingSpeedSlider"));
+        playingSpeedSlider->setMinimum(1);
+        playingSpeedSlider->setMaximum(5);
+        playingSpeedSlider->setSingleStep(1);
+        playingSpeedSlider->setSliderPosition(1);
+        playingSpeedSlider->setOrientation(Qt::Horizontal);
+        playingSpeedSlider->setTickPosition(QSlider::TicksBelow);
+        playingSpeedSlider->setTickInterval(1);
+
+        verticalLayout_5->addWidget(playingSpeedSlider);
+
+        lblCurrentSpeed = new QLabel(groupBox_5);
+        lblCurrentSpeed->setObjectName(QString::fromUtf8("lblCurrentSpeed"));
+
+        verticalLayout_5->addWidget(lblCurrentSpeed);
 
 
         verticalLayout->addWidget(groupBox_5);
@@ -311,7 +336,7 @@ public:
         AugmentedRealityTutorialClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(AugmentedRealityTutorialClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 966, 21));
+        menuBar->setGeometry(QRect(0, 0, 969, 22));
         AugmentedRealityTutorialClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(AugmentedRealityTutorialClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -336,6 +361,7 @@ public:
         QObject::connect(comboAdaptiveMode, SIGNAL(currentIndexChanged(int)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
         QObject::connect(spinBlocksize, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
         QObject::connect(spinConstantC, SIGNAL(valueChanged(double)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
+        QObject::connect(playingSpeedSlider, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(playSpeedChanged()));
 
         QMetaObject::connectSlotsByName(AugmentedRealityTutorialClass);
     } // setupUi
@@ -352,6 +378,8 @@ public:
         groupBox_5->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Basic Settings", 0, QApplication::UnicodeUTF8));
         pushCalibrateGuitar->setText(QApplication::translate("AugmentedRealityTutorialClass", "Calibrate Guitar", 0, QApplication::UnicodeUTF8));
         checkShowCalibration->setText(QApplication::translate("AugmentedRealityTutorialClass", "Show Calibration", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AugmentedRealityTutorialClass", "Playing Speed", 0, QApplication::UnicodeUTF8));
+        lblCurrentSpeed->setText(QApplication::translate("AugmentedRealityTutorialClass", "1", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Settings", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Type:", 0, QApplication::UnicodeUTF8));
         comboThresholdType->clear();

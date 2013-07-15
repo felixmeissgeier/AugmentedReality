@@ -22,7 +22,7 @@ static const uint qt_meta_data_ARExercise[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -43,6 +43,7 @@ static const uint qt_meta_data_ARExercise[] = {
      234,   11,   11,   11, 0x0a,
      256,   11,   11,   11, 0x0a,
      274,   11,   11,   11, 0x0a,
+     293,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -55,7 +56,7 @@ static const char qt_meta_stringdata_ARExercise[] = {
     "reloadFileInputPushed()\0pauseVideo()\0"
     "fretBoardDetected()\0calibrateGuitar()\0"
     "saveFretboardToFile()\0drawCalibration()\0"
-    "updateTabulatureDataSetIndex(int)\0"
+    "playSpeedChanged()\0updateTabulatureDataSetIndex(int)\0"
 };
 
 void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -76,7 +77,8 @@ void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->calibrateGuitar(); break;
         case 10: _t->saveFretboardToFile(); break;
         case 11: _t->drawCalibration(); break;
-        case 12: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->playSpeedChanged(); break;
+        case 13: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -114,9 +116,9 @@ int ARExercise::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }

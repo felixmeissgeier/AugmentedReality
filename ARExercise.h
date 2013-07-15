@@ -49,6 +49,7 @@ public slots:
   void calibrateGuitar();
   void saveFretboardToFile();
   void drawCalibration();
+	void playSpeedChanged();
   void updateTabulatureDataSetIndex(int);
 
 private:
