@@ -135,7 +135,7 @@ void Marker::indexMarkerCorners(){
   if(_leftTopCornerIndex==0){
     _rightTopCornerIndex = 1;
   }
-  for(size_t i = 0; i<_cornerPoints.size(); i++){
+  for(int i = 0; i<_cornerPoints.size(); i++){
     if(i!=_leftTopCornerIndex){
       if(_cornerPoints.at(i).y < _cornerPoints.at(_rightTopCornerIndex).y){
         _rightTopCornerIndex = i;
@@ -148,7 +148,7 @@ void Marker::indexMarkerCorners(){
     _rightTopCornerIndex = tmp;
   }
 
-  for(size_t i = 0; i<_cornerPoints.size(); i++){
+  for(int i = 0; i<_cornerPoints.size(); i++){
     if(i!=_leftTopCornerIndex && i!=_rightTopCornerIndex){
       if(_leftBottomCornerIndex==-1){
         _leftBottomCornerIndex = i;

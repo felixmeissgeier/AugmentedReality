@@ -38,6 +38,7 @@ private:
   void initMarkerList();
   void printResultMatrix(float* resultmatrix);
 	cv::Point2f intersect(cv::Vec4f &line1, cv::Vec4f &line2);
+	bool shouldBeEmitted(Marker &m);
 	
   std::vector<int> _detectedMarker;
   std::map<int,int> _markerList;
@@ -45,6 +46,7 @@ private:
   
   int _stripeSizeRows;
   int _stripeSizeCols;
+	Marker _prevMarker;
 	
 	
 };

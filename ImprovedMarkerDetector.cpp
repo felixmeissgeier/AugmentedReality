@@ -330,7 +330,13 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 				cornerPoints2d.push_back(p);
 			}
 			Marker marker(cornerPoints2d,code,distance,angle);
-			detectedMarkers.push_back(marker);
+			if(shouldBeEmitted(marker)){
+				detectedMarkers.push_back(marker);
+				_prevMarker = marker;
+			}
+			else{
+				detectedMarkers.push_back(_prevMarker);
+			}
 		}
 	}
 	return detectedMarkers;
@@ -450,4 +456,31 @@ cv::Point2f ImprovedMarkerDetector::intersect(cv::Vec4f &line1, cv::Vec4f &line2
 	result.y = (y2 + s * b2);
 	
 	return result;
+}
+
+bool ImprovedMarkerDetector::shouldBeEmitted(Marker &m){
+	if(_prevMarker.isValid()){
+		double tolerance = 2.0;
+		cv::Point2d oldTopLeft = _prevMarker.getLeftTopCorner();
+		cv::Point2d oldTopRight= _prevMarker.getRightTopCorner();
+		cv::Point2d oldBottomLeft = _prevMarker.getLeftBottomCorner();
+		cv::Point2d oldBottomRight = _prevMarker.getRightBottomCorner();
+		
+		cv::Point2d newTopLeft = m.getLeftTopCorner();
+		cv::Point2d newTopRight= m.getRightTopCorner();
+		cv::Point2d newBottomLeft = m.getLeftBottomCorner();
+		cv::Point2d newBottomRight = m.getRightBottomCorner();
+		
+	
+		if (abs(oldTopLeft.x - newTopLeft.x) <= tolerance && 
+				abs(oldBottomRight.x - newBottomRight.x) <= tolerance &&
+				abs(oldTopLeft.y - newTopLeft.y) <= tolerance &&
+				abs(oldBottomRight.y - newBottomRight.y) <= tolerance) {
+			return false;
+		}
+		return true;
+	}
+	else{
+		return true;
+	}
 }
