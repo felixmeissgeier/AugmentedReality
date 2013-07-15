@@ -56,6 +56,7 @@ private:
   void computeDrawIntersectionPoints();
   void drawIntersectionPoints();
   double getDeltaMarkerScale();
+  double getMarkerRealRatio();
 
   Ui::AugmentedRealityTutorialClass ui;
   DetectionThread* _detectionThread;

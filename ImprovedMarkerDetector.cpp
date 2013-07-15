@@ -59,7 +59,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
   else{
     cv::threshold(greyImage,greyImage,(double)thresholdSettings.thresholdValue,255.0,thresholdSettings.thresholdType);
   }
-	imshow("Threshold", greyImage);
+	//imshow("Threshold", greyImage);
 	//Preparations for contour finding
 	std::vector<std::vector<cv::Point> > contours;
 	std::vector<cv::Vec4i> hierarchies;
