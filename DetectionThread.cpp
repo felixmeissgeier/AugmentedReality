@@ -15,7 +15,7 @@ DetectionThread::DetectionThread(ARExercise* parent)
   _markerDetectionThresholdSettings.adaptiveThresholdBlocksize = 201;
   _markerDetectionThresholdSettings.adaptiveThresholdConstantC = 5;
   _markerDetectionThresholdSettings.thresholdType = cv::THRESH_BINARY;
-  _markerDetectionThresholdSettings.thresholdValue = 80;
+  _markerDetectionThresholdSettings.thresholdValue = 166;
   _markerDetectionThresholdSettings.useAdaptiveThreshold = false;
 
   _guitarDetectionThresholdSettings.adaptiveMode = cv::ADAPTIVE_THRESH_MEAN_C;
@@ -78,7 +78,7 @@ void DetectionThread::setInputFrame(cv::Mat* inputFrame){
 }
 
 Marker DetectionThread::getCurrentMarker(){
-  QReadLocker locker(&_lock);
+ // QReadLocker locker(&_lock);
   return _currentMarker;
 }
 

@@ -3,6 +3,7 @@
 
 GuitarDetector::GuitarDetector(void)
 {
+
 }
 
 
@@ -60,7 +61,7 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     //detect lines using HoughLines
     cv::vector<cv::Vec4i> lines;
     cv::HoughLinesP( filteredFrame, lines, 1, CV_PI/180, 10,100,20.0 );
-    
+        
     cv::Vec4i topLine(0,grayscaleFrame.rows,0,grayscaleFrame.rows);
     cv::Vec4i bottomLine(0,0,0,0);
     bool bottomLineDefined=false;
@@ -140,7 +141,6 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
         //get lines
         cv::vector<cv::Vec4i> fretLines;
         cv::HoughLinesP( tmpThresholdFrame, fretLines, 1, CV_PI/180,10,markerEdgeRealityRatio*realMinFretHeight,10.0);
-
         //outputFrame = tmpThresholdFrame.clone();
         //yTop = 0;
         if(fretLines.size()>0){
@@ -152,10 +152,17 @@ cv::Mat GuitarDetector::detectFretBoard(cv::Mat inputFrame, ThresholdSettings th
     
           for(uint i = 0; i<fretLines.size(); i++){
             fret.clear();
-            fret.push_back(cv::Point2d(fretLines[i][0]-grayscaleFrame.cols,topLineM*fretLines[i][0]+topLineN));
-            fret.push_back(cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN));
+            cv::Point2d topPoint = cv::Point2d(fretLines[i][0]-grayscaleFrame.cols,topLineM*fretLines[i][0]+topLineN+markerEdgeRealityRatio*0.005);
+            cv::Point2d bottomPoint = cv::Point2d(fretLines[i][2]-grayscaleFrame.cols,bottomLineM*fretLines[i][2]+bottomLineN-markerEdgeRealityRatio*0.005);
+            fret.push_back(topPoint);
+            std::vector<cv::Point2d> points = getPointsBetweenBorderPoints(topPoint,bottomPoint,markerEdgeRealityRatio);
+            for(int i=0; i<points.size();i++){
+              fret.push_back(points.at(i));
+            }
+            fret.push_back(bottomPoint);
             intersectionPoints.push_back(fret);
           }
+
           //define new fretboard
           fretBoard.setMarkerScale(detectedMarker.getBottomEdgeLength()/realMarkerEdgeLength);
           fretBoard.setMarkerRotation(detectedMarker.getMarkerRotationAngle());
@@ -201,4 +208,25 @@ double GuitarDetector::getDistanceBetweenLines(double m1, double b1, double m2, 
     distance = sqrt(pow(x1-xIntersect,2)+pow(y1-yIntersect,2));
   }
   return distance;
+}
+
+std::vector<cv::Point2d> GuitarDetector::getPointsBetweenBorderPoints(cv::Point2d topPoint, cv::Point2d bottomPoint, double markerEdgeRealityRatio){
+  std::vector<cv::Point2d> points;
+  
+  double deltaY = topPoint.y-bottomPoint.y;
+  double deltaX = topPoint.x-bottomPoint.x;
+  double m = deltaX/deltaY;
+  double distance = sqrt(pow(abs(deltaX),2.0)+pow(abs(deltaY),2.0));
+  double subDistance = distance/5.0;
+  double alpha = atan(deltaX/deltaY);
+  double deltaSubY = cos(alpha)*subDistance;
+  double deltaSubX = deltaSubY * m;
+
+  if(subDistance>=(markerEdgeRealityRatio*0.005)){
+    for(int i=0;i<4;i++){
+      points.push_back(cv::Point2d(topPoint.x+((i+1)*deltaSubX),topPoint.y+((i+1)*deltaSubY)));
+    }
+  }
+
+  return points;
 }

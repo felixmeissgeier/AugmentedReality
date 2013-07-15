@@ -28,7 +28,6 @@ public:
   double getTopEdgeLength();
   double getRightEdgeLength();
   double getBottomEdgeLength();
-
   
 private:
   void indexMarkerCorners();

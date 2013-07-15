@@ -29,7 +29,7 @@ void TabProvider::start(){
 }
 
 void TabProvider::provideNextTabulatureDataSet(){
-	if(_tabCounter <= (int)_tabulatureSize){
+	if(_tabCounter < (int)_tabulatureSize){
     TabulatureDataSet currentTabDS;
     if(_tabCounter<0){
       currentTabDS.set(100,-1,-1,-1,-1,-1,-1);

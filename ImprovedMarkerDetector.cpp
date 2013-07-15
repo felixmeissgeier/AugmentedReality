@@ -75,7 +75,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 		approxPolyDP(cv::Mat(contours[i]), approx, 5, true);
 		rectangles[i] = boundingRect(approx);
 		//just rectangles
-		if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30)){
+		if(approx.size() == 4 && (rectangles[i].height > 30 && rectangles[i].width > 30) && fabs(cv::contourArea(cv::Mat(approx))) > 100 && cv::isContourConvex(cv::Mat(approx))){
 			//polylines(*inputFrame, approx, true, cv::Scalar(0,0,255), 1, cv::CV_AA, 0);
 			
 			//Fitted lines
@@ -225,7 +225,7 @@ std::vector<Marker> ImprovedMarkerDetector::detectMarkers(cv::Mat* inputFrame, T
 			warpPerspective(greyClone, markerImage, transMatrix, markerSize, cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar());
 			//Thresholding
 			markerImage = markerImage > 128;
-			
+      //cv::imshow("Threshold",markerImage);
 			bool hasBorder = true;
 			for(int i = 0; i < markerImage.cols; i++){
 				//top row

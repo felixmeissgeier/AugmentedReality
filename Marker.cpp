@@ -14,13 +14,15 @@ Marker::Marker()
 }
 
 Marker::Marker(cv::vector<cv::Point2d> cornerPoints, int markerID, double distance, int detectionRotations)
-  :_cornerPoints(cornerPoints),
-  _markerID(markerID),
+  :_markerID(markerID),
   _distance(distance),
   _detectionRotations(detectionRotations),
   _valid(true)
 {
-  indexMarkerCorners();  
+  if(cornerPoints.size()==4){
+    _cornerPoints = cornerPoints;
+    indexMarkerCorners();
+  }
 }
 
 
@@ -32,7 +34,8 @@ bool Marker::isValid(){
 	if (_cornerPoints.size() == 0) {
 		return false;
 	}
-	for(int i = 0; i < 4; i++){
+  //corners stored in marker are correct
+	/*for(int i = 0; i < 4; i++){
 		cv::Point2f anchor = _cornerPoints[(i+1)%4];
 		cv::Point2f p1 = _cornerPoints[i];
 		cv::Point2f p2 = _cornerPoints[(i+2)%4];
@@ -58,13 +61,13 @@ bool Marker::isValid(){
 		//arccos to get the angle -> bogenmaß
 		double angle = acos(result);
 		
-		double PI = atan(1)*4;
+		double PI = atan(1.0)*4;
 		angle = (angle * 180.0)/PI;
 		
 		if(angle > 100.0 || angle < 80.0){
 			return false;
 		}		
-	}
+	}*/
 	return true;
 }
 
@@ -124,10 +127,13 @@ void Marker::indexMarkerCorners(){
   _leftBottomCornerIndex=-1;
   _rightBottomCornerIndex=-1;
 
-  for(ssize_t i = 0; i<_cornerPoints.size(); i++){
+  for(size_t i = 0; i<_cornerPoints.size(); i++){
     if(_cornerPoints.at(i).y < _cornerPoints.at(_leftTopCornerIndex).y){
       _leftTopCornerIndex = i;
     }
+  }
+  if(_leftTopCornerIndex==0){
+    _rightTopCornerIndex = 1;
   }
   for(size_t i = 0; i<_cornerPoints.size(); i++){
     if(i!=_leftTopCornerIndex){

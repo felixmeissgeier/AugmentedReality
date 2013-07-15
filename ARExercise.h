@@ -52,28 +52,34 @@ public slots:
   void updateTabulatureDataSetIndex(int);
 
 private:
-    Ui::AugmentedRealityTutorialClass ui;
-    DetectionThread* _detectionThread;
-		TabProvider* _tabProvider;
-    TabVisualizer* _tabVisualizer;
-    Marker _currentMarker;
-    QTimer* _captureTimer;
-    int _showSavedLabelCounter;
-    cv::VideoCapture* _cap;
-    cv::Mat _currentInputFrame, _currentThresholdFrame;
-    cv::Mat _bufferFrame;
-    int _camDeviceID;
-    QString _inputFilePath;
-    QString _tabFilePath;
-    QString _fretboardFilePath;
-    Tabulature _tabulature;
-    bool _videoPaused;
-    int _captureDuration, _recomputeDuration;
-    bool _showCalibration;
-    bool _calibrationModeOn;
-    FretBoard _currentFretBoard;
-    FretBoard _detectedFretBoard;
-    bool _fretBoardDetected;
+  void computePreciseDrawIntersectionPoints();
+  void computeDrawIntersectionPoints();
+  void drawIntersectionPoints();
+  double getDeltaMarkerScale();
+
+  Ui::AugmentedRealityTutorialClass ui;
+  DetectionThread* _detectionThread;
+	TabProvider* _tabProvider;
+  TabVisualizer* _tabVisualizer;
+  Marker _currentMarker;
+  QTimer* _captureTimer;
+  int _showSavedLabelCounter;
+  cv::VideoCapture* _cap;
+  cv::Mat _currentInputFrame, _currentThresholdFrame;
+  cv::Mat _bufferFrame;
+  int _camDeviceID;
+  QString _inputFilePath;
+  QString _tabFilePath;
+  QString _fretboardFilePath;
+  Tabulature _tabulature;
+  bool _videoPaused;
+  int _captureDuration, _recomputeDuration;
+  bool _showCalibration;
+  bool _calibrationModeOn;
+  FretBoard _currentFretBoard;
+  FretBoard _detectedFretBoard;
+  bool _fretBoardDetected;
+  std::vector<std::vector<cv::Point2d> > _drawIntersectionPoints;
 
 
     QReadWriteLock _lock;

@@ -14,7 +14,7 @@ void TabVisualizer::setTabulatureDataSetIndex(int tabulatureDataSetIndex){
   _tabulatureDataSetIndex = tabulatureDataSetIndex;
 }
 
-void TabVisualizer::drawTabulature(cv::Mat* frame){
+void TabVisualizer::drawTabulature(cv::Mat* frame, std::vector<std::vector<cv::Point2d> > intersectionPoints, double scale){
   int tabShowFrameXOffset = 20;
   int tabShowFrameYOffset = 20;
   int tabShowFrameInnerXOffset = 10;
@@ -44,18 +44,26 @@ void TabVisualizer::drawTabulature(cv::Mat* frame){
   else{
     currentTabDS = _tabulature.at(dataSetIterator);
   }
+
   while(pxlIterator<tabShowPxlInnerWidth){
     for(int string=0; string<6; string++){
       int tabData = 0;
+      cv::Scalar stringPointColor;
       switch(string){
-      case 0: tabData = currentTabDS.getFretString1(); break;
-      case 1: tabData = currentTabDS.getFretString2(); break;
-      case 2: tabData = currentTabDS.getFretString3(); break;
-      case 3: tabData = currentTabDS.getFretString4(); break;
-      case 4: tabData = currentTabDS.getFretString5(); break;
-      case 5: tabData = currentTabDS.getFretString6(); break;
+      case 0: tabData = currentTabDS.getFretString1(); stringPointColor = cv::Scalar(	255,144,30); break;
+      case 1: tabData = currentTabDS.getFretString2(); stringPointColor = cv::Scalar(	0,127,255); break;
+      case 2: tabData = currentTabDS.getFretString3(); stringPointColor = cv::Scalar(	0,139,0); break;	
+      case 3: tabData = currentTabDS.getFretString4(); stringPointColor = cv::Scalar(	212,255,127); break;
+      case 4: tabData = currentTabDS.getFretString5(); stringPointColor = cv::Scalar(	51,51,205); break;
+      case 5: tabData = currentTabDS.getFretString6(); stringPointColor = cv::Scalar(	255,130,171); break;
       }
-      if(tabData!=-1){
+      if(tabData>-1){
+        if(intersectionPoints.size()>=(tabData+2) && tabData>0 && pxlIterator==0){
+          cv::Point2d prevStringPoint = intersectionPoints[tabData-1][string];
+          cv::Point2d stringPoint = intersectionPoints[tabData][string];
+          cv::Point2d drawPoint(stringPoint.x+( prevStringPoint.x-stringPoint.x)/2.0,stringPoint.y);
+          cv::circle(*frame,drawPoint,7*scale,stringPointColor,-1,CV_AA);
+        }
         cv::circle(*frame,cv::Point2d(tabShowFrameXOffset+tabShowFrameInnerXOffset+pxlIterator,tabShowFrameYOffset+string*10),4,tabDataBackgroundColor,-1,CV_AA);
         cv::putText(*frame,QString::number(tabData).toStdString(),cv::Point2d(tabShowFrameXOffset+tabShowFrameInnerXOffset+pxlIterator-3,tabShowFrameYOffset+string*10+3),cv::FONT_HERSHEY_PLAIN,0.6,tabDataTextColor,0.5,CV_AA);
       }
