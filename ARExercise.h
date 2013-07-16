@@ -13,6 +13,7 @@
 #include <QWriteLocker>
 #include <QReadLocker>
 #include <QTime>
+#include <qdir.h>
 #include <iostream>
 #include <QDebug>
 #include <qfile.h>
@@ -41,16 +42,16 @@ public slots:
   void thresholdValueChanged(int value);
   void adaptiveThresholdSettingsChanged();
 
-  void inputDeviceChanged();
   void showCalibrationChanged();
   void reloadFileInputPushed();
-  void pauseVideo();
+  void pausePushed();
   void fretBoardDetected();
   void calibrateGuitar();
   void saveFretboardToFile();
   void drawCalibration();
 	void playSpeedChanged();
   void updateTabulatureDataSetIndex(int);
+  void tabFileIndexChanged(QString);
 
 private:
   void computePreciseDrawIntersectionPoints();
@@ -58,6 +59,7 @@ private:
   void drawIntersectionPoints();
   double getDeltaMarkerScale();
   double getMarkerRealRatio();
+  void updateTabFileList();
 
   Ui::AugmentedRealityTutorialClass ui;
   DetectionThread* _detectionThread;
@@ -74,7 +76,7 @@ private:
   QString _tabFilePath;
   QString _fretboardFilePath;
   Tabulature _tabulature;
-  bool _videoPaused;
+  bool _tabPaused;
   int _captureDuration, _recomputeDuration;
   bool _showCalibration;
   bool _calibrationModeOn;

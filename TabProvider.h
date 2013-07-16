@@ -27,7 +27,9 @@ public:
   TabProvider(QObject* consumer, Tabulature tab);
 	~TabProvider();
 	void start();
-	void setMetronom(int val);
+	void setMetronom(double val);
+  void setPaused(bool isPaused);
+  void restart();
 
 	
 private:
@@ -37,7 +39,8 @@ private:
 	Tabulature					_tabulature;
 	size_t							_tabulatureSize;
 	int									_tabCounter;
-	int									_metronom;
+	double									_metronom;
+  bool                _paused;
 	
 private slots:
 	void provideNextTabulatureDataSet();

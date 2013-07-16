@@ -1,14 +1,15 @@
 #include "ARExercise.h"
 
+
 ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
-    _tabFilePath(/*"test.gp4"*/"sportfreunde_stiller_ein_kompliment.gp4"),
+    _inputFilePath("guitar_init.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _tabFilePath(""),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
-    _videoPaused(false),
+    _tabPaused(false),
     _captureDuration(33),
     _calibrationModeOn(false),
     _fretBoardDetected(false),
@@ -40,28 +41,24 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
   this->move(300,100);
   _captureTimer = new QTimer();
 
-  _cap = new cv::VideoCapture(_camDeviceID);
-  //_cap = new cv::VideoCapture(_inputFilePath.toStdString());
+  //_cap = new cv::VideoCapture(_camDeviceID);
+  _cap = new cv::VideoCapture(_inputFilePath.toStdString());
 
   QObject::connect(_captureTimer,SIGNAL(timeout()),this,SLOT(refresh()));
   //QObject::connect(_recomputeTimer,SIGNAL(timeout()),this,SLOT(recomputeMarkerPosition()));
 
   _captureTimer->start(_captureDuration);
-  
-  inputDeviceChanged();
+
   showCalibrationChanged();
+
+  updateTabFileList();
+  tabFileIndexChanged(ui.fileCombo->currentText());
   
-  _tabulature = GP4Decoder::decodeFile(_tabFilePath);
-  if(_tabulature.size()>0){
-    _tabVisualizer = new TabVisualizer(_tabulature);
-    _tabProvider = new TabProvider(this,_tabulature);
-    if(_tabProvider!=0 && _tabVisualizer!=0){
-			_tabProvider->setMetronom(1);
-      _tabProvider->start();
-    }
-  }
   _detectionThread = new DetectionThread(this);
   _detectionThread->start();
+  playSpeedChanged();
+  QImage legendImage("./guitarTuning.jpg");
+  ui.legendImageLabel->setPixmap(QPixmap::fromImage(legendImage));
 }
 
 /*
@@ -95,17 +92,17 @@ void ARExercise::refresh(){
         cv::circle(_currentInputFrame,pt2,3,cv::Scalar(230,0,0));
         cv::circle(_currentInputFrame,pt3,3,cv::Scalar(230,0,0));
         cv::circle(_currentInputFrame,pt4,3,cv::Scalar(230,0,0));
-				cv::line(_currentInputFrame, pt1, pt2, cv::Scalar(230,0,0), 2, 8, 0);
+				/*cv::line(_currentInputFrame, pt1, pt2, cv::Scalar(230,0,0), 2, 8, 0);
 				cv::line(_currentInputFrame, pt2, pt3, cv::Scalar(230,0,0), 2, 8, 0);
 				cv::line(_currentInputFrame, pt3, pt4, cv::Scalar(230,0,0), 2, 8, 0);
-				cv::line(_currentInputFrame, pt4, pt1, cv::Scalar(230,0,0), 2, 8, 0);
+				cv::line(_currentInputFrame, pt4, pt1, cv::Scalar(230,0,0), 2, 8, 0);*/
 
         //get scale for scaling tab bobbels
         scale = getDeltaMarkerScale();
       }
 
       _tabVisualizer->drawTabulature(&_currentInputFrame,_drawIntersectionPoints,scale);
-            
+
       QImage img(_currentInputFrame.data,_currentInputFrame.size[1],_currentInputFrame.size[0],imgFormat);
       img = img.rgbSwapped();
    
@@ -121,6 +118,7 @@ cv::Mat ARExercise::getBufferFrame(){
   QReadLocker locker(&_lock);
   return _bufferFrame;
 }
+
 void ARExercise::updateTabulatureDataSetIndex(int index){
   if(_tabVisualizer!=0){
     _tabVisualizer->setTabulatureDataSetIndex(index);
@@ -258,16 +256,16 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
       }
 
       //get subimage of fret
-      cv::Rect roi(roiPointX-10,fretboardPoint.y,50,30);
+      cv::Rect roi(roiPointX-10,fretboardPoint.y,20,30);
       if(roi.x>=0 && roi.y>=0 && (roi.x+roi.width)<grayFrame.cols && (roi.y+roi.height)<grayFrame.rows){
-        cv::rectangle(_currentInputFrame,roi,cv::Scalar(255,10,23));
+        //cv::rectangle(_currentInputFrame,roi,cv::Scalar(255,10,23));
         cv::Mat fretFrame = cv::Mat(grayFrame,roi);
         //edge detection using sobel
         //cv::dilate(fretFrame,dilateFrame,cv::Mat());
         cv::Sobel(fretFrame,sobelFrame,-1,1,0,3);
         cv::Mat tmpThresholdFrame;
         //better extraction of edges by thresholding image
-        cv::threshold(sobelFrame,tmpThresholdFrame,128,255,cv::THRESH_BINARY);      
+        cv::threshold(sobelFrame,tmpThresholdFrame,50,255,cv::THRESH_BINARY);      
         //get lines
         cv::vector<cv::Vec4i> fretLines;
         cv::HoughLinesP( tmpThresholdFrame, fretLines, 10, CV_PI/180,10,20,3.0);
@@ -334,10 +332,10 @@ void ARExercise::drawIntersectionPoints(){
       for(uint string=0; string<_drawIntersectionPoints[fret].size(); string++){
         cv::Point2d fretboardPoint;
         if(string!=0 && string!=5){
-          cv::circle(_currentInputFrame,_drawIntersectionPoints[fret][string],3,cv::Scalar(200,0,10));
+          //cv::circle(_currentInputFrame,_drawIntersectionPoints[fret][string],3,cv::Scalar(200,0,10));
         }
         else{
-          cv::circle(_currentInputFrame,_drawIntersectionPoints[fret][string],3,cv::Scalar(0,250,0));
+          cv::circle(_currentInputFrame,_drawIntersectionPoints[fret][string],1,cv::Scalar(0,250,0));
         }
       }
     }
@@ -389,52 +387,20 @@ void ARExercise::computeDrawIntersectionPoints(){
   }
 }
 
-void ARExercise::inputDeviceChanged(){
-  _currentMarker = Marker();
-  _captureTimer->stop();
-
-  if(_cap!=0){
-    _cap->release();
-  }
-  
-  delete _cap;
-  _cap = 0;
-  
-  if(ui.radioInputWebCam->isChecked()){
-    _cap = new cv::VideoCapture(_camDeviceID);
-    ui.pushReloadFileInput->setEnabled(false);
-    ui.pushPause->setEnabled(false);
-    //_cap->open(_camDeviceID);
-  }
-  else if(ui.radioInputFile->isChecked()){
-    _cap = new cv::VideoCapture(_inputFilePath.toStdString());
-    ui.pushReloadFileInput->setEnabled(true);
-    ui.pushPause->setEnabled(true);
+void ARExercise::pausePushed(){
+  if(_tabPaused==true){
     ui.pushPause->setText("Pause");
-    //_cap->open(_inputFilePath.toStdString());
+    _tabPaused = false;
   }
-
-  _captureTimer->start(_captureDuration);
-}
-
-void ARExercise::pauseVideo(){
-  if(ui.radioInputFile->isChecked()){
-    if(_videoPaused==true){
-      ui.pushPause->setText("Pause");
-      _captureTimer->start(_captureDuration);
-      _videoPaused = false;
-    }
-    else{
-      ui.pushPause->setText("Continue");
-      _captureTimer->stop();
-      _videoPaused = true;
-    }
-    
+  else{
+    ui.pushPause->setText("Continue");
+    _tabPaused = true;
   }
+  _tabProvider->setPaused(_tabPaused);
 }
 
 void ARExercise::reloadFileInputPushed(){
-  inputDeviceChanged();
+  _tabProvider->restart();
 }
 
 void ARExercise::showCalibrationChanged(){
@@ -494,8 +460,8 @@ void ARExercise::thresholdValueChanged(int value){
 }
 
 void ARExercise::playSpeedChanged(){
-	_tabProvider->setMetronom(ui.playingSpeedSlider->value());
-	ui.lblCurrentSpeed->setText(QString::number(ui.playingSpeedSlider->value()));
+	_tabProvider->setMetronom(ui.playingSpeedSlider->value()*0.1);
+  ui.playSpeedSliderLabel->setText("Tab Preview Speed: x"+QString::number(ui.playingSpeedSlider->value()*0.1));
 }
 
 void ARExercise::adaptiveThresholdSettingsChanged(){
@@ -520,6 +486,34 @@ void ARExercise::adaptiveThresholdSettingsChanged(){
   _detectionThread->_markerDetectionThresholdSettings.adaptiveThresholdBlocksize = adaptiveThresholdBlocksize;
 
   _detectionThread->_markerDetectionThresholdSettings.adaptiveThresholdConstantC = ui.spinConstantC->value();
+}
+
+void ARExercise::updateTabFileList(){
+  QStringList nameFilter("*.gp4");
+  QDir directory("./");
+  QStringList files = directory.entryList(nameFilter);
+  for(int i=0;i<files.size();i++){
+    ui.fileCombo->addItem(files[i]);
+  }
+}
+
+void ARExercise::tabFileIndexChanged(QString filename){
+  _tabFilePath = filename;
+  _tabulature = GP4Decoder::decodeFile(_tabFilePath);
+  if(_tabulature.size()>0){
+    if(_tabVisualizer!=0){
+      delete _tabVisualizer;
+    }
+    if(_tabProvider!=0){
+      delete _tabProvider;
+    }
+    _tabVisualizer = new TabVisualizer(_tabulature);
+    _tabProvider = new TabProvider(this,_tabulature);
+    if(_tabProvider!=0 && _tabVisualizer!=0){
+			_tabProvider->setMetronom(1);
+      _tabProvider->start();
+    }
+  }
 }
 
 ARExercise::~ARExercise()

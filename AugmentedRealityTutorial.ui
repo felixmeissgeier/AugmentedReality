@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>801</height>
+    <width>1033</width>
+    <height>890</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,14 +41,38 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="imageLabel">
-       <property name="text">
-        <string>No Camera Input</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QLabel" name="imageLabel">
+         <property name="text">
+          <string>No Camera Input</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="legendImageLabel">
+         <property name="text">
+          <string>No Legend Image</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <spacer name="horizontalSpacer">
@@ -68,33 +92,16 @@
        <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
-          <string>Input Device</string>
+          <string>Tab File</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QRadioButton" name="radioInputWebCam">
-            <property name="text">
-             <string>WebCam</string>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioInputFile">
-            <property name="text">
-             <string>File Input</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <widget class="QComboBox" name="fileCombo"/>
           </item>
           <item>
            <widget class="QPushButton" name="pushReloadFileInput">
             <property name="text">
-             <string>Reload File</string>
+             <string>Restart</string>
             </property>
            </widget>
           </item>
@@ -115,13 +122,6 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QPushButton" name="pushCalibrateGuitar">
-            <property name="text">
-             <string>Calibrate Guitar</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QCheckBox" name="checkShowCalibration">
             <property name="text">
              <string>Show Calibration</string>
@@ -132,7 +132,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="playSpeedSliderLabel">
             <property name="text">
              <string>Playing Speed</string>
             </property>
@@ -144,13 +144,16 @@
              <number>1</number>
             </property>
             <property name="maximum">
-             <number>5</number>
+             <number>20</number>
             </property>
             <property name="singleStep">
              <number>1</number>
             </property>
+            <property name="value">
+             <number>10</number>
+            </property>
             <property name="sliderPosition">
-             <number>1</number>
+             <number>10</number>
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -164,11 +167,25 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="lblCurrentSpeed">
-            <property name="text">
-             <string>1</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="lblCurrentSpeed">
+              <property name="text">
+               <string>x0.1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>x2.0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -210,7 +227,7 @@
              <string>Fixed-Level Threshold</string>
             </property>
             <property name="checked">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -253,25 +270,12 @@
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <widget class="QRadioButton" name="radioAdaptiveThreshold">
             <property name="text">
              <string>Adaptive Threshold</string>
             </property>
             <property name="checked">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -358,6 +362,13 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
+           <widget class="QPushButton" name="pushCalibrateGuitar">
+            <property name="text">
+             <string>Calibrate Guitar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="pushFretBoardDetected">
             <property name="text">
              <string>Fretboard Detected</string>
@@ -380,19 +391,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </item>
     </layout>
@@ -403,8 +401,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>969</width>
-     <height>22</height>
+     <width>1033</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -424,22 +422,6 @@
  </resources>
  <connections>
   <connection>
-   <sender>radioInputWebCam</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>AugmentedRealityTutorialClass</receiver>
-   <slot>inputDeviceChanged()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>938</x>
-     <y>84</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>609</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pushReloadFileInput</sender>
    <signal>clicked()</signal>
    <receiver>AugmentedRealityTutorialClass</receiver>
@@ -447,27 +429,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>938</x>
-     <y>136</y>
+     <y>144</y>
     </hint>
     <hint type="destinationlabel">
      <x>566</x>
      <y>131</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushPause</sender>
-   <signal>clicked()</signal>
-   <receiver>AugmentedRealityTutorialClass</receiver>
-   <slot>pauseVideo()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>938</x>
-     <y>165</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>596</x>
-     <y>180</y>
     </hint>
    </hints>
   </connection>
@@ -479,7 +445,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>938</x>
-     <y>250</y>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
      <x>505</x>
@@ -494,8 +460,8 @@
    <slot>calibrateGuitar()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>891</x>
-     <y>217</y>
+     <x>938</x>
+     <y>752</y>
     </hint>
     <hint type="destinationlabel">
      <x>739</x>
@@ -511,7 +477,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>938</x>
-     <y>620</y>
+     <y>795</y>
     </hint>
     <hint type="destinationlabel">
      <x>713</x>
@@ -527,7 +493,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>938</x>
-     <y>649</y>
+     <y>838</y>
     </hint>
     <hint type="destinationlabel">
      <x>739</x>
@@ -542,8 +508,8 @@
    <slot>thresholdTypeChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>829</x>
-     <y>298</y>
+     <x>937</x>
+     <y>441</y>
     </hint>
     <hint type="destinationlabel">
      <x>457</x>
@@ -558,8 +524,8 @@
    <slot>thresholdTypeChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>691</x>
-     <y>331</y>
+     <x>938</x>
+     <y>465</y>
     </hint>
     <hint type="destinationlabel">
      <x>525</x>
@@ -574,12 +540,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>809</x>
-     <y>326</y>
+     <x>938</x>
+     <y>465</y>
     </hint>
     <hint type="destinationlabel">
      <x>809</x>
-     <y>376</y>
+     <y>488</y>
     </hint>
    </hints>
   </connection>
@@ -590,12 +556,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>809</x>
-     <y>439</y>
+     <x>938</x>
+     <y>565</y>
     </hint>
     <hint type="destinationlabel">
      <x>809</x>
-     <y>506</y>
+     <y>602</y>
     </hint>
    </hints>
   </connection>
@@ -606,8 +572,8 @@
    <slot>thresholdValueChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>753</x>
-     <y>390</y>
+     <x>928</x>
+     <y>532</y>
     </hint>
     <hint type="destinationlabel">
      <x>536</x>
@@ -622,8 +588,8 @@
    <slot>adaptiveThresholdSettingsChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>788</x>
-     <y>485</y>
+     <x>928</x>
+     <y>614</y>
     </hint>
     <hint type="destinationlabel">
      <x>280</x>
@@ -638,8 +604,8 @@
    <slot>adaptiveThresholdSettingsChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>795</x>
-     <y>516</y>
+     <x>928</x>
+     <y>640</y>
     </hint>
     <hint type="destinationlabel">
      <x>565</x>
@@ -654,8 +620,8 @@
    <slot>adaptiveThresholdSettingsChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>815</x>
-     <y>536</y>
+     <x>928</x>
+     <y>666</y>
     </hint>
     <hint type="destinationlabel">
      <x>612</x>
@@ -670,12 +636,44 @@
    <slot>playSpeedChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>802</x>
-     <y>320</y>
+     <x>938</x>
+     <y>336</y>
     </hint>
     <hint type="destinationlabel">
      <x>484</x>
      <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushPause</sender>
+   <signal>clicked()</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>pausePushed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>726</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fileCombo</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>AugmentedRealityTutorialClass</receiver>
+   <slot>tabFileIndexChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>711</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>109</y>
     </hint>
    </hints>
   </connection>
@@ -693,5 +691,7 @@
   <slot>fretBoardDetected()</slot>
   <slot>saveFretboardToFile()</slot>
   <slot>playSpeedChanged()</slot>
+  <slot>pausePushed()</slot>
+  <slot>tabFileIndexChanged(QString)</slot>
  </slots>
 </ui>

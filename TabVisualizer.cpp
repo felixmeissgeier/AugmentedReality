@@ -73,7 +73,7 @@ void TabVisualizer::drawTabulature(cv::Mat* frame, std::vector<std::vector<cv::P
         if(intersectionPoints.size()>=(tabData+2) && tabData>0 && pxlIterator==0){
           cv::Point2d prevStringPoint = intersectionPoints[tabData-1][string];
           cv::Point2d stringPoint = intersectionPoints[tabData][string];
-          cv::Point2d drawPoint(stringPoint.x+( prevStringPoint.x-stringPoint.x)/2.0,stringPoint.y);
+          cv::Point2d drawPoint(stringPoint.x+( prevStringPoint.x-stringPoint.x)/3.0,stringPoint.y);
 
           //draw tab-point at the fretboard
           cv::circle(*frame,drawPoint,7*scale,stringPointColor,-1,CV_AA);

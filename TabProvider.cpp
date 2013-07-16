@@ -14,7 +14,8 @@ TabProvider::TabProvider(QObject* consumer, Tabulature tab)
    _tabulature(tab),
    _tabCounter(-70),
 	 _metronom(1),
-   _tabulatureSize(tab.size())
+   _tabulatureSize(tab.size()),
+   _paused(false)
 {
   QObject::connect(this,SIGNAL(tabulatureDataSetIndexChanged(int)),consumer,SLOT(updateTabulatureDataSetIndex(int)));
   QObject::connect(&_tabDataSetUpdateTimer,SIGNAL(timeout()),this,SLOT(provideNextTabulatureDataSet()));
@@ -29,7 +30,7 @@ void TabProvider::start(){
 }
 
 void TabProvider::provideNextTabulatureDataSet(){
-	if(_tabCounter < (int)_tabulatureSize){
+	if(_tabCounter < (int)_tabulatureSize && !_paused){
     TabulatureDataSet currentTabDS;
     if(_tabCounter<0){
       currentTabDS.set(100,-1,-1,-1,-1,-1,-1);
@@ -38,7 +39,7 @@ void TabProvider::provideNextTabulatureDataSet(){
       currentTabDS = _tabulature.at((size_t)_tabCounter);
     }
 		int tabDuration = currentTabDS.getDurationMs();
-    _tabDataSetUpdateTimer.setInterval(tabDuration*_metronom);
+    _tabDataSetUpdateTimer.setInterval(tabDuration*(1.0/_metronom));
     //restarttimer
     _tabDataSetUpdateTimer.start();
 
@@ -47,6 +48,14 @@ void TabProvider::provideNextTabulatureDataSet(){
   }
 }
 
-void TabProvider::setMetronom(int val){
+void TabProvider::setMetronom(double val){
 	_metronom = val;
+}
+
+void TabProvider::setPaused(bool isPaused){
+  _paused = isPaused;
+}
+
+void TabProvider::restart(){
+  _tabCounter = -30;
 }
