@@ -301,9 +301,6 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
           double preciseX = fretboardPoint.x + xOffset;
           double preciseY = fretboardPoint.y + yOffset;
           cv::Point2d fretStringPoint(preciseX,preciseY);
-					if(abs(previousX - preciseX) < 5.0){
-						fretStringPoint.x = previousX;
-					}
 					fretPoints.push_back(fretStringPoint);
         }
         _drawIntersectionPoints.push_back(fretPoints);

@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E1D6C60317950EFD00F0BF4D</string>
+										<string>E1D6C61317952A5E00F0BF4D</string>
 										<key>history</key>
 										<array>
 											<string>E1D6BE711789657300F0BF4D</string>
@@ -358,11 +358,11 @@
 											<string>E1D6C58E1794A30700F0BF4D</string>
 											<string>E1D6C58F1794A30700F0BF4D</string>
 											<string>E1D6C5911794A30700F0BF4D</string>
-											<string>E1D6C5A81794A3C300F0BF4D</string>
 											<string>E1D6C5B21794A54000F0BF4D</string>
 											<string>E1D6C5E517950C1200F0BF4D</string>
 											<string>E1D6C5FD17950EDB00F0BF4D</string>
-											<string>E1D6C5FE17950EDB00F0BF4D</string>
+											<string>E1D6C61117952A5E00F0BF4D</string>
+											<string>E1D6C61217952A5E00F0BF4D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -420,9 +420,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E1D6C5E817950C1200F0BF4D</string>
+				<string>E1D6C61417952A5E00F0BF4D</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E1D6C5E917950C1200F0BF4D</string>
+				<string>E1D6C61517952A5E00F0BF4D</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -560,11 +560,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E1D6C60417950EFD00F0BF4D</string>
-		<string>E1D6C5F317950C1200F0BF4D</string>
-		<string>E1D6C5F417950C1200F0BF4D</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E1D6BE6D1789656B00F0BF4D</string>
 		<string>/Users/andreas/workspace_cpp/AugmentedReality/AugmentedReality.xcodeproj</string>
 	</array>
@@ -646,7 +641,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E1D6BE6D1789656B00F0BF4D</string>
-				<string>E1D6C5EA17950C1200F0BF4D</string>
+				<string>E1D6C61617952A5E00F0BF4D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
