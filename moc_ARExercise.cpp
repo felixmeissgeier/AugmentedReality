@@ -35,15 +35,15 @@ static const uint qt_meta_data_ARExercise[] = {
       51,   45,   11,   11, 0x0a,
       78,   11,   11,   11, 0x0a,
      113,   11,   11,   11, 0x0a,
-     134,   11,   11,   11, 0x0a,
-     159,   11,   11,   11, 0x0a,
-     183,   11,   11,   11, 0x0a,
+     138,   11,   11,   11, 0x0a,
+     162,   11,   11,   11, 0x0a,
+     176,   11,   11,   11, 0x0a,
      196,   11,   11,   11, 0x0a,
-     216,   11,   11,   11, 0x0a,
-     234,   11,   11,   11, 0x0a,
-     256,   11,   11,   11, 0x0a,
-     274,   11,   11,   11, 0x0a,
-     293,   11,   11,   11, 0x0a,
+     214,   11,   11,   11, 0x0a,
+     236,   11,   11,   11, 0x0a,
+     254,   11,   11,   11, 0x0a,
+     273,   11,   11,   11, 0x0a,
+     307,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -52,11 +52,12 @@ static const char qt_meta_stringdata_ARExercise[] = {
     "ARExercise\0\0refresh()\0thresholdTypeChanged()\0"
     "value\0thresholdValueChanged(int)\0"
     "adaptiveThresholdSettingsChanged()\0"
-    "inputDeviceChanged()\0showCalibrationChanged()\0"
-    "reloadFileInputPushed()\0pauseVideo()\0"
+    "showCalibrationChanged()\0"
+    "reloadFileInputPushed()\0pausePushed()\0"
     "fretBoardDetected()\0calibrateGuitar()\0"
     "saveFretboardToFile()\0drawCalibration()\0"
     "playSpeedChanged()\0updateTabulatureDataSetIndex(int)\0"
+    "tabFileIndexChanged(QString)\0"
 };
 
 void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -69,16 +70,16 @@ void ARExercise::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->thresholdTypeChanged(); break;
         case 2: _t->thresholdValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->adaptiveThresholdSettingsChanged(); break;
-        case 4: _t->inputDeviceChanged(); break;
-        case 5: _t->showCalibrationChanged(); break;
-        case 6: _t->reloadFileInputPushed(); break;
-        case 7: _t->pauseVideo(); break;
-        case 8: _t->fretBoardDetected(); break;
-        case 9: _t->calibrateGuitar(); break;
-        case 10: _t->saveFretboardToFile(); break;
-        case 11: _t->drawCalibration(); break;
-        case 12: _t->playSpeedChanged(); break;
-        case 13: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->showCalibrationChanged(); break;
+        case 5: _t->reloadFileInputPushed(); break;
+        case 6: _t->pausePushed(); break;
+        case 7: _t->fretBoardDetected(); break;
+        case 8: _t->calibrateGuitar(); break;
+        case 9: _t->saveFretboardToFile(); break;
+        case 10: _t->drawCalibration(); break;
+        case 11: _t->playSpeedChanged(); break;
+        case 12: _t->updateTabulatureDataSetIndex((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->tabFileIndexChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }

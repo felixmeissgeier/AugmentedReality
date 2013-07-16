@@ -42,22 +42,25 @@ public:
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_2;
+    QVBoxLayout *verticalLayout_8;
     QLabel *imageLabel;
+    QSpacerItem *verticalSpacer;
+    QLabel *legendImageLabel;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
     QGroupBox *groupBox_4;
     QVBoxLayout *verticalLayout_4;
-    QRadioButton *radioInputWebCam;
-    QRadioButton *radioInputFile;
+    QComboBox *fileCombo;
     QPushButton *pushReloadFileInput;
     QPushButton *pushPause;
     QGroupBox *groupBox_5;
     QVBoxLayout *verticalLayout_5;
-    QPushButton *pushCalibrateGuitar;
     QCheckBox *checkShowCalibration;
-    QLabel *label;
+    QLabel *playSpeedSliderLabel;
     QSlider *playingSpeedSlider;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *lblCurrentSpeed;
+    QLabel *label_6;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
     QFormLayout *formLayout_2;
@@ -68,7 +71,6 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *labelThresholdValue;
     QSlider *sliderThresholdValue;
-    QSpacerItem *verticalSpacer_2;
     QRadioButton *radioAdaptiveThreshold;
     QGroupBox *groupBox_2;
     QFormLayout *formLayout;
@@ -80,9 +82,9 @@ public:
     QLabel *label_5;
     QGroupBox *groupBox_6;
     QVBoxLayout *verticalLayout_6;
+    QPushButton *pushCalibrateGuitar;
     QPushButton *pushFretBoardDetected;
     QPushButton *pushSaveFretboard2File;
-    QSpacerItem *verticalSpacer;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -92,7 +94,7 @@ public:
         if (AugmentedRealityTutorialClass->objectName().isEmpty())
             AugmentedRealityTutorialClass->setObjectName(QString::fromUtf8("AugmentedRealityTutorialClass"));
         AugmentedRealityTutorialClass->setEnabled(true);
-        AugmentedRealityTutorialClass->resize(969, 801);
+        AugmentedRealityTutorialClass->resize(1033, 890);
         centralWidget = new QWidget(AugmentedRealityTutorialClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
@@ -107,11 +109,26 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setSpacing(6);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
         imageLabel = new QLabel(horizontalLayoutWidget);
         imageLabel->setObjectName(QString::fromUtf8("imageLabel"));
         imageLabel->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout->addWidget(imageLabel);
+        verticalLayout_8->addWidget(imageLabel);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_8->addItem(verticalSpacer);
+
+        legendImageLabel = new QLabel(horizontalLayoutWidget);
+        legendImageLabel->setObjectName(QString::fromUtf8("legendImageLabel"));
+
+        verticalLayout_8->addWidget(legendImageLabel);
+
+
+        horizontalLayout->addLayout(verticalLayout_8);
 
         horizontalSpacer = new QSpacerItem(200, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -126,17 +143,10 @@ public:
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        radioInputWebCam = new QRadioButton(groupBox_4);
-        radioInputWebCam->setObjectName(QString::fromUtf8("radioInputWebCam"));
-        radioInputWebCam->setChecked(false);
+        fileCombo = new QComboBox(groupBox_4);
+        fileCombo->setObjectName(QString::fromUtf8("fileCombo"));
 
-        verticalLayout_4->addWidget(radioInputWebCam);
-
-        radioInputFile = new QRadioButton(groupBox_4);
-        radioInputFile->setObjectName(QString::fromUtf8("radioInputFile"));
-        radioInputFile->setChecked(true);
-
-        verticalLayout_4->addWidget(radioInputFile);
+        verticalLayout_4->addWidget(fileCombo);
 
         pushReloadFileInput = new QPushButton(groupBox_4);
         pushReloadFileInput->setObjectName(QString::fromUtf8("pushReloadFileInput"));
@@ -157,38 +167,46 @@ public:
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        pushCalibrateGuitar = new QPushButton(groupBox_5);
-        pushCalibrateGuitar->setObjectName(QString::fromUtf8("pushCalibrateGuitar"));
-
-        verticalLayout_5->addWidget(pushCalibrateGuitar);
-
         checkShowCalibration = new QCheckBox(groupBox_5);
         checkShowCalibration->setObjectName(QString::fromUtf8("checkShowCalibration"));
         checkShowCalibration->setChecked(true);
 
         verticalLayout_5->addWidget(checkShowCalibration);
 
-        label = new QLabel(groupBox_5);
-        label->setObjectName(QString::fromUtf8("label"));
+        playSpeedSliderLabel = new QLabel(groupBox_5);
+        playSpeedSliderLabel->setObjectName(QString::fromUtf8("playSpeedSliderLabel"));
 
-        verticalLayout_5->addWidget(label);
+        verticalLayout_5->addWidget(playSpeedSliderLabel);
 
         playingSpeedSlider = new QSlider(groupBox_5);
         playingSpeedSlider->setObjectName(QString::fromUtf8("playingSpeedSlider"));
         playingSpeedSlider->setMinimum(1);
-        playingSpeedSlider->setMaximum(5);
+        playingSpeedSlider->setMaximum(20);
         playingSpeedSlider->setSingleStep(1);
-        playingSpeedSlider->setSliderPosition(1);
+        playingSpeedSlider->setValue(10);
+        playingSpeedSlider->setSliderPosition(10);
         playingSpeedSlider->setOrientation(Qt::Horizontal);
         playingSpeedSlider->setTickPosition(QSlider::TicksBelow);
         playingSpeedSlider->setTickInterval(1);
 
         verticalLayout_5->addWidget(playingSpeedSlider);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         lblCurrentSpeed = new QLabel(groupBox_5);
         lblCurrentSpeed->setObjectName(QString::fromUtf8("lblCurrentSpeed"));
 
-        verticalLayout_5->addWidget(lblCurrentSpeed);
+        horizontalLayout_2->addWidget(lblCurrentSpeed);
+
+        label_6 = new QLabel(groupBox_5);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_2->addWidget(label_6);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_2);
 
 
         verticalLayout->addWidget(groupBox_5);
@@ -217,7 +235,7 @@ public:
 
         radioFixedLevelThreshold = new QRadioButton(groupBox);
         radioFixedLevelThreshold->setObjectName(QString::fromUtf8("radioFixedLevelThreshold"));
-        radioFixedLevelThreshold->setChecked(false);
+        radioFixedLevelThreshold->setChecked(true);
 
         verticalLayout_2->addWidget(radioFixedLevelThreshold);
 
@@ -246,13 +264,9 @@ public:
 
         verticalLayout_2->addWidget(groupBox_3);
 
-        verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_2->addItem(verticalSpacer_2);
-
         radioAdaptiveThreshold = new QRadioButton(groupBox);
         radioAdaptiveThreshold->setObjectName(QString::fromUtf8("radioAdaptiveThreshold"));
-        radioAdaptiveThreshold->setChecked(true);
+        radioAdaptiveThreshold->setChecked(false);
 
         verticalLayout_2->addWidget(radioAdaptiveThreshold);
 
@@ -311,6 +325,11 @@ public:
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        pushCalibrateGuitar = new QPushButton(groupBox_6);
+        pushCalibrateGuitar->setObjectName(QString::fromUtf8("pushCalibrateGuitar"));
+
+        verticalLayout_6->addWidget(pushCalibrateGuitar);
+
         pushFretBoardDetected = new QPushButton(groupBox_6);
         pushFretBoardDetected->setObjectName(QString::fromUtf8("pushFretBoardDetected"));
 
@@ -326,17 +345,13 @@ public:
 
         verticalLayout->addWidget(groupBox_6);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
 
         horizontalLayout->addLayout(verticalLayout);
 
         AugmentedRealityTutorialClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(AugmentedRealityTutorialClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 969, 22));
+        menuBar->setGeometry(QRect(0, 0, 1033, 21));
         AugmentedRealityTutorialClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(AugmentedRealityTutorialClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -346,9 +361,7 @@ public:
         AugmentedRealityTutorialClass->setStatusBar(statusBar);
 
         retranslateUi(AugmentedRealityTutorialClass);
-        QObject::connect(radioInputWebCam, SIGNAL(toggled(bool)), AugmentedRealityTutorialClass, SLOT(inputDeviceChanged()));
         QObject::connect(pushReloadFileInput, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(reloadFileInputPushed()));
-        QObject::connect(pushPause, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(pauseVideo()));
         QObject::connect(checkShowCalibration, SIGNAL(stateChanged(int)), AugmentedRealityTutorialClass, SLOT(showCalibrationChanged()));
         QObject::connect(pushCalibrateGuitar, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(calibrateGuitar()));
         QObject::connect(pushFretBoardDetected, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(fretBoardDetected()));
@@ -362,6 +375,8 @@ public:
         QObject::connect(spinBlocksize, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
         QObject::connect(spinConstantC, SIGNAL(valueChanged(double)), AugmentedRealityTutorialClass, SLOT(adaptiveThresholdSettingsChanged()));
         QObject::connect(playingSpeedSlider, SIGNAL(valueChanged(int)), AugmentedRealityTutorialClass, SLOT(playSpeedChanged()));
+        QObject::connect(pushPause, SIGNAL(clicked()), AugmentedRealityTutorialClass, SLOT(pausePushed()));
+        QObject::connect(fileCombo, SIGNAL(currentIndexChanged(QString)), AugmentedRealityTutorialClass, SLOT(tabFileIndexChanged(QString)));
 
         QMetaObject::connectSlotsByName(AugmentedRealityTutorialClass);
     } // setupUi
@@ -370,16 +385,15 @@ public:
     {
         AugmentedRealityTutorialClass->setWindowTitle(QApplication::translate("AugmentedRealityTutorialClass", "AugmentedRealityTutorial", 0, QApplication::UnicodeUTF8));
         imageLabel->setText(QApplication::translate("AugmentedRealityTutorialClass", "No Camera Input", 0, QApplication::UnicodeUTF8));
-        groupBox_4->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Input Device", 0, QApplication::UnicodeUTF8));
-        radioInputWebCam->setText(QApplication::translate("AugmentedRealityTutorialClass", "WebCam", 0, QApplication::UnicodeUTF8));
-        radioInputFile->setText(QApplication::translate("AugmentedRealityTutorialClass", "File Input", 0, QApplication::UnicodeUTF8));
-        pushReloadFileInput->setText(QApplication::translate("AugmentedRealityTutorialClass", "Reload File", 0, QApplication::UnicodeUTF8));
+        legendImageLabel->setText(QApplication::translate("AugmentedRealityTutorialClass", "No Legend Image", 0, QApplication::UnicodeUTF8));
+        groupBox_4->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Tab File", 0, QApplication::UnicodeUTF8));
+        pushReloadFileInput->setText(QApplication::translate("AugmentedRealityTutorialClass", "Restart", 0, QApplication::UnicodeUTF8));
         pushPause->setText(QApplication::translate("AugmentedRealityTutorialClass", "Pause", 0, QApplication::UnicodeUTF8));
         groupBox_5->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Basic Settings", 0, QApplication::UnicodeUTF8));
-        pushCalibrateGuitar->setText(QApplication::translate("AugmentedRealityTutorialClass", "Calibrate Guitar", 0, QApplication::UnicodeUTF8));
         checkShowCalibration->setText(QApplication::translate("AugmentedRealityTutorialClass", "Show Calibration", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AugmentedRealityTutorialClass", "Playing Speed", 0, QApplication::UnicodeUTF8));
-        lblCurrentSpeed->setText(QApplication::translate("AugmentedRealityTutorialClass", "1", 0, QApplication::UnicodeUTF8));
+        playSpeedSliderLabel->setText(QApplication::translate("AugmentedRealityTutorialClass", "Playing Speed", 0, QApplication::UnicodeUTF8));
+        lblCurrentSpeed->setText(QApplication::translate("AugmentedRealityTutorialClass", "x0.1", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("AugmentedRealityTutorialClass", "x2.0", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Settings", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("AugmentedRealityTutorialClass", "Threshold Type:", 0, QApplication::UnicodeUTF8));
         comboThresholdType->clear();
@@ -401,6 +415,7 @@ public:
         label_2->setText(QApplication::translate("AugmentedRealityTutorialClass", "Blocksize:", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("AugmentedRealityTutorialClass", "constant C:", 0, QApplication::UnicodeUTF8));
         groupBox_6->setTitle(QApplication::translate("AugmentedRealityTutorialClass", "Calibration Settings", 0, QApplication::UnicodeUTF8));
+        pushCalibrateGuitar->setText(QApplication::translate("AugmentedRealityTutorialClass", "Calibrate Guitar", 0, QApplication::UnicodeUTF8));
         pushFretBoardDetected->setText(QApplication::translate("AugmentedRealityTutorialClass", "Fretboard Detected", 0, QApplication::UnicodeUTF8));
         pushSaveFretboard2File->setText(QApplication::translate("AugmentedRealityTutorialClass", "Save Fretboard To File", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

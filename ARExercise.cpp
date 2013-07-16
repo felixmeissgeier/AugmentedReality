@@ -5,7 +5,7 @@ ARExercise::ARExercise(QWidget *parent, Qt::WFlags flags)
     : QMainWindow(parent, flags),
     _showCalibration(false),
     _camDeviceID(0),
-    _inputFilePath("guitar_init.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
+    _inputFilePath("test.mpg"/*"marker_02.wmv"*//*"MarkerMovie.mpg"*/),
     _tabFilePath(""),
     _fretboardFilePath("felix_guitar.gtr"),
     _cap(0),
@@ -301,7 +301,10 @@ void ARExercise::computePreciseDrawIntersectionPoints(){
           double preciseX = fretboardPoint.x + xOffset;
           double preciseY = fretboardPoint.y + yOffset;
           cv::Point2d fretStringPoint(preciseX,preciseY);
-          fretPoints.push_back(fretStringPoint);
+					if(abs(previousX - preciseX) < 5.0){
+						fretStringPoint.x = previousX;
+					}
+					fretPoints.push_back(fretStringPoint);
         }
         _drawIntersectionPoints.push_back(fretPoints);
       }
